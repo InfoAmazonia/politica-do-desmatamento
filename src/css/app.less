@@ -1,0 +1,131 @@
+@import "functions.less";
+
+body,
+html {
+	font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+	background: @bg;
+	width: 100%;
+	height: 100%;
+	color: #f0f0f0;
+	font-size: 18px;
+	line-height: 150%;
+}
+
+#masthead {
+	height: 60px;
+	background: @header;
+	color: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 99999;
+	h1 {
+		font-size: 16px;
+		line-height: 60px;
+		color: #fff;
+		text-transform: uppercase;
+		margin: 0;
+		font-weight: 600;
+	}
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+	line-height: 120%;
+}
+
+#content {
+	width: 100%;
+	height: -webkit-calc(~"100% - 0px");
+	height: -moz-calc(~"100% - 0px");
+	height: calc(~"100% - 0px");
+}
+
+#timeline {
+	width: 100%;
+	height: 100%;
+	.timeline-item {
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		background-position: center;
+		.timeline-content {
+			width: 100%;
+			height: 100%;
+			.box-sizing(border-box);
+			padding-top: 10%;
+			background: rgba(0,0,0,0.4) url(../img/hover.png);
+			h2 {
+				font-size: 150px;
+				color: #fff;
+				font-weight: 800;
+			}
+			section {
+				max-width: 800px;
+				p {
+					font-size: 24px;
+					line-height: 150%;
+				}
+			}
+		}
+	}
+	#timeline-nav {
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		padding-top: 60px;
+		padding-bottom: 60px;
+		z-index: 2;
+		.gradient(transparent, rgba(0,0,0,0.8), transparent);
+		nav {
+			width: 100%;
+			display: table;
+			height: 1px;
+			border-bottom: 1px solid #fff;
+			a {
+				width: 1%;
+				display: table-cell;
+				color: #fff;
+				text-decoration: none;
+				text-align: center;
+				font-size: 14px;
+				line-height: 20px;
+				opacity: 0.7;
+				.transition(all 200ms ease-in-out);
+				&.active,
+				&:hover {
+					opacity: 1;
+					font-size: 24px;
+					font-weight: 600;
+					&:after {
+						width: 15px;
+						height: 15px;
+						border-radius: 8px;
+						margin-bottom: -8px;
+					}
+				}
+				&:after {
+					.transition(all 200ms ease-in-out);
+					content: '';
+					width: 10px;
+					height: 10px;
+					.box-shadow(0 0 2px 3px rgba(0,0,0,0.2));
+					background: #fff;
+					display: block;
+					margin: 10px auto -5px;
+					border-radius: 5px;
+				}
+			}
+		}
+	}
+}

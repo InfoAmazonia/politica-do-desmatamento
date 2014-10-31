@@ -1,0 +1,59 @@
+{
+  "name": "monitor-de-gastos",
+  "description": "Monitor de gastos no combate ao desmatamento",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/oeco/monitor-de-gastos.git"
+  },
+  "version": "0.1.0",
+  "authors": [
+    "Miguel Peixe <miguel@cardume.art.br>",
+    "Vitor George <vitor.george@gmail.com>"
+  ],
+  "scripts": {
+    "install": "./node_modules/.bin/napa",
+    "postinstall": "mkdir -p dist && ./node_modules/grunt-cli/bin/grunt build",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "angular": "^1.2.23",
+    "async": "^0.9.0",
+    "body-parser": "^1.9.0",
+    "compression": "^1.1.0",
+    "dotenv": "^0.4.0",
+    "express": "^4.9.5",
+    "express-session": "^1.8.2",
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^3.0.1",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-connect": "^0.8.0",
+    "grunt-markdown": "^0.6.1",
+    "grunt-contrib-copy": "^0.6.0",
+    "grunt-contrib-jade": "^0.12.0",
+    "grunt-contrib-less": "^0.11.4",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "jade": "^1.7.0",
+    "jquery": "^2.1.1",
+    "leaflet": "^0.7.3",
+    "less": "^1.7.5",
+    "method-override": "^2.2.0",
+    "moment": "^2.8.3",
+    "moment-timezone": "^0.2.2",
+    "napa": "^0.4.1",
+    "request": "^2.44.0",
+    "ui-router": "0.0.1",
+    "underscore": "^1.7.0"
+  },
+  "napa": {
+    "angular-leaflet": "tombatossals/angular-leaflet-directive",
+    "angular-dialog": "likeastore/ngDialog"
+  },
+  "keywords": [
+    "amazonia",
+    "desmatamento",
+    "orçamento",
+    "gastos"
+  ],
+  "engine": "node >= 0.10"
+}
