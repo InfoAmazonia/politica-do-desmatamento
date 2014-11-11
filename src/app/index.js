@@ -4,11 +4,13 @@
  * App
  */
 
-angular.module('monitor', [
+var app = angular.module('monitor', [
 	'ui.router'
-])
+]);
 
-.config([
+require('./timeline')(app);
+
+app.config([
 	'$stateProvider',
 	'$urlRouterProvider',
 	'$locationProvider',
@@ -55,7 +57,7 @@ angular.module('monitor', [
 		});
 
 	}
-]);
+])
 
 $(document).ready(function() {
 	angular.bootstrap(document, ['monitor']);
