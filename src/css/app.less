@@ -2,11 +2,11 @@
 
 body,
 html {
-	font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+	font-family: "Playfair Display", serif;
 	background: @bg;
 	width: 100%;
 	height: 100%;
-	color: #f0f0f0;
+	color: #fff;
 	font-size: 18px;
 	line-height: 150%;
 }
@@ -63,7 +63,7 @@ h6 {
 			width: 100%;
 			height: 100%;
 			.box-sizing(border-box);
-			padding-top: 10%;
+			padding-top: 6%;
 			background: rgba(0,0,0,0.4) url(../img/hover.png);
 			h2 {
 				font-size: 150px;
@@ -79,7 +79,7 @@ h6 {
 			}
 		}
 	}
-	#timeline-nav {
+	.nav {
 		width: 100%;
 		position: absolute;
 		bottom: 0;
@@ -87,45 +87,100 @@ h6 {
 		padding-bottom: 60px;
 		z-index: 2;
 		.gradient(transparent, rgba(0,0,0,0.8), transparent);
+		font-family: "Open Sans", "Helvetica", sans-serif;
 		nav {
-			width: 100%;
-			display: table;
-			height: 1px;
+			width: 50%;
+			position: relative;
+			margin: 0 auto 40px;
+			height: 30px;
 			border-bottom: 1px solid #fff;
-			a {
-				width: 1%;
-				display: table-cell;
-				color: #fff;
-				text-decoration: none;
-				text-align: center;
-				font-size: 14px;
-				line-height: 20px;
-				opacity: 0.7;
-				.transition(all 200ms ease-in-out);
-				&.active,
-				&:hover {
+			&.pre:after,
+			&.post:after {
+				content: '';
+				background: #fff;
+				width: 1px;
+				height: 50px;
+				position: absolute;
+				left: 50%;
+			}
+			&.pre:after {
+				top: 34px;
+			}
+			&.post:after {
+				bottom: 0;
+			}
+			&.current {
+				border: 0;
+				margin-bottom: 20px;
+				height: auto;
+				.nav-content a {
+					background: #111;
+					color: #fff;
+					border: 1px solid #fff;
+					font-size: 16px;
+					text-transform: uppercase;
+					font-weight: 800;
 					opacity: 1;
-					font-size: 24px;
-					font-weight: 600;
+					padding: 20px 0;
 					&:after {
-						width: 15px;
-						height: 15px;
-						border-radius: 8px;
-						margin-bottom: -8px;
+						content: none;
 					}
 				}
-				&:after {
-					.transition(all 200ms ease-in-out);
-					content: '';
-					width: 10px;
-					height: 10px;
-					.box-shadow(0 0 2px 3px rgba(0,0,0,0.2));
-					background: #fff;
-					display: block;
-					margin: 10px auto -5px;
-					border-radius: 5px;
+			}
+			.nav-content {
+				display: table;
+				height: 1px;
+				margin: 0;
+				a {
+					width: 1%;
+					display: table-cell;
+					color: #fff;
+					text-decoration: none;
+					text-align: center;
+					font-size: 14px;
+					line-height: 20px;
+					opacity: 0.7;
+					.transition(all 200ms linear);
+					&:after {
+						.transition(all 200ms linear);
+						content: '';
+						width: 10px;
+						height: 10px;
+						.box-shadow(0 0 2px 3px rgba(0,0,0,0.2));
+						background: #fff;
+						display: block;
+						margin: 5px auto 0;
+						border-radius: 5px;
+					}
+					&.active,
+					&:hover {
+						opacity: 1;
+					}
 				}
 			}
+		}
+	}
+}
+
+#home.timeline-item .timeline-content {
+	header {
+		h1 {
+			font-family: "Playfair Display SC";
+			font-weight: 900;
+			color: #fff;
+			text-align: center;
+			font-size: 64px;
+			border-bottom: 2px solid #fff;
+			margin: 0 0 40px;
+			padding: 0 0 40px;
+		}
+	}
+	section {
+		margin-left: auto;
+		margin-right: auto;
+		p {
+			text-align: center;
+			font-size: 20px;
 		}
 	}
 }
