@@ -103,25 +103,38 @@ h6 {
 				position: absolute;
 				left: 50%;
 			}
-			&.pre:after {
-				top: 34px;
+			&.pre {
+				margin: 0 0 40px;
+				&:after {
+					left: auto;
+					right: 0;
+					top: 30px;
+				}
 			}
-			&.post:after {
-				bottom: 0;
+			&.post {
+				margin: 0 0 40px 50%;
+				&:after {
+					left: 0;
+					bottom: 0;
+				}
 			}
 			&.current {
+				max-width: 300px;
 				border: 0;
 				margin-bottom: 20px;
 				height: auto;
 				.nav-content a {
-					background: #111;
-					color: #fff;
+					background: #f9f9f9;
+					color: #444;
 					border: 1px solid #fff;
 					font-size: 16px;
 					text-transform: uppercase;
 					font-weight: 800;
 					opacity: 1;
 					padding: 20px 0;
+					&:hover {
+						color: #111;
+					}
 					&:after {
 						content: none;
 					}
@@ -170,7 +183,7 @@ h6 {
 			color: #fff;
 			text-align: center;
 			font-size: 64px;
-			border-bottom: 2px solid #fff;
+			border-bottom: 3px solid #fff;
 			margin: 0 0 40px;
 			padding: 0 0 40px;
 		}
