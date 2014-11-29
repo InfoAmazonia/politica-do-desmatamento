@@ -4,7 +4,12 @@ section#timeline(ng-controller="TimelineController")
 			.container
 				.twelve.columns
 					nav
-						a(ng-repeat="item in data" href="javascript:void(0);" ng-class="{active:item.active}") {{item.year}}
+						a(ng-repeat="item in data" href="javascript:void(0);" ng-class="{active:item.active}") {{item.year}}		
+
+	.video-container
+		youtube-video#video(video-id="videoId" player-vars="videoVars" player-width="'100%'" player-height="'100%'")
+
+	a.play-video.icon-play(href="javascript:void(0);")
 
 	#timeline-nav.nav
 		.container
@@ -27,14 +32,14 @@ section#timeline(ng-controller="TimelineController")
 						a(href="javascript:void(0);" ng-class="{active:item.active}") 2020
 
 
-	article#home.timeline-item(style="background-image:url(/img/1974_transamazonica.jpg);")
+	article#home.timeline-item
 		.timeline-content
 			.container
 				.twelve.columns
 					header
 						h1 Gastando a Amazônia
 					section
-						p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a ipsum et est rutrum vestibulum nec nec libero. Praesent commodo nulla sit amet aliquet suscipit. Nam urna dui, luctus ut massa vel, bibendum fermentum lacus. Suspendisse suscipit imperdiet risus, eget lacinia nunc viverra sit amet. Donec porta ullamcorper libero quis ullamcorper.
+						p Uma jornada pela história do desmatamento moderno
 
 	//
 		article.timeline-item(ng-repeat="item in data" style="background-image:url({{item.media.url}})")

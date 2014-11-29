@@ -6,6 +6,28 @@ module.exports = function(app) {
 		'$scope',
 		function($scope) {
 
+			$scope.videoId = '--ZYWLObzzU';
+			$scope.videoVars = {
+				controls: 0,
+				enablejsapi: 1,
+				autoplay: 0,
+				disablekb: 1,
+				fs: 0,
+				loop: 1,
+				showinfo: 0
+			};
+
+			$scope.$on('youtube.player.ready', function($event, player) {
+				player.mute();
+				player.seekTo(180).playVideo();
+				setInterval(function() {
+					if(player.getCurrentTime() > 190) {
+						player.seekTo(180);
+					}
+				}, 1000);
+				$scope.player = player;
+			});
+
 			$scope.data = [
 				{
 					year: '1974',

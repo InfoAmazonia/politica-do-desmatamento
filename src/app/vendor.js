@@ -4,6 +4,7 @@ window.L = require('leaflet');
 require('angular');
 require('ui-router');
 require('angular-leaflet/dist/angular-leaflet-directive');
+require('angular-youtube/src/angular-youtube-embed');
 
 window.moment = require('moment-timezone');
 require('moment/locale/pt-br');

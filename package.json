@@ -47,6 +47,7 @@
   },
   "napa": {
     "angular-leaflet": "tombatossals/angular-leaflet-directive",
+    "angular-youtube": "brandly/angular-youtube-embed",
     "angular-dialog": "likeastore/ngDialog"
   },
   "keywords": [

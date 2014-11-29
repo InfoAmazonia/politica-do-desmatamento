@@ -5,7 +5,8 @@
  */
 
 var app = angular.module('monitor', [
-	'ui.router'
+	'ui.router',
+	'youtube-embed'
 ]);
 
 require('./timeline')(app);
