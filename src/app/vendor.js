@@ -6,9 +6,9 @@ require('animo.js/animo');
 require('angular');
 require('angular-animate/angular-animate');
 require('ui-router');
-require('angular-leaflet/dist/angular-leaflet-directive');
 require('angular-youtube/src/angular-youtube-embed');
 
+/*
 window.moment = require('moment-timezone');
 require('moment/locale/pt-br');
 moment.locale('pt-br');
@@ -22,3 +22,4 @@ moment.locale('pt-br', {
 		sameElse: 'DD/MM [às] LT'
 	},
 });
+*/
