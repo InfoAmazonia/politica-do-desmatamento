@@ -1,52 +1,9 @@
-section#timeline(ng-controller="TimelineController")
-	//
-		#timeline-nav.nav1
-			.container
-				.twelve.columns
-					nav
-						a(ng-repeat="item in data" href="javascript:void(0);" ng-class="{active:item.active}") {{item.year}}		
-
-	.video-container
-		youtube-video#video(video-id="videoId" player-vars="videoVars" player-width="'100%'" player-height="'100%'")
-
-	a.play-video.icon-play(href="javascript:void(0);")
-
-	#timeline-nav.nav
+article.timeline-item
+	.timeline-content
 		.container
 			.twelve.columns
-				nav.pre
-					.nav-content
-						a(href="javascript:void(0);" ng-class="{active:item.active}") 1974
-						a(href="javascript:void(0);" ng-class="{active:item.active}") 1980
-						a(href="javascript:void(0);" ng-class="{active:item.active}") 1990
-						a(href="javascript:void(0);" ng-class="{active:item.active}") 1991
-						a(href="javascript:void(0);" ng-class="{active:item.active}") 1995
-						a(href="javascript:void(0);" ng-class="{active:item.active}") 2003
-						a(href="javascript:void(0);" ng-class="{active:item.active}") 2004
-				nav.current
-					.nav-content
-						a(href="javascript:void(0);" ng-class="{active:item.active}") Análise dos tempos atuais
-				nav.post
-					.nav-content
-						a(href="javascript:void(0);" ng-class="{active:item.active}") 2015
-						a(href="javascript:void(0);" ng-class="{active:item.active}") 2020
-
-
-	article#home.timeline-item
-		.timeline-content
-			.container
-				.twelve.columns
-					header
-						h1 Gastando a Amazônia
-					section
-						p Uma jornada pela história do desmatamento moderno
-
-	//
-		article.timeline-item(ng-repeat="item in data" style="background-image:url({{item.media.url}})")
-			.timeline-content
-				.container
-					.twelve.columns
-						header
-							h2 {{item.year}}
-						section
-							p {{item.content}}
+				header
+					h2 {{item.year}}
+				section
+					p
+						span(ng-repeat="content in item.contents") {{content.text}} 

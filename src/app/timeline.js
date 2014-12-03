@@ -3,103 +3,15 @@
 module.exports = function(app) {
 
 	app.controller('TimelineController', [
+		'Data',
+		'$stateParams',
 		'$scope',
-		function($scope) {
+		function(Data, $stateParams, $scope) {
 
-			$scope.videoId = '--ZYWLObzzU';
-			$scope.videoVars = {
-				controls: 0,
-				enablejsapi: 1,
-				autoplay: 0,
-				disablekb: 1,
-				fs: 0,
-				loop: 1,
-				showinfo: 0
-			};
+			$scope.data = Data.get();
 
-			$scope.$on('youtube.player.ready', function($event, player) {
-				player.mute();
-				player.seekTo(180).playVideo();
-				setInterval(function() {
-					if(player.getCurrentTime() > 190) {
-						player.seekTo(180);
-					}
-				}, 1000);
-				$scope.player = player;
-			});
+			$scope.item = _.find($scope.data, function(item) { return $stateParams.year == item.year; });
 
-			$scope.data = [
-				{
-					year: '1974',
-					content: 'A rodovia Transamazônica (BR-230) é inaugurada em agosto. A obra resulta em uma estrada com 4.073 quilômetros de extensão (até hoje, mais da metade sem asfalto) e dá início à era moderna do desmatamento na Amazônia.',
-					media: {
-						type: 'image',
-						url: '/img/1974_transamazonica.jpg'
-					}
-				},
-				{
-					year: '1980',
-					content: ''
-				},
-				{
-					year: '1990',
-					content: ''
-				},
-				{
-					year: '1991',
-					content: ''
-				},
-				{
-					year: '1995',
-					content: ''
-				},
-				{
-					year: '2003',
-					content: ''
-				},
-				{
-					year: '2004',
-					content: ''
-				},
-				{
-					year: '2007',
-					content: ''
-				},
-				{
-					year: '2008',
-					content: ''
-				},
-				{
-					year: '2009',
-					content: ''
-				},
-				{
-					year: '2011',
-					content: ''
-				},
-				{
-					year: '2012',
-					content: ''
-				},
-				{
-					year: '2013',
-					content: ''
-				},
-				{
-					year: '2014',
-					content: ''
-				},
-				{
-					year: '2015',
-					content: ''
-				},
-				{
-					year: '2020',
-					content: ''
-				}
-			];
-
-			$scope.data[0].active = true;
 		}
 	]);
 

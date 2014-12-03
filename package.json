@@ -47,8 +47,10 @@
   },
   "napa": {
     "angular-leaflet": "tombatossals/angular-leaflet-directive",
+    "angular-animate": "angular/bower-angular-animate#v1.3.0",
     "angular-youtube": "brandly/angular-youtube-embed",
-    "angular-dialog": "likeastore/ngDialog"
+    "angular-dialog": "likeastore/ngDialog",
+    "animo.js": "ThrivingKings/animo.js"
   },
   "keywords": [
     "amazonia",

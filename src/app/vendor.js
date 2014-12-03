@@ -1,7 +1,10 @@
 window._ = require('underscore');
 window.L = require('leaflet');
 
+require('animo.js/animo');
+
 require('angular');
+require('angular-animate/angular-animate');
 require('ui-router');
 require('angular-leaflet/dist/angular-leaflet-directive');
 require('angular-youtube/src/angular-youtube-embed');

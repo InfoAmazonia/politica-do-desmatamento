@@ -1,7 +1,7 @@
 doctype html
 html(lang='pt-BR')
 	include includes/head
-	body
+	body(ng-controller="SiteController")
 		#fb-root
 		script.
 			(function(d, s, id) {
@@ -20,7 +20,44 @@ html(lang='pt-BR')
 							a(href="/")
 								span Monitor de Gastos
 
+		.video-container
+			youtube-video(player-id="video" video-id="videoId" player-vars="videoVars" player-width="'100%'" player-height="'100%'")
+
+		header#masthead
+			.container
+				.twelve.columns
+					h1 Gastando a Amazônia
+					section
+						p Uma jornada pela história do desmatamento moderno
+
+		a.play-video.icon-play(href="javascript:void(0);" ng-click="init()")
+
 		section#content(ui-view, autoscroll='false')
+
+		#timeline-nav.nav
+			.container
+				.twelve.columns
+					nav.pre
+						.nav-content
+							a(href="/timeline/1960") 1960
+							a(href="/timeline/1974") 1974
+							a(href="/timeline/1980") 1980
+							a(href="/timeline/1988") 1988
+							a(href="/timeline/1989") 1989
+							a(href="/timeline/1990") 1990
+							a(href="/timeline/1991") 1991
+							a(href="/timeline/1995") 1995
+							a(href="/timeline/1998") 1998
+							a(href="/timeline/2003") 2003
+							a(href="/timeline/2004") 2004
+							a(href="/timeline/2005") 2005
+					nav.current
+						.nav-content
+							a(href="/analise") Análise dos tempos atuais
+					nav.post
+						.nav-content
+							a(href="/timeline/2015") 2015
+							a(href="/timeline/2020") 2020
 
 		footer#mastfoot
 
