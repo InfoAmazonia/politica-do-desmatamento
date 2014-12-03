@@ -1,5 +1,6 @@
 window._ = require('underscore');
-window.L = require('leaflet');
+
+//window.L = require('leaflet');
 
 require('animo.js/animo');
 
