@@ -14,7 +14,7 @@ var app = angular.module('monitor', [
 
 require('./timeline')(app);
 
-app.config(require('./config'));
+app.config(require('./config'))
 
 .factory('Data', [
 	function() {
