@@ -99,6 +99,8 @@ app.config(require('./config'))
 		 */
 		$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState) {
 
+			$('#masthead,.play-video').hide();
+
 			if(toState.name !== 'home') {
 				if(fromState.name == 'home') {
 					$('#masthead').animo({animation: 'fadeOutUp', duration: 0.5, keep: true});
@@ -107,7 +109,7 @@ app.config(require('./config'))
 					});
 				}
 			} else {
-				$('#masthead').animo({animation: 'fadeInDown', duration: 0.5, keep: true});
+				$('#masthead').show().animo({animation: 'fadeInDown', duration: 0.5, keep: true});
 				$('.play-video').show().animo({animation: 'fadeIn', duration: 0.5, keep: true});
 			}
 
