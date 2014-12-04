@@ -40,6 +40,10 @@ h6 {
 		border-bottom: 3px solid #fff;
 		margin: 0 0 40px;
 		padding: 0 0 40px;
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
 	}
 	section {
 		margin-left: auto;
@@ -47,6 +51,22 @@ h6 {
 		p {
 			text-align: center;
 			font-size: 20px;
+		}
+	}
+	// Fixed
+	&.fixed {
+		top: 0;
+		background: #000;
+		padding: 10px 0;
+		h1 {
+			font-size: 20px;
+			text-align: left;
+			border: 0;
+			margin: 0;
+			padding: 0;
+		}
+		section {
+			display: none;
 		}
 	}
 }
@@ -159,23 +179,110 @@ a.play-video {
 	z-index: 10;
 	bottom: 0;
 	padding-top: 60px;
-	padding-bottom: 60px;
+	padding-bottom: 40px;
 	.gradient(transparent, rgba(0,0,0,0.8), transparent);
 	font-family: "Open Sans", "Helvetica", sans-serif;
+	overflow: hidden;
+	.transition(all .5s ease-in-out);
+	&.analise {
+		nav.pre {
+			margin-left: -50%;
+		}
+		nav.post {
+			margin-left: 100%;
+			width: 15%;
+		}
+		nav.current {
+			max-width: none;
+			position: static;
+			width: auto;
+			padding: 0 40px;
+			&:before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				margin-top: 6px;
+				left: -500px;
+				right: -500px;
+				height: 1px;
+				background: #fff;
+			}
+			.nav-content a {
+				//background: transparent;
+				//color: #fff;
+				width: auto;
+				display: block;
+				float: left;
+				position: relative;
+				z-index: 1;
+				padding: 20px;
+				margin: 0 10px 0 0;
+			}
+			.nav-content > a {
+				float: left;
+			}
+			.sub-nav {
+				float: left;
+				display: block;
+				a {
+					margin-top: 10px;
+					padding: 10px 15px;
+					font-size: 14px;
+				}
+				> * {
+					float: left;
+				}
+				.timeline {
+					margin-left: 20px;
+					margin-top: -21px;
+					a {
+						font-weight: normal;
+						background: transparent;
+						color: #fff;
+						text-decoration: none;
+						text-align: center;
+						font-size: 14px;
+						line-height: 20px;
+						opacity: 0.7;
+						padding: 10px 5px;
+						.transition(all 200ms linear);
+						&:after {
+							.transition(all 200ms linear);
+							content: '';
+							width: 10px;
+							height: 10px;
+							.box-shadow(0 0 2px 3px rgba(0,0,0,0.2));
+							background: #fff;
+							display: block;
+							margin: 5px auto 0;
+							border-radius: 5px;
+						}
+						&.active,
+						&:hover {
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+	}
 	nav {
 		width: 50%;
 		position: relative;
 		margin: 0 auto 20px;
 		height: 30px;
 		border-bottom: 1px solid #fff;
+		.transition(all .5s ease-in-out);
+		.sub-nav {
+			display: none;
+		}
 		&.pre:after,
 		&.post:after {
 			content: '';
 			background: #fff;
 			width: 1px;
-			height: 50px;
+			height: 55px;
 			position: absolute;
-			left: 50%;
 		}
 		&.pre {
 			margin: 0 0 25px;
@@ -189,6 +296,7 @@ a.play-video {
 			margin: 0 0 0 50%;
 			&:after {
 				left: 0;
+				height: 70px;
 				bottom: 0;
 			}
 		}
@@ -200,7 +308,6 @@ a.play-video {
 			.nav-content a {
 				background: #f9f9f9;
 				color: #444;
-				border: 1px solid #fff;
 				font-size: 16px;
 				text-transform: uppercase;
 				font-weight: 800;

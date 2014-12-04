@@ -21,6 +21,9 @@ module.exports = [
 				url: '/timeline/:year/',
 				controller: 'TimelineController',
 				templateUrl: '/views/pages/timeline.html'
+			})
+			.state('analise', {
+				url: '/analise/'
 			});
 
 		/*

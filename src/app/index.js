@@ -97,20 +97,39 @@ app.config(require('./config'))
 		/*
 		 * Index items animations
 		 */
-		$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState) {
+		$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState) {
 
-			$('#masthead,.play-video').hide();
+			if(toState.name != fromState.name) {
 
-			if(toState.name !== 'home') {
-				if(fromState.name == 'home') {
-					$('#masthead').animo({animation: 'fadeOutUp', duration: 0.5, keep: true});
-					$('.play-video').animo({animation: 'fadeOut', duration: 0.5, keep: true}, function() {
+				if(toState.name !== 'home') {
+					if(!fromState.name) {
+						$('#masthead').show().addClass('fixed');
 						$('.play-video').hide();
-					});
+					} else if(fromState.name == 'home') {
+						$('#masthead').animo({animation: 'fadeOutUp', duration: 0.5, keep: true}, function() {
+							$('#masthead').addClass('fixed').animo({animation: 'fadeInDown', duration: 0.5, keep: true});
+						});
+						$('.play-video').animo({animation: 'fadeOut', duration: 0.5, keep: true}, function() {
+							$('.play-video').hide();
+						});
+					}
+				} else {
+					if(!fromState.name) {
+						$('#masthead').show().removeClass('fixed');
+					} else {
+						$('#masthead').animo({animation: 'fadeOutUp', duration: 0.5, keep: true}, function() {
+							$('#masthead').removeClass('fixed').animo({animation: 'fadeInDown', duration: 0.5, keep: true});
+						});
+						$('.play-video').show().animo({animation: 'fadeIn', duration: 0.5, keep: true});
+					}
 				}
-			} else {
-				$('#masthead').show().animo({animation: 'fadeInDown', duration: 0.5, keep: true});
-				$('.play-video').show().animo({animation: 'fadeIn', duration: 0.5, keep: true});
+
+				if(toState.name == 'analise') {
+					$('#timeline-nav').addClass('analise');
+				} else {
+					$('#timeline-nav').removeClass('analise');
+				}
+
 			}
 
 		});
