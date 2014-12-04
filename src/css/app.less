@@ -193,45 +193,39 @@ a.play-video {
 	.transition(all .5s ease-in-out);
 	&.analise {
 		nav.pre {
-			margin-left: -50%;
+			margin-left: -45%;
 		}
 		nav.post {
 			margin-left: 100%;
-			width: 15%;
+			width: 20%;
 		}
 		nav.current {
-			max-width: none;
-			position: static;
-			width: auto;
-			padding: 0 40px;
+			width: 100%;
+			position: relative;
+			padding: 0;
+			height: 60px;
+			overflow: hidden;
 			&:before {
-				content: '';
-				position: absolute;
-				top: 50%;
-				margin-top: 6px;
-				left: -500px;
-				right: -500px;
-				height: 1px;
-				background: #fff;
+				left: 0;
+				right: 0;
 			}
-			.nav-content a {
+			.nav-content a.label {
 				//background: transparent;
 				//color: #fff;
-				width: auto;
-				display: block;
+				margin: 0 10px 0 0;
 				float: left;
 				position: relative;
 				z-index: 1;
-				padding: 20px;
-				margin: 0 10px 0 0;
-			}
-			.nav-content > a {
-				float: left;
 			}
 			.sub-nav {
 				float: left;
 				display: block;
 				a {
+					width: auto;
+					display: block;
+					float: left;
+					position: relative;
+					z-index: 1;
 					margin-top: 10px;
 					padding: 10px 15px;
 					font-size: 14px;
@@ -241,7 +235,7 @@ a.play-video {
 				}
 				.timeline {
 					margin-left: 20px;
-					margin-top: -21px;
+					margin-top: -20px;
 					a {
 						font-weight: normal;
 						background: transparent;
@@ -308,11 +302,24 @@ a.play-video {
 			}
 		}
 		&.current {
-			max-width: 300px;
+			width: 300px;
 			border: 0;
 			margin-bottom: 10px;
 			height: auto;
+			&:before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				margin-top: 0;
+				left: 50%;
+				right: 50%;
+				height: 1px;
+				background: #fff;
+				.transition(all .5s ease-in-out);
+			}
 			.nav-content a {
+				display: block;
+				width: 300px;
 				background: #f9f9f9;
 				color: #444;
 				font-size: 16px;
@@ -320,6 +327,8 @@ a.play-video {
 				font-weight: 800;
 				opacity: 1;
 				padding: 20px 0;
+				position: relative;
+				z-index: 1;
 				&:hover {
 					color: #111;
 				}
