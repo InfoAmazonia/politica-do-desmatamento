@@ -1,5 +1,7 @@
 'use strict';
 
+require('./ui');
+
 var timelineData = require('./data');
 
 /*
@@ -88,8 +90,14 @@ app.config(require('./config'))
 			// Initial video display
 			if(toState.name == 'home') {
 				setLoop(57, 70);
-			} else if(toState.name == 'timeline') {
+				$scope.videoId = '2qOpPo-onf0';
+			} else if(toParams.year) {
 				var item = _.find($scope.data, function(item) { return toParams.year == item.year; });
+				if(item.videoSettings.videoId) {
+					$scope.videoId = item.videoSettings.videoId;
+				} else {
+					$scope.videoId = '2qOpPo-onf0';
+				}
 				setLoop(item.videoSettings.start, item.videoSettings.end);
 			}
 		});
@@ -97,7 +105,7 @@ app.config(require('./config'))
 		/*
 		 * Index items animations
 		 */
-		$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState) {
+		$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState) {
 
 			if(toState.name != fromState.name) {
 
@@ -124,10 +132,18 @@ app.config(require('./config'))
 					}
 				}
 
-				if(toState.name == 'analise' || toState.name == 'analiseTimeline') {
+				if(toState.name.indexOf('analise') !== -1) {
 					$('#timeline-nav').addClass('analise');
+					$('html,body').animate({
+						scrollTop: $(window).height() - 130
+					}, 1000);
 				} else {
 					$('#timeline-nav').removeClass('analise');
+					if(fromState.name.indexOf('analise') !== -1) {
+						$('html,body').animate({
+							scrollTop: 0
+						}, 500);
+					}
 				}
 
 			}

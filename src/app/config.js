@@ -24,12 +24,12 @@ module.exports = [
 			})
 			.state('analise', {
 				url: '/analise/',
-				templateUrl: '/views/pages/introducao.html'
+				templateUrl: '/views/pages/analise.html'
 			})
-			.state('analiseTimeline', {
-				url: '/analise/:year/',
+			.state('analise.timeline', {
+				url: ':year/',
 				controller: 'TimelineController',
-				templateUrl: '/views/pages/introducao.html'
+				templateUrl: '/views/pages/timeline.html'
 			});
 
 		/*

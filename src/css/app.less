@@ -56,7 +56,8 @@ h6 {
 	// Fixed
 	&.fixed {
 		top: 0;
-		background: #000;
+		background: #111;
+		.box-shadow(0 0 5px rgba(0,0,0,1));
 		padding: 10px 0;
 		position: fixed;
 		h1 {
@@ -80,10 +81,16 @@ h6 {
 	position: absolute;
 	z-index: 4;
 	.page {
-		background: #fff;
-		min-height: 100%;
-		color: #333;
 		padding: 6% 0;
+		min-height: 100%;
+		.box-sizing(border-box);
+		&.flat {
+			background: #fff;
+			color: #333;
+		}
+	}
+	#timeline {
+		height: 100%;
 	}
 }
 
@@ -111,7 +118,7 @@ h6 {
 .video-container {
 	width: 100%;
 	height: 100%;
-	position: absolute;
+	position: fixed;
 	z-index: 1;
 	overflow: hidden;
 	#video {
@@ -191,7 +198,38 @@ a.play-video {
 	font-family: "Open Sans", "Helvetica", sans-serif;
 	overflow: hidden;
 	.transition(all .5s ease-in-out);
+	&.fixed {
+		position: fixed;
+		top: -60px;
+		height: 90px;
+		background: #111;
+		bottom: auto;
+	}
 	&.analise {
+		&.fixed {
+			nav:after {
+				background: #222 !important;
+			}
+			nav.current {
+				a.label {
+					color: #fff;
+					background: #111;
+					text-align: left;
+				}
+				&:before {
+					background: #222;
+				}
+				.sub-nav {
+					a {
+						background: #111;
+						color: #999;
+					}
+					.timeline a {
+						opacity: .2;
+					}
+				}
+			}
+		}
 		nav.pre {
 			margin-left: -45%;
 		}
@@ -229,6 +267,7 @@ a.play-video {
 					margin-top: 10px;
 					padding: 10px 15px;
 					font-size: 14px;
+					font-weight: normal;
 				}
 				> * {
 					float: left;
@@ -245,10 +284,10 @@ a.play-video {
 						font-size: 14px;
 						line-height: 20px;
 						opacity: 0.7;
-						padding: 10px 5px;
-						.transition(all 200ms linear);
+						padding: 10px;
+						.transition(all .5s linear);
 						&:after {
-							.transition(all 200ms linear);
+							.transition(all .5s linear);
 							content: '';
 							width: 10px;
 							height: 10px;
@@ -350,9 +389,9 @@ a.play-video {
 				font-size: 14px;
 				line-height: 20px;
 				opacity: 0.7;
-				.transition(all 200ms linear);
+				.transition(all .5s linear);
 				&:after {
-					.transition(all 200ms linear);
+					.transition(all .5s linear);
 					content: '';
 					width: 10px;
 					height: 10px;

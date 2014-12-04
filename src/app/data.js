@@ -23,8 +23,9 @@ module.exports = [
 	{
 		year: 1974,
 		videoSettings: {
-			start: 80,
-			end: 90
+			videoId: 'SAzPlaY4GJI',
+			start: 0,
+			end: 39
 		},
 		contents: [
 			{
