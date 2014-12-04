@@ -105,7 +105,7 @@ app.config(require('./config'))
 		/*
 		 * Index items animations
 		 */
-		$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState) {
+		$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState) {
 
 			if(toState.name != fromState.name) {
 
@@ -132,20 +132,20 @@ app.config(require('./config'))
 					}
 				}
 
-				if(toState.name.indexOf('analise') !== -1) {
-					$('#timeline-nav').addClass('analise');
-					$('html,body').animate({
-						scrollTop: $(window).height() - 130
-					}, 1000);
-				} else {
-					$('#timeline-nav').removeClass('analise');
-					if(fromState.name.indexOf('analise') !== -1) {
-						$('html,body').animate({
-							scrollTop: 0
-						}, 500);
-					}
-				}
+			}
 
+			if(toState.name.indexOf('analise') !== -1) {
+				$('#timeline-nav').addClass('analise');
+				$('html,body').animate({
+					scrollTop: $(window).height() - 130
+				}, 1000);
+			} else {
+				$('#timeline-nav').removeClass('analise');
+				if(fromState.name.indexOf('analise') !== -1) {
+					$('html,body').animate({
+						scrollTop: 0
+					}, 500);
+				}
 			}
 
 		});

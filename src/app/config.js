@@ -26,6 +26,10 @@ module.exports = [
 				url: '/analise/',
 				templateUrl: '/views/pages/analise.html'
 			})
+			.state('analise.metodologia', {
+				url: 'metodologia/',
+				templateUrl: '/views/pages/metodologia.html'
+			})
 			.state('analise.timeline', {
 				url: ':year/',
 				controller: 'TimelineController',

@@ -13,6 +13,7 @@ html {
 	color: #fff;
 	font-size: 18px;
 	line-height: 150%;
+	overflow: hidden;
 }
 
 h1,
@@ -89,8 +90,15 @@ h6 {
 			color: #333;
 		}
 	}
+	.subcontent {
+		height: -webkit-calc(~"100% - 130px");
+		height: -moz-calc(~"100% - 130px");
+		height: calc(~"100% - 130px");
+		overflow: auto;
+	}
 	#timeline {
 		height: 100%;
+		position: relative;
 	}
 }
 
@@ -215,6 +223,7 @@ a.play-video {
 					color: #fff;
 					background: #111;
 					text-align: left;
+					padding-left: 0 !important;
 				}
 				&:before {
 					background: #222;
@@ -254,6 +263,9 @@ a.play-video {
 				float: left;
 				position: relative;
 				z-index: 1;
+				width: auto;
+				padding-right: 20px;
+				padding-left: 20px;
 			}
 			.sub-nav {
 				float: left;
