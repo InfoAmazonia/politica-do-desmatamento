@@ -23,7 +23,13 @@ module.exports = [
 				templateUrl: '/views/pages/timeline.html'
 			})
 			.state('analise', {
-				url: '/analise/'
+				url: '/analise/',
+				templateUrl: '/views/pages/introducao.html'
+			})
+			.state('analiseTimeline', {
+				url: '/analise/:year/',
+				controller: 'TimelineController',
+				templateUrl: '/views/pages/introducao.html'
 			});
 
 		/*

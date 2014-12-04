@@ -124,7 +124,7 @@ app.config(require('./config'))
 					}
 				}
 
-				if(toState.name == 'analise') {
+				if(toState.name == 'analise' || toState.name == 'analiseTimeline') {
 					$('#timeline-nav').addClass('analise');
 				} else {
 					$('#timeline-nav').removeClass('analise');
@@ -139,10 +139,6 @@ app.config(require('./config'))
 		$scope.init = function() {
 
 			$state.go('timeline', { year: Data.get()[0].year });
-
-			// $('#masthead').animo({animation: 'fadeOutUp', duration: 0.5, keep: true}, function() {
-			// 	$('#masthead').animo({animation: 'fadeInDown', duration: 0.5, keep: true});
-			// });
 
 		};
 
