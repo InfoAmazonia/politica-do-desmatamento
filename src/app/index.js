@@ -34,11 +34,46 @@ app.config(require('./config'))
 
 .factory('VideoService', [
 	function() {
+		var time = -1;
 
-		var init = function(video) {
+		return {
+			getTime: function() {
+				return time;
+			},
+			setTime: function(val) {
+				time = val;
+				return time;
+			}
+		}
+	}
+])
 
+.directive('videoContent', [
+	'VideoService',
+	function(Video) {
 
+		return {
+			restrict: 'EA',
+			scope: {
+				videoIn: '=',
+				videoOut: '='
+			},
+			link: function(scope, element, attrs) {
 
+				scope.showContent = false;
+
+				scope.$watch(function() {
+					return Video.getTime();
+				}, function(time) {
+					if(time >= scope.videoIn && time <= scope.videoOut) {
+						element.addClass('active');
+					} else {
+						element.removeClass('active');
+					}
+					console.log(time);
+				});
+
+			}
 		}
 
 	}
@@ -46,11 +81,12 @@ app.config(require('./config'))
 
 .controller('SiteController', [
 	'Data',
+	'VideoService',
 	'$interval',
 	'$state',
 	'$scope',
 	'$rootScope',
-	function(Data, $interval, $state, $scope, $rootScope) {
+	function(Data, Video, $interval, $state, $scope, $rootScope) {
 
 		$scope.data = Data.get();
 
@@ -75,7 +111,9 @@ app.config(require('./config'))
 			$scope.player = player;
 		});
 
-		var setVideo = function(id, cb) {
+		$scope.currentTime = -1;
+
+		var setVideo = function(id, cb, initLoop) {
 
 			var set = function(player) {
 				player.loadVideoById(id).playVideo();
@@ -89,14 +127,20 @@ app.config(require('./config'))
 
 				videoLoop = $interval(function() {
 					var ended = false;
-					if(player.getPlayerState() == 1 && player.getCurrentTime() >= (player.getDuration() - 1)) {
+					$scope.currentTime = player.getCurrentTime();
+					Video.setTime($scope.currentTime);
+					if(player.getPlayerState() == 1 && $scope.currentTime >= (player.getDuration() - 1)) {
 						var ended = true;
 						if(cb == true) {
 							player.seekTo(0);
 						} else {
+							if(initLoop) {
+								player.seekTo(initLoop).playVideo();
+							} else {
+								clearInterval(videoLoop);
+							}
 							if(typeof cb !== 'function')
 								player.pauseVideo();
-							clearInterval(videoLoop);
 						}
 					}
 					if(typeof cb == 'function')
@@ -117,31 +161,16 @@ app.config(require('./config'))
 		}
 
 		$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams) {
-			$scope.showInfo = false;
-			if(toState.name == 'home') {
-				setVideo('bkhRoHQEzkA', true);
-			} else if(toParams.year) {
+			if(toParams.year) {
 				var item = _.find($scope.data, function(item) { return toParams.year == item.year; });
 				var next = $scope.data[$scope.data.indexOf(item)+1] || false;
-				if(item.videoSettings.introId) {
-					setVideo(item.videoSettings.introId, function(ended, player) {
-						if(ended) {
-							$scope.showInfo = true;
-							setVideo(item.videoSettings.videoId, function(ended, player) {
-								if(ended && next)
-									$state.go('timeline', {year: next.year});
-							});
-						} else {
-							//console.log(player.getCurrentTime());
-						}
-					});
-				} else {
-					$scope.showInfo = true;
-					setVideo(item.videoSettings.videoId, function(ended) {
-						if(ended && next)
-							$state.go('timeline', {year: next.year});
-					});					
-				}
+				setVideo(item.videoSettings.videoId, function(ended) {
+					if(ended && next) {
+						//$state.go('timeline', {year: next.year});
+					}
+				}, item.videoSettings.introTime);
+			} else {
+				setVideo('bkhRoHQEzkA', true);
 			}
 		});
 

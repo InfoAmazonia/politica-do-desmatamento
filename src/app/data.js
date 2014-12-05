@@ -10,13 +10,13 @@ module.exports = [
 		contents: [
 			{
 				text: 'A abertura da rodovia Belém-Brasília inaugura a era dos desmatamentos modernos na Amazônia brasileira, com grandes focos concentrados entre Goiás, o atual território do Tocantins e o Pará.',
-				in: 1,
-				out: 4
+				in: 2,
+				out: 8
 			},
 			{
 				text: 'É a primeira via de acesso aberta na floresta conectando as regiões Sul e Sudeste ao Norte do país.',
-				in: 4,
-				out: 7
+				in: 8,
+				out: 14
 			}
 		]
 	},
@@ -99,15 +99,19 @@ module.exports = [
 	{
 		year: 1989,
 		videoSettings: {
-			start: 110,
-			end: 120
+			videoId: 'ka5eYZZVh1I',
+			introTime: 29
 		},
 		contents: [
 			{
-				text: 'É criado o IBAMA (Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis).'
+				text: 'É criado o IBAMA (Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis).',
+				in: 26,
+				out: 33
 			},
 			{
-				text: 'A partir deste momento, a gestão ambiental do governo federal, que antes era descentralizada e realizada por diferentes secretarias ligadas a vários ministérios, passou a ser integrada.'
+				text: 'A partir deste momento, a gestão ambiental do governo federal, que antes era descentralizada e realizada por diferentes secretarias ligadas a vários ministérios, passou a ser integrada.',
+				in: 34,
+				out: 46
 			}
 		]
 	},
