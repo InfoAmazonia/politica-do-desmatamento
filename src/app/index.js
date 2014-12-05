@@ -32,12 +32,25 @@ app.config(require('./config'))
 	}
 ])
 
+.factory('VideoService', [
+	function() {
+
+		var init = function(video) {
+
+
+
+		}
+
+	}
+])
+
 .controller('SiteController', [
 	'Data',
+	'$interval',
 	'$state',
 	'$scope',
 	'$rootScope',
-	function(Data, $state, $scope, $rootScope) {
+	function(Data, $interval, $state, $scope, $rootScope) {
 
 		$scope.data = Data.get();
 
@@ -45,7 +58,7 @@ app.config(require('./config'))
 		 * VIDEO
 		 */
 
-		$scope.videoId = '2qOpPo-onf0';
+		$scope.videoId = 'bkhRoHQEzkA';
 		$scope.videoVars = {
 			controls: 0,
 			autoplay: 0,
@@ -58,25 +71,41 @@ app.config(require('./config'))
 		 * Set video loop from timeline data
 		 */
 		var videoLoop = false;
+		$scope.$on('youtube.player.ready', function(event, player) {
+			$scope.player = player;
+		});
 
-		var setLoop = function(start, end) {
+		var setVideo = function(id, cb) {
 
 			var set = function(player) {
-				player.seekTo(start).playVideo();
+				player.loadVideoById(id).playVideo();
+				player.unMute();
+				player.setVolume(100);
 
-				if(videoLoop)
-					clearInterval(videoLoop);
+				if(videoLoop) {
+					$interval.cancel(videoLoop);
+					videoLoop = false;
+				}
 
-				videoLoop = setInterval(function() {
-					if(player.getCurrentTime() > end) {
-						player.seekTo(start);
+				videoLoop = $interval(function() {
+					var ended = false;
+					if(player.getPlayerState() == 1 && player.getCurrentTime() >= (player.getDuration() - 1)) {
+						var ended = true;
+						if(cb == true) {
+							player.seekTo(0);
+						} else {
+							if(typeof cb !== 'function')
+								player.pauseVideo();
+							clearInterval(videoLoop);
+						}
 					}
+					if(typeof cb == 'function')
+						cb(ended, player);
 				}, 500);
 			}
 
 			if(!$scope.player) {
 				$scope.$on('youtube.player.ready', function(event, player) {
-					player.mute();
 					$scope.player = player;
 					set(player);
 				});
@@ -87,18 +116,31 @@ app.config(require('./config'))
 		}
 
 		$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams) {
-			// Initial video display
+			$scope.showInfo = false;
 			if(toState.name == 'home') {
-				setLoop(57, 70);
-				$scope.videoId = '2qOpPo-onf0';
+				setVideo('bkhRoHQEzkA', true);
 			} else if(toParams.year) {
 				var item = _.find($scope.data, function(item) { return toParams.year == item.year; });
-				if(item.videoSettings.videoId) {
-					$scope.videoId = item.videoSettings.videoId;
+				var next = $scope.data[$scope.data.indexOf(item)+1] || false;
+				if(item.videoSettings.introId) {
+					setVideo(item.videoSettings.introId, function(ended, player) {
+						if(ended) {
+							$scope.showInfo = true;
+							setVideo(item.videoSettings.videoId, function(ended, player) {
+								if(ended && next)
+									$state.go('timeline', {year: next.year});
+							});
+						} else {
+							//console.log(player.getCurrentTime());
+						}
+					});
 				} else {
-					$scope.videoId = '2qOpPo-onf0';
+					$scope.showInfo = true;
+					setVideo(item.videoSettings.videoId, function(ended) {
+						if(ended && next)
+							$state.go('timeline', {year: next.year});
+					});					
 				}
-				setLoop(item.videoSettings.start, item.videoSettings.end);
 			}
 		});
 
@@ -132,23 +174,23 @@ app.config(require('./config'))
 					}
 				}
 
-			}
-
-			if(toState.name.indexOf('analise') !== -1) {
-				$('#timeline-nav').addClass('analise');
-				$('html,body').animate({
-					scrollTop: $(window).height() - 130
-				}, 1000);
-			} else {
-				$('#timeline-nav').removeClass('analise');
-				if(fromState.name.indexOf('analise') !== -1) {
+				if(toState.name.indexOf('analise') !== -1) {
+					$('#timeline-nav').addClass('analise');
 					$('html,body').animate({
-						scrollTop: 0
-					}, 500);
+						scrollTop: $(window).height() - 130
+					}, 1000);
+				} else {
+					$('#timeline-nav').removeClass('analise');
+					if(fromState.name.indexOf('analise') !== -1) {
+						$('html,body').animate({
+							scrollTop: 0
+						}, 500);
+					}
 				}
+
 			}
 
-		});
+			});
 
 		/***/
 

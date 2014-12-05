@@ -4,8 +4,8 @@ module.exports = [
 	{
 		year: 1960,
 		videoSettings: {
-			start: 70,
-			end: 80
+			introId: 'dA_-eEPO2N8',
+			videoId: 'nUMboEjemPY'
 		},
 		contents: [
 			{
@@ -23,9 +23,7 @@ module.exports = [
 	{
 		year: 1974,
 		videoSettings: {
-			videoId: 'SAzPlaY4GJI',
-			start: 0,
-			end: 39
+			videoId: 'rRa_H1Zryx8'
 		},
 		contents: [
 			{
@@ -43,8 +41,8 @@ module.exports = [
 	{
 		year: 1980,
 		videoSettings: {
-			start: 90,
-			end: 100
+			introId: 'On4jzfldwNo',
+			videoId: 'VIt7KQtAGzA'
 		},
 		contents: [
 			{
@@ -67,8 +65,8 @@ module.exports = [
 	{
 		year: 1988,
 		videoSettings: {
-			start: 100,
-			end: 110
+			introId: '7ey5zYc9IzE',
+			videoId: 'ilBRwwrGbSA'
 		},
 		contents: [
 			{

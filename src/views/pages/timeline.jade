@@ -4,6 +4,6 @@ article.timeline-item
 			.twelve.columns
 				header
 					h2 {{item.year}}
-				section
+				section(ng-show="showInfo")
 					p
 						span(ng-repeat="content in item.contents") {{content.text}} 

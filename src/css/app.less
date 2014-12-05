@@ -74,34 +74,6 @@ h6 {
 	}
 }
 
-#content {
-	width: 100%;
-	height: -webkit-calc(~"100% - 0px");
-	height: -moz-calc(~"100% - 0px");
-	height: calc(~"100% - 0px");
-	position: absolute;
-	z-index: 4;
-	.page {
-		padding: 6% 0;
-		min-height: 100%;
-		.box-sizing(border-box);
-		&.flat {
-			background: #fff;
-			color: #333;
-		}
-	}
-	.subcontent {
-		height: -webkit-calc(~"100% - 130px");
-		height: -moz-calc(~"100% - 130px");
-		height: calc(~"100% - 130px");
-		overflow: auto;
-	}
-	#timeline {
-		height: 100%;
-		position: relative;
-	}
-}
-
 [ui-view].ng-enter,
 [ui-view].ng-leave {
 	.transition(all .5s linear);
@@ -121,6 +93,36 @@ h6 {
 
 [ui-view].ng-leave-active {
 	opacity: 0;
+}
+
+#content {
+	width: 100%;
+	height: -webkit-calc(~"100% - 0px");
+	height: -moz-calc(~"100% - 0px");
+	height: calc(~"100% - 0px");
+	position: absolute;
+	z-index: 4;
+	.page {
+		padding: 6% 0;
+		min-height: 100%;
+		.box-sizing(border-box);
+		position: relative;
+		&.flat {
+			background: #fff;
+			color: #333;
+		}
+	}
+	.subcontent {
+		height: -webkit-calc(~"100% - 130px");
+		height: -moz-calc(~"100% - 130px");
+		height: calc(~"100% - 130px");
+		overflow: auto;
+		position: relative;
+	}
+	#timeline {
+		height: 100%;
+		position: relative;
+	}
 }
 
 .video-container {
@@ -220,7 +222,7 @@ a.play-video {
 			}
 			nav.current {
 				a.label {
-					color: #fff;
+					color: #ccc;
 					background: #111;
 					text-align: left;
 					padding-left: 0 !important;
@@ -371,8 +373,8 @@ a.play-video {
 			.nav-content a {
 				display: block;
 				width: 300px;
-				background: #f9f9f9;
-				color: #444;
+				background: #111;
+				color: #fff;
 				font-size: 16px;
 				text-transform: uppercase;
 				font-weight: 800;
