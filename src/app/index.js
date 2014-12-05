@@ -106,6 +106,7 @@ app.config(require('./config'))
 
 			if(!$scope.player) {
 				$scope.$on('youtube.player.ready', function(event, player) {
+					$(window).resize();
 					$scope.player = player;
 					set(player);
 				});
