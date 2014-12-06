@@ -23,22 +23,24 @@ html(lang='pt-BR')
 		.video-container
 			youtube-video(player-id="video" video-id="videoId" player-vars="videoVars" player-width="'100%'" player-height="'100%'")
 
-		header#masthead
+		header#masthead(ng-class="{middle:!initialized}")
 			.container
 				.twelve.columns
 					h1
 						a(href="/") Gastando a Amazônia
 					section
-						p Quanto dinheiro é gasto pelo governo federal para preservar a Amazônia? Onde os recursos são investidos? Os valores são suficientes? Um olhar em perspectiva da era moderna do desmatamento revela o tamanho do estrago e aponta os sucessos e as falhas da estratégia oficial de combate à devastação da mais importante floresta tropical do planeta
+						p Quanto dinheiro é gasto pelo governo federal para preservar a Amazônia? Onde os recursos são investidos? Os valores são suficientes?
+
 						p Um olhar em perspectiva da era moderna do desmatamento revela o tamanho do estrago e aponta os sucessos e as falhas da estratégia oficial de combate à devastação da Amazônia brasileira
-						p
+
+						p(ng-hide="initialized")
 							a.start-timeline(href="javascript:void(0);" ng-click="init()") Comece a navegar pela linha do tempo
 		
 		//a.play-video.icon-play(href="javascript:void(0);" ng-click="init()")
 
 		section#content(ui-view, autoscroll='false')
 
-		#timeline-nav.nav
+		#timeline-nav.nav(ng-class="{initialized:initialized || navigated}")
 			.container
 				.twelve.columns
 					nav.pre

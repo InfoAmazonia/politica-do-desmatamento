@@ -161,6 +161,9 @@ app.config(require('./config'))
 		}
 
 		$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams) {
+			if(toState.name !== 'home') {
+				$scope.initialized = true;
+			}
 			if(toParams.year) {
 				var item = _.find($scope.data, function(item) { return toParams.year == item.slug; });
 				$scope.showNext = false;
@@ -235,6 +238,7 @@ app.config(require('./config'))
 
 		$scope.init = function() {
 
+			$scope.initialized = true;
 			$state.go('timeline', { year: Data.get()[0].slug });
 
 		};

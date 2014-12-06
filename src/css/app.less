@@ -32,6 +32,11 @@ h6 {
 	left: 0;
 	right: 0;
 	z-index: 15;
+	.transition(all .5s ease-in-out);
+	&.middle {
+		top: 50%;
+		margin-top: -300px;
+	}
 	h1 {
 		font-family: "Playfair Display SC";
 		font-weight: 900;
@@ -39,8 +44,9 @@ h6 {
 		text-align: center;
 		font-size: 64px;
 		border-bottom: 3px solid #fff;
-		margin: 0 0 40px;
+		margin: 0;
 		padding: 0 0 40px;
+		text-shadow: 0 0 10px rgba(0,0,0,1);
 		a {
 			text-decoration: none;
 			color: inherit;
@@ -49,10 +55,14 @@ h6 {
 	section {
 		margin-left: auto;
 		margin-right: auto;
-		max-width: 80%; 
+		max-width: 800px;
+		padding: 40px 15% 0;
+		//background: rgba(0,0,0,0.5);
 		p {
 			text-align: center;
-			font-size: 20px;
+			font-size: 24px;
+			line-height: 36px;
+			text-shadow: 0 0 10px rgba(0,0,0,1);
 		}
 		.start-timeline {
 			background: rgba(0,0,0,0.4);
@@ -379,13 +389,20 @@ a.play-video {
 	width: 100%;
 	position: absolute;
 	z-index: 10;
-	bottom: 0;
 	padding-top: 60px;
 	padding-bottom: 40px;
 	.gradient(transparent, rgba(0,0,0,0.8), transparent);
 	font-family: "Open Sans", "Helvetica", sans-serif;
 	overflow: hidden;
 	.transition(all .5s ease-in-out);
+	bottom: -40px;
+	opacity: 0;
+	pointer-events: none;
+	&.initialized {
+		pointer-events: auto;
+		opacity: 1;
+		bottom: 0;
+	}
 	&.fixed {
 		position: fixed;
 		top: -60px;
@@ -432,6 +449,7 @@ a.play-video {
 			padding: 0;
 			height: 60px;
 			overflow: hidden;
+			border: 0;
 			&:before {
 				left: 0;
 				right: 0;
@@ -572,6 +590,7 @@ a.play-video {
 			border: 0;
 			margin-bottom: 10px;
 			height: auto;
+			border: 1px solid rgba(255,255,255,0.5);
 			&:before {
 				content: '';
 				position: absolute;
