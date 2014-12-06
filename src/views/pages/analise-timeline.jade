@@ -1,0 +1,41 @@
+article.timeline-item
+	.timeline-content
+		.container
+			.six.columns
+				header
+					h2 {{item.title}}
+			.six.columns
+				section
+					p
+						span(ng-repeat="content in item.contents" video-content video-in="content.in" video-out="content.out") {{content.text}}
+		section#analise
+			// Analise
+			div(ng-show="item.slug == '2007-2008'")
+				.full.analise-area.white
+					.container
+						.four.columns
+							p Vellentesque ligula leo, imperdiet quis congue ut, ornare nec risus. Vestibulum a velit velit. Sed vel lectus tincidunt, tempor lacus non, pulvinar lorem. Maecenas dignissim sem quis cursus tristique. Fusce scelerisque risus enim, vitae dapibus magna hendrerit in.
+						.four.columns
+							p Vellentesque ligula leo, imperdiet quis congue ut, ornare nec risus. Vestibulum a velit velit. Sed vel lectus tincidunt, tempor lacus non, pulvinar lorem. Maecenas dignissim sem quis cursus tristique. Fusce scelerisque risus enim, vitae dapibus magna hendrerit in.
+						.four.columns
+							p Vellentesque ligula leo, imperdiet quis congue ut, ornare nec risus. Vestibulum a velit velit. Sed vel lectus tincidunt, tempor lacus non, pulvinar lorem. Maecenas dignissim sem quis cursus tristique. Fusce scelerisque risus enim, vitae dapibus magna hendrerit in.
+				.clear
+				.container
+					.twelve.columns
+						.half-right.analise-area.white
+							p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper sapien quis leo finibus pulvinar. Sed sit amet dolor venenatis lorem scelerisque mattis a vitae ante. Quisque tincidunt scelerisque pellentesque. Pellentesque ligula leo, imperdiet quis congue ut, ornare nec risus. Vestibulum a velit velit. Sed vel lectus tincidunt, tempor lacus non, pulvinar lorem. Maecenas dignissim sem quis cursus tristique. Fusce scelerisque risus enim, vitae dapibus magna hendrerit in. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec porta eu erat vitae tristique. Nulla facilisi. Pellentesque lacinia sit amet justo eu lobortis. Etiam aliquet euismod rutrum. Sed ac augue molestie, aliquam eros bibendum, gravida mi. Nullam eu vehicula diam. Nam fermentum gravida dolor et tempor.
+				.full.analise-area.white
+					.container
+						.four.columns
+							p Vellentesque ligula leo, imperdiet quis congue ut, ornare nec risus. Vestibulum a velit velit. Sed vel lectus tincidunt, tempor lacus non, pulvinar lorem. Maecenas dignissim sem quis cursus tristique. Fusce scelerisque risus enim, vitae dapibus magna hendrerit in.
+						.four.columns
+							p Vellentesque ligula leo, imperdiet quis congue ut, ornare nec risus. Vestibulum a velit velit. Sed vel lectus tincidunt, tempor lacus non, pulvinar lorem. Maecenas dignissim sem quis cursus tristique. Fusce scelerisque risus enim, vitae dapibus magna hendrerit in.
+						.four.columns
+							p Vellentesque ligula leo, imperdiet quis congue ut, ornare nec risus. Vestibulum a velit velit. Sed vel lectus tincidunt, tempor lacus non, pulvinar lorem. Maecenas dignissim sem quis cursus tristique. Fusce scelerisque risus enim, vitae dapibus magna hendrerit in.
+				.clear
+				.container
+					.twelve.columns
+						.half-left.analise-area.white
+							iframe(src="http://cf.datawrapper.de/X26Df/2/")
+						.half-right.analise-area
+							p Vellentesque ligula leo, imperdiet quis congue ut, ornare nec risus. Vestibulum a velit velit. Sed vel lectus tincidunt, tempor lacus non, pulvinar lorem. Maecenas dignissim sem quis cursus tristique. Fusce scelerisque risus enim, vitae dapibus magna hendrerit in.
