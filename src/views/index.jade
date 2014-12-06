@@ -29,9 +29,12 @@ html(lang='pt-BR')
 					h1
 						a(href="/") Gastando a Amazônia
 					section
-						p Uma jornada pela história do desmatamento moderno
-
-		a.play-video.icon-play(href="javascript:void(0);" ng-click="init()")
+						p Quanto dinheiro é gasto pelo governo federal para preservar a Amazônia? Onde os recursos são investidos? Os valores são suficientes? Um olhar em perspectiva da era moderna do desmatamento revela o tamanho do estrago e aponta os sucessos e as falhas da estratégia oficial de combate à devastação da mais importante floresta tropical do planeta
+						p Um olhar em perspectiva da era moderna do desmatamento revela o tamanho do estrago e aponta os sucessos e as falhas da estratégia oficial de combate à devastação da Amazônia brasileira
+						p
+							a.start-timeline(href="javascript:void(0);" ng-click="init()") Comece a navegar pela linha do tempo
+		
+		//a.play-video.icon-play(href="javascript:void(0);" ng-click="init()")
 
 		section#content(ui-view, autoscroll='false')
 
@@ -46,7 +49,7 @@ html(lang='pt-BR')
 							a(href="/timeline/1988") 1988
 							a(href="/timeline/1989") 1989
 							a(href="/timeline/1990") 1990
-							a(href="/timeline/1991") 1991
+							a(href="/timeline/1992") 1992
 							a(href="/timeline/1995") 1995
 							a(href="/timeline/1998") 1998
 							a(href="/timeline/2003") 2003
@@ -59,20 +62,21 @@ html(lang='pt-BR')
 								.pages
 									a(href="/analise") Introdução
 								.timeline
-									a(href="/analise/2007") 1ª fase
+									a(href="/analise/2007-2008") 1ª fase
 										span.tip
 											span.title Primeira fase do PPCDAm 
 											span.year 2007-2008
-									a(href="/analise/2008") 2ª fase
+									a(href="/analise/2009-2011") 2ª fase
 										span.tip
 											span.title Segunda fase do PPCDAm 
 											span.year 2009-2011
-									a(href="/analise/2009") 3ª fase
+									a(href="/analise/2012-2014") 3ª fase
 										span.tip
 											span.title Terceira fase do PPCDAm 
 											span.year 2012-2014
 								.pages
 									a(href="/analise/metodologia") Metodologia
+									a(href="/analise/mapa") Mapa
 					nav.post
 						.nav-content
 							a(href="/timeline/2015") 2015

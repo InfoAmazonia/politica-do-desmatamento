@@ -2,7 +2,9 @@
 
 module.exports = [
 	{
-		year: 1960,
+		title: 1960,
+		slug: 1960,
+		subtitle: 'As rodovias inaguram o desmatamento moderno',
 		videoSettings: {
 			introId: 'dA_-eEPO2N8',
 			videoId: 'nUMboEjemPY'
@@ -21,7 +23,9 @@ module.exports = [
 		]
 	},
 	{
-		year: 1974,
+		title: 1974,
+		slug: 1974,
+		subtitle: 'A lógica da ocupação do "grande vazio" demográfico',
 		videoSettings: {
 			videoId: 'rRa_H1Zryx8'
 		},
@@ -39,7 +43,9 @@ module.exports = [
 		]
 	},
 	{
-		year: 1980,
+		title: 1980,
+		slug: 1980,
+		subtitle: 'Os primórdios da grilagem e dos conflitos fundiários',
 		videoSettings: {
 			introId: 'On4jzfldwNo',
 			videoId: 'VIt7KQtAGzA'
@@ -63,7 +69,9 @@ module.exports = [
 		]
 	},
 	{
-		year: 1988,
+		title: 1988,
+		slug: 1988,
+		subtitle: 'O assassinato de Chico Mendes',
 		videoSettings: {
 			introId: '7ey5zYc9IzE',
 			videoId: 'ilBRwwrGbSA'
@@ -97,7 +105,9 @@ module.exports = [
 		]
 	},
 	{
-		year: 1989,
+		title: 1989,
+		slug: 1989,
+		subtitle: 'O governo federal cria o Ibama',
 		videoSettings: {
 			videoId: 'ka5eYZZVh1I',
 			introTime: 29
@@ -106,47 +116,66 @@ module.exports = [
 			{
 				text: 'É criado o IBAMA (Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis).',
 				in: 26,
-				out: 33
+				out: 34
 			},
 			{
 				text: 'A partir deste momento, a gestão ambiental do governo federal, que antes era descentralizada e realizada por diferentes secretarias ligadas a vários ministérios, passou a ser integrada.',
-				in: 34,
-				out: 46
+				in: 35,
+				out: 48
 			}
 		]
 	},
 	{
-		year: 1990,
+		title: 1990,
+		slug: 1990,
+		subtitle: 'A pecuária extensiva avança sobre a floresta',
 		videoSettings: {
-			start: 120,
-			end: 130
+			videoId: '_4yv3_uATrw',
+			introTime: 20
 		},
 		contents: [
 			{
-				text: 'Com a hiperinflação, que predomina na economia do Brasil durante décadas, a terra, supervalorizada, atinge preços inviáveis na Amazônia.'
+				text: 'Com a hiperinflação, que predomina na economia do Brasil durante décadas, a terra, supervalorizada, atinge preços inviáveis na Amazônia.',
+				in: 4,
+				out: 10
 			},
 			{
-				text: 'Como efeito, dissemina-se a prática da retirada da cobertura florestal para a criação de pastagens, inclusive como instrumento de reivindicação da posse das áreas exploradas.'
+				text: 'Como efeito, dissemina-se a prática da retirada da cobertura florestal para a criação de pastagens, inclusive como instrumento de reivindicação da posse das áreas exploradas.',
+				in: 11,
+				out: 20
 			},
 			{
-				text: 'O resultado: outros 280 mil quilômetros são incorporados à porção desmatada na Amazônia Legal (o equivalente à dimensão territorial do estado de Minas Gerais), sendo que 26% desse total foram contabilizados apenas pelo estado do Mato Grosso, em franca expansão da atividade pecuária.'
+				text: 'O resultado: outros 280 mil quilômetros são incorporados à porção desmatada na Amazônia Legal (o equivalente à dimensão territorial do estado de Minas Gerais), sendo que 26% desse total foram contabilizados apenas pelo estado do Mato Grosso, em franca expansão da atividade pecuária.',
+				in: 21,
+				out: 32
 			}
 		]
 	},
 	{
-		year: 1991,
+		title: 1992,
+		slug: 1992,
+		subtitle: 'Eco 92: a Amazônia no centro da discussão mundial',
 		videoSettings: {
-			start: 130,
-			end: 140
+			videoId: 'wkLwDoDSZO8',
+			introTime: 20
 		},
 		contents: [
 			{
-				text: 'Entre 1987 e 1991, o país vive um período de intensa recessão econômica, resultando na diminuição do desmatamento, tendo em vista que os grandes latifundiários – apontados como principais responsáveis pelo devastação – são mais sensíveis às mudanças na economia.'
+				text: 'Entre 1987 e 1992, o país vive um período de intensa recessão econômica, resultando na diminuição do desmatamento, tendo em vista que os grandes latifundiários – apontados como principais responsáveis pela devastação – são mais sensíveis às mudanças na economia.',
+				in: 14,
+				out: 23
+			},
+			{
+				text: 'Em junho, no Rio de Janeiro, ocorre a Conferência das Nações Unidas sobre o Meio Ambiente e o Desenvolvimento, que ficaria conhecida como Eco 92 – mais de 100 chefes de Estado se reuniram para discutir novas perspectivas de desenvolvimento e consumo.',
+				in: 24,
+				out: 33
 			}
 		]
 	},
 	{
-		year: 1995,
+		title: 1995,
+		slug: 1995,
+		subtitle: 'Plano Real, créditos agrícolas e desmatamento recorde',
 		videoSettings: {
 			start: 140,
 			end: 150
@@ -164,7 +193,9 @@ module.exports = [
 		]
 	},
 	{
-		year: 1998,
+		title: 1998,
+		slug: 1998,
+		subtitle: 'Alterações climáticas e a savana em chamas',
 		videoSettings: {
 			start: 150,
 			end: 160
@@ -179,7 +210,9 @@ module.exports = [
 		]
 	},
 	{
-		year: 2003,
+		title: 2003,
+		slug: 2003,
+		subtitle: 'O asfalto na BR-163 faz disparar os índices de desmatamento',
 		videoSettings: {
 			start: 160,
 			end: 170
@@ -194,7 +227,8 @@ module.exports = [
 		]
 	},
 	{
-		year: 2004,
+		title: 2004,
+		slug: 2004,
 		videoSettings: {
 			start: 170,
 			end: 180
@@ -215,7 +249,8 @@ module.exports = [
 		]
 	},
 	{
-		year: 2005,
+		title: 2005,
+		slug: 2005,
 		videoSettings: {
 			start: 180,
 			end: 190
@@ -230,139 +265,32 @@ module.exports = [
 		]
 	},
 	{
-		year: 2007,
+		title: '1ª fase',
+		slug: '2007-2008',
 		videoSettings: {
-			start: 190,
-			end: 200
+			videoId: 'bkhRoHQEzkA',
+			introTime: 20
 		},
-		contents: [
-			{
-				text: 'Após três anos consecutivos de redução do desmatamento na Amazônia, o segundo semestre de 2007 é marcado por um novo aumento significativo, motivado pela valorização da soja e da carne bovina no mercado internacional.'
-			}
-		]
+		contents: []
 	},
 	{
-		year: 2008,
+		title: '2ª fase',
+		slug: '2009-2011',
 		videoSettings: {
-			start: 200,
-			end: 210
 		},
-		contents: [
-			{
-				text: 'Ao final da primeira fase do PPCDAm (2004-2008), mais de 25 milhões de hectares de Unidades de Conservação federais haviam sido criadas, além da homologação de 10 milhões de hectares de Terras Indígenas.'
-			},
-			{
-				text: 'Os estados também envidaram esforços na criação de áreas protegidas, totalizando 25 milhões de hectares de unidades de conservação estaduais.'
-			}
-		]
+		contents: []
 	},
 	{
-		year: 2009,
+		title: '3ª fase',
+		slug: '2012-2014',
 		videoSettings: {
-			start: 210,
-			end: 220
 		},
-		contents: [
-			{
-				text: 'A dinâmica espacial da desflorestação se modifica: em resposta aos mecanismos de controle, os agentes associados ao desmatamento (produtores de soja e gado, além dos madeireiros) promovem uma pulverização espacial no corte da cobertura florestal.'
-			},
-			{
-				text: 'Ao invés dos tradicionais grandes polígonos, observava-se um aumento relativo de polígonos menores em diferentes áreas da Amazônia, em pequenas propriedades e em assentamentos da reforma agrária.'
-			},
-			{
-				text: 'Em contrapartida, em dezembro desse mesmo ano, na Conferência das Nações Unidas sobre as Mudanças Climáticas, em Copenhague, Dinamarca, o Brasil assume, perante a comunidade internacional, o compromisso de reduzir suas emissões de gases de efeito estufa associadas ao desmatamento na Amazônia e no Cerrado.'
-			}
-		]
+		contents: []
 	},
 	{
-		year: 2011,
+		title: 2015,
+		slug: 2015,
 		videoSettings: {
-			start: 220,
-			end: 230
-		},
-		contents: [
-			{
-				text: 'Na segunda fase do PPCDAm (2009-2011), a queda das taxas de desmatamento é atribuída principalmente à eficiência do sistema DETER e à agilidade das ações integradas de fiscalização do desmatamento e combate ao crime organizado, realizadas pelo IBAMA, pelas polícias Federal e Rodoviária Federal, Força Nacional de Segurança Pública e com apoio do Exército Brasileiro.'
-			},
-			{
-				text: 'Uma das consequências é a diminuição no volume de madeira extraída da floresta, que é de 12 milhões de metros cúbicos (58% menor, por exemplo, do que o volume extraído em 1998) – entretanto, a maior parte segue tendo origem ilícita.'
-			},
-			{
-				text: 'No dia 24 de maio, o casal de extrativistas José Cláudio Ribeiro e Maria do Espírito Santo é assassinado em Nova Ipixuna, no Pará.'
-			},
-			{
-				text: 'Os dois eram opositores declarados dos madeireiros ilegais da região.'
-			}
-		]
-	},
-	{
-		year: 2012,
-		videoSettings: {
-			start: 230,
-			end: 240
-		},
-		contents: [
-			{
-				text: 'A taxa de desmatamento atinge o menor valor histórico da série de monitoramento do Inpe, chegando a 4.656 quilômetros quadrados.'
-			},
-			{
-				text: 'No entanto, por meio da Medida Provisória 558, o governo federal (sem realizar a consulta pública exigida por lei) exclui 1.500 quilômetros quadrados de sete Unidades de Conservção na Amazônia (duas no Amazonas e cinco no Pará).'
-			},
-			{
-				text: 'O objetivo é possibilitar o aproveitamento hidrelétrico do rios Madeira, Jamanxim e Tapajós.'
-			},
-			{
-				text: 'No dia 25 de maio, o novo Código Florestal é sancionado pelo governo federal.'
-			},
-			{
-				text: 'Um dos pontos criticados é a anistia concedida a quem promoveu o desmatamento entre os anos de 1965 e 2008.'
-			}
-		]
-	},
-	{
-		year: 2013,
-		videoSettings: {
-			start: 240,
-			end: 250
-		},
-		contents: [
-			{
-				text: 'Por meio de um decreto, o Grupo Permanente de Trabalho Interministerial (GPTI) deixa de ser coordenado pela Casa Civil da Presidência da República e passa a ser coordenado pelo Ministério do Meio Ambiente.'
-			},
-			{
-				text: 'O desmatamento volta a subir e o índice acumulado, que era inferior a 1% do território amazônico até início da década de 1970, atinge 19% dele em 2013 – em torno de 760 mil quilômetros quadrados (mais de duas vezes o território da Alemanha).'
-			},
-			{
-				text: 'Apesar da desaceleração da devastação florestal em comparação com a década passada, os índices na Amazônia seguem entre as maiores do mundo tropical.'
-			}
-		]
-	},
-	{
-		year: 2014,
-		videoSettings: {
-			start: 250,
-			end: 260
-		},
-		contents: [
-			{
-				text: 'O governo deixa de dar publicidade periódica e sistemática aos dados do DETER, alterando uma prática que vinha ocorrendo desde o início do PPCDAm.'
-			},
-			{
-				text: 'Liberados de forma espaçada, os dados do Deter divulgados pelo Inpe demonstram que a Amazônia Legal perdeu 3.036 quilômetros quadrados de floresta entre agosto de 2013 e julho de 2014 – 9,8% a mais em relação ao período anterior.'
-			},
-			{
-				text: 'Os meses integram o chamado "calendário do desmatamento", relacionado com as chuvas e a intensidade das atividades agrícolas.'
-			},
-			{
-				text: 'Por outro lado, publicados no final de novembro, os dados do Prodes indicam uma queda de 18% no desmatamento em relação ao ano anterior.'
-			}
-		]
-	},
-	{
-		year: 2015,
-		videoSettings: {
-			start: 260,
-			end: 270
 		},
 		contents: [
 			{
@@ -380,10 +308,9 @@ module.exports = [
 		]
 	},
 	{
-		year: 2020,
+		title: 2020,
+		slug: 2020,
 		videoSettings: {
-			start: 270,
-			end: 280
 		},
 		contents: [
 			{

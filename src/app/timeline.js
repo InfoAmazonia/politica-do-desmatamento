@@ -10,7 +10,7 @@ module.exports = function(app) {
 
 			$scope.data = Data.get();
 
-			$scope.item = _.find($scope.data, function(item) { return $stateParams.year == item.year; });
+			$scope.item = _.find($scope.data, function(item) { return $stateParams.year == item.slug; });
 
 		}
 	]);

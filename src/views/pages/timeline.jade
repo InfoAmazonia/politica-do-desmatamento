@@ -1,9 +1,17 @@
 article.timeline-item
 	.timeline-content
 		.container
-			.twelve.columns
+			.six.columns
 				header
-					h2 {{item.year}}
+					h2 {{item.title}}
+					h3 {{item.subtitle}}
 				section
 					p
 						span(ng-repeat="content in item.contents" video-content video-in="content.in" video-out="content.out") {{content.text}} 
+			.six.columns
+				section#next
+					span.icon-arrow-right6
+					p
+						a(href="{{nextUrl}}") Próximo
+					h3
+						a(href="{{nextUrl}}") {{nextTitle}}

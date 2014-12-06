@@ -30,10 +30,14 @@ module.exports = [
 				url: 'metodologia/',
 				templateUrl: '/views/pages/metodologia.html'
 			})
+			.state('analise.mapa', {
+				url: 'mapa/',
+				templateUrl: '/views/pages/mapa.html'
+			})
 			.state('analise.timeline', {
 				url: ':year/',
 				controller: 'TimelineController',
-				templateUrl: '/views/pages/timeline.html'
+				templateUrl: '/views/pages/analise-timeline.html'
 			});
 
 		/*

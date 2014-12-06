@@ -162,11 +162,20 @@ app.config(require('./config'))
 
 		$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams) {
 			if(toParams.year) {
-				var item = _.find($scope.data, function(item) { return toParams.year == item.year; });
-				var next = $scope.data[$scope.data.indexOf(item)+1] || false;
-				setVideo(item.videoSettings.videoId, function(ended) {
-					if(ended && next) {
-						//$state.go('timeline', {year: next.year});
+				var item = _.find($scope.data, function(item) { return toParams.year == item.slug; });
+				$scope.showNext = false;
+				$scope.next = $scope.data[$scope.data.indexOf(item)+1] || false;
+				$scope.nextUrl = '/timeline/' + $scope.next.slug + '/';
+				$scope.nextTitle = $scope.next.title;
+				if(item.slug == 2005) {
+					$scope.nextUrl = '/analise/';
+					$scope.nextTitle = 'Análise';
+				} else if(toState.name.indexOf('analise') !== -1 && item.slug !== '2012-2014') {
+					$scope.nextUrl = '/analise/' + $scope.next.slug + '/';
+				}
+				setVideo(item.videoSettings.videoId, function(ended, player) {
+					if($scope.currentTime >= item.videoSettings.introTime && $scope.next) {
+						$scope.showNext = true;
 					}
 				}, item.videoSettings.introTime);
 			} else {
@@ -226,7 +235,7 @@ app.config(require('./config'))
 
 		$scope.init = function() {
 
-			$state.go('timeline', { year: Data.get()[0].year });
+			$state.go('timeline', { year: Data.get()[0].slug });
 
 		};
 
