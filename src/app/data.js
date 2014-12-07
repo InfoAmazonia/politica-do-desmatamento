@@ -177,18 +177,24 @@ module.exports = [
 		slug: 1995,
 		subtitle: 'Plano Real, créditos agrícolas e desmatamento recorde',
 		videoSettings: {
-			start: 140,
-			end: 150
+			videoId: 'hvpn9WLpm2Q',
+			introTime: 16
 		},
 		contents: [
 			{
-				text: 'É registrado um pico no desmatamento, atribuído ao período de crescimento econômico proporcionado pelo Plano Real.'
+				text: 'É registrado um pico no desmatamento, atribuído ao período de crescimento econômico proporcionado pelo Plano Real.',
+				in: 14,
+				out: 22
 			},
 			{
-				text: 'As reformas incrementam o acesso ao capital por meio de créditos agrícolas.'
+				text: 'As reformas incrementam o acesso ao capital por meio de créditos agrícolas.',
+				in: 23,
+				out: 30
 			},
 			{
-				text: 'Com dinheiro em mãos, os fazendeiros retomam o ímpeto por novas pastagens, impulsionando a destruição da floresta e estabelecendo um novo recorde: mais de 29.000 quilômetros quadrados colocados abaixo em 12 meses (área equivalente à do estado de Alagoas).'
+				text: 'Com dinheiro em mãos, os fazendeiros retomam o ímpeto por novas pastagens, impulsionando a destruição da floresta e estabelecendo um novo recorde: mais de 29.000 quilômetros quadrados colocados abaixo em 12 meses (área equivalente à do estado de Alagoas).',
+				in: 31,
+				out: 45
 			}
 		]
 	},
@@ -197,15 +203,19 @@ module.exports = [
 		slug: 1998,
 		subtitle: 'Alterações climáticas e a savana em chamas',
 		videoSettings: {
-			start: 150,
-			end: 160
+			videoId: 'u8Z3K_CZJCM',
+			introTime: 9
 		},
 		contents: [
 			{
-				text: 'O chamado "incêndio do século" consome um quarto da área do estado de Roraima, impelido por fatores como o fenômeno climático El Niño, o desmatamento e o uso indiscriminado do fogo para a limpeza de áreas destinadas à agropecuária.'
+				text: 'O chamado "incêndio do século" consome um quarto da área do estado de Roraima, impelido por fatores como o fenômeno climático El Niño, o desmatamento e o uso indiscriminado do fogo para a limpeza de áreas destinadas à agropecuária.',
+				in: 8,
+				out: 20
 			},
 			{
-				text: 'Nesse mesmo ano, a exploração madeireira em toda a Amazônia atinge a expressiva marca de 28,3 milhões de metros cúbicos extraídos (ou 28 trilhões de exemplares de árvores de várias espécies) – a maior parte de origem ilegal.'
+				text: 'Nesse mesmo ano, a exploração madeireira em toda a Amazônia atinge a expressiva marca de 28,3 milhões de metros cúbicos extraídos (ou 28 trilhões de exemplares de árvores de várias espécies) – a maior parte de origem ilegal.',
+				in: 21,
+				out: 43
 			}
 		]
 	},
@@ -214,78 +224,171 @@ module.exports = [
 		slug: 2003,
 		subtitle: 'O asfalto na BR-163 faz disparar os índices de desmatamento',
 		videoSettings: {
-			start: 160,
-			end: 170
+			videoId: 'TGAKbHro7X4',
+			introTime: 17
 		},
 		contents: [
 			{
-				text: 'Após a euforia inicial com o Plano Real, o período entre 1996 e 2001 é marcado por um padrão nos índices de desmatamento, que voltariam a subir de maneira dramática em 2002, embalados, por exemplo, pelo anúncio de grandes obras do programa Avança Brasil, como o asfaltamento da BR-163, que fez aumentar em 500% a desflorestação no seu entorno.'
+				text: 'Após a euforia inicial com o Plano Real, o período entre 1996 e 2001 é marcado por um padrão nos índices de desmatamento, que voltariam a subir de maneira dramática em 2002, embalados, por exemplo, pelo anúncio de grandes obras do programa Avança Brasil, como o asfaltamento da BR-163, que fez aumentar em 500% a desflorestação no seu entorno.',
+				in: 5,
+				out: 18
 			},
 			{
-				text: 'Diante do quadro, o novo governo federal cria o Grupo Permanente de Trabalho Interministerial (GPTI), com a finalidade de propor e coordenar ações que visem à redução dos índices de desmatamento na Amazônia, sob coordenação da Casa Civil da Presidência da República.'
+				text: 'Diante do quadro, o novo governo federal cria o Grupo Permanente de Trabalho Interministerial (GPTI), com a finalidade de propor e coordenar ações que visem à redução dos índices de desmatamento na Amazônia, sob coordenação da Casa Civil da Presidência da República.',
+				in: 19,
+				out: 37
 			}
 		]
 	},
 	{
 		title: 2004,
 		slug: 2004,
+		subtitle: 'O Plano de Ação para a Prevenção e o Controle do Desmatamento na Amazônia é lançado',
 		videoSettings: {
-			start: 170,
-			end: 180
+			videoId: 'JJoKZCFYtZw',
+			introTime: 22
 		},
 		contents: [
 			{
-				text: 'O ritmo do desmatamento é intensificado e totaliza uma área acumulada de 670 mil quilômetros quadrados, o equivalente a 16% da área de floresta original da Amazônia Legal.'
+				text: 'O ritmo do desmatamento é intensificado e totaliza uma área acumulada de 670 mil quilômetros quadrados, o equivalente a 16% da área de floresta original da Amazônia Legal.',
+				in: 21,
+				out: 28
 			},
 			{
-				text: 'Em resposta, o governo federal lança o Plano de Ação para a Prevenção e Controle do Desmatamento na Amazônia Legal (PPCDAm), estratégia oficial de combate ao desmatamento que resultou das discussões no GPTI.'
+				text: 'Em resposta, o governo federal lança o Plano de Ação para a Prevenção e Controle do Desmatamento na Amazônia Legal (PPCDAm), estratégia oficial de combate ao desmatamento que resultou das discussões no GPTI.',
+				in: 29,
+				out: 38
 			},
 			{
-				text: 'É, também, o primeiro ano de operação do Sistema de Detecção do Desmatamento em Tempo Real (Deter), do Inpe.'
+				text: 'É, também, o primeiro ano de operação do Sistema de Detecção do Desmatamento em Tempo Real (Deter), do Inpe.',
+				in: 39,
+				out: 44
 			},
 			{
-				text: 'Utilizado pelo governo para gerar alertas diários sobre a destruição da floresta, é importante para reduzir o tempo de resposta das operações de fiscalização.'
+				text: 'Utilizado pelo governo para gerar alertas diários sobre a destruição da floresta, é importante para reduzir o tempo de resposta das operações de fiscalização.',
+				in: 45,
+				out: 51
 			}
 		]
 	},
 	{
 		title: 2005,
 		slug: 2005,
+		subtitle: 'A morte da Irmã Dorothy Stang ganha repercussão internacional',
 		videoSettings: {
-			start: 180,
-			end: 190
+			videoId: 'JJoKZCFYtZw',
+			introTime: 22
 		},
 		contents: [
 			{
-				text: 'No dia 12 de fevereiro, os conflitos fundiários na Amazônia fazem mais uma vítima: a missionária americana Dorothy Stang, que atuava há 20 anos na região, é assassinada em Anapu, no Pará.'
+				text: 'No dia 12 de fevereiro, os conflitos fundiários na Amazônia fazem mais uma vítima: a missionária americana Dorothy Stang, que atuava há 20 anos na região, é assassinada em Anapu, no Pará.',
+				in: 21,
+				out: 28
 			},
 			{
-				text: 'A morte da Irmã teria sido encomendada por fazendeiros locais, insatisfeitos com a atuação política da religiosa, que lutava pela criação de assentamentos da reforma agrária no oeste paraense.'
+				text: 'A morte da Irmã teria sido encomendada por fazendeiros locais, insatisfeitos com a atuação política da religiosa, que lutava pela criação de assentamentos da reforma agrária no oeste paraense.',
+				in: 29,
+				out: 40
 			}
 		]
 	},
 	{
 		title: '1ª fase',
 		slug: '2007-2008',
+		subtitle: 'Esforço para a criação de áreas protegidas.',
 		videoSettings: {
-			videoId: 'bkhRoHQEzkA',
-			introTime: 20
+			videoId: 'Rnf1dFUptEk',
+			introTime: 28
 		},
-		contents: []
+		contents: [
+			{
+				text: 'Após três anos consecutivos de redução do desmatamento, o segundo semestre de 2007 é marcado por um novo aumento significativo, motivado pela valorização da soja e da carne bovina no mercado internacional.',
+				in: 27,
+				out: 35
+			},
+			{
+				text: 'Ao final da primeira fase do PPCDAm (2004-2008), mais de 25 milhões de hectares de Unidades de Conservação federais haviam sido criadas, além da homologação de 10 milhões de hectares de Terras Indígenas.',
+				in: 36,
+				out: 42
+			},
+			{
+				text: 'Os estados também enviaram esforços na criação de áreas protegidas, totalizando 25 milhões de hectares de unidades de conservação estaduais.',
+				in: 43,
+				out: 50
+			}
+		]
 	},
 	{
 		title: '2ª fase',
 		slug: '2009-2011',
+		subtitle: 'A queda nos índices de desmatamento',
 		videoSettings: {
+			videoId: 'C0iLLtCehkE',
+			introTime: 23
 		},
-		contents: []
+		contents: [
+			{
+				text: 'A dinâmica espacial da desflorestação se modifica: em resposta aos mecanismos de controle, os agentes associados ao desmatamento (madeireiros, produtores de soja e de gado) promovem uma pulverização espacial no corte da cobertura florestal.',
+				in: 10,
+				out: 20
+			},
+			{
+				text: 'Ao invés dos tradicionais grandes polígonos, observava-se um aumento relativo de polígonos menores em pequenas propriedades e em assentamentos da Reforma Agrária.',
+				in: 21,
+				out: 28
+			},
+			{
+				text: 'Em dezembro desse mesmo ano, na Conferência das Nações Unidas sobre as Mudanças Climáticas, em Copenhague, Dinamarca, o Brasil assume o compromisso de reduzir suas emissões de gases de efeito estufa associadas ao desmatamento na Amazônia e no Cerrado.',
+				in: 29,
+				out: 38
+			},
+			{
+				text: 'Ao final da segunda fase do PPCDAm, a queda das taxas de desflorestação é atribuída à eficiência do sistema DETER e à agilidade das ações integradas de fiscalização e combate ao crime organizado.',
+				in: 39,
+				out: 48
+			},
+			{
+				text: 'No dia 24 de maio, o casal de extrativistas José Cláudio Ribeiro e Maria do Espírito Santo é assassinado em Nova Ipixuna, no Pará. Os dois eram opositores declarados dos madeireiros ilegais da região.',
+				in: 49,
+				out: 55
+			}
+		]
 	},
 	{
 		title: '3ª fase',
 		slug: '2012-2014',
+		subtitle: 'O desafio é fomentar a prática de atividades sustentáveis',
 		videoSettings: {
+			videoId: '1CFJuXDeh_4',
+			introTime: 18 
 		},
-		contents: []
+		contents: [
+			{
+				text: 'Em 2012, a taxa de desmatamento atinge o menor valor histórico da série de monitoramento do Inpe, chegando a 4.656 quilômetros quadrados.',
+				in: 2,
+				out: 7
+			},
+			{
+				text: 'No entanto, por meio da Medida Provisória 558, o governo federal (sem realizar a consulta pública exigida por lei) exclui 1.500 quilômetros quadrados de sete Unidades de Conservação na Amazônia (duas no Amazonas e cinco no Pará).',
+				in: 8,
+				out: 16
+			},
+			{
+				text: 'O objetivo é possibilitar o aproveitamento hidrelétrico do rios Madeira, Jamanxim e Tapajós. No dia 25 de maio, o novo Código Florestal é sancionado pelo governo federal.',
+				in: 17,
+				out: 25
+			},
+			{
+				text: 'Um dos pontos criticados é a anistia concedida a quem promoveu o desmatamento entre os anos de 1965 e 2008.',
+				in: 26,
+				out: 30
+			},
+			{
+				text: 'No ano de 2013, por meio de um decreto, o Grupo Permanente de Trabalho Interministerial (GPTI) deixa de ser coordenado pela Casa Civil da Presidência da República e passa a ser coordenado pelo Ministério do Meio Ambiente.',
+				in: 31,
+				out: 40
+			}
+		]
 	},
 	{
 		title: 2015,
