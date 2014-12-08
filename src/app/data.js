@@ -298,7 +298,7 @@ module.exports = [
 		slug: '2007-2008',
 		subtitle: 'Esforço para a criação de áreas protegidas.',
 		videoSettings: {
-			videoId: 'Rnf1dFUptEk',
+			videoId: 'GX_aCTYVfOE',
 			introTime: 28
 		},
 		contents: [
@@ -415,10 +415,14 @@ module.exports = [
 		title: 2020,
 		slug: 2020,
 		videoSettings: {
+			videoId: '_iF36FognFw',
+			introTime: 21
 		},
 		contents: [
 			{
-				text: 'É a data limite, ratificada junto à comunidade internacional no Plano Nacional sobre Mudança do Clima (PNMC), para que o desmatamento na Amazônia seja reduzido em 80%.'
+				text: 'É a data limite, ratificada junto à comunidade internacional no Plano Nacional sobre Mudança do Clima (PNMC), para que o desmatamento na Amazônia seja reduzido em 80%.',
+				in: 21,
+				out: 60
 			}
 		]
 	}

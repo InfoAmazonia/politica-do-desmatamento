@@ -38,6 +38,10 @@ module.exports = [
 				url: ':year/',
 				controller: 'TimelineController',
 				templateUrl: '/views/pages/analise-timeline.html'
+			})
+			.state('equipe', {
+				url: '/equipe/',
+				templateUrl: '/views/pages/equipe.html'
 			});
 
 		/*

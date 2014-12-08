@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 	$(window).scroll(function() {
 
-		var offset = $(window).height() - $('body').scrollTop() - timelineHeight - 40;
+		var offset = $(window).height() - $(window).scrollTop() - timelineHeight - 40;
 
 		if(offset <= 0) {
 			$('#timeline-nav').addClass('fixed');

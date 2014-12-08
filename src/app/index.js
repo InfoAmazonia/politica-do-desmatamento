@@ -34,7 +34,9 @@ app.config(require('./config'))
 
 .factory('VideoService', [
 	function() {
+
 		var time = -1;
+		var readyForNext = false;
 
 		return {
 			getTime: function() {
@@ -43,6 +45,11 @@ app.config(require('./config'))
 			setTime: function(val) {
 				time = val;
 				return time;
+			},
+			ready: function(val) {
+				if(typeof val !== 'undefined')
+					readyForNext = val;
+				return readyForNext;
 			}
 		}
 	}
@@ -56,7 +63,8 @@ app.config(require('./config'))
 			restrict: 'EA',
 			scope: {
 				videoIn: '=',
-				videoOut: '='
+				videoOut: '=',
+				lastContent: '='
 			},
 			link: function(scope, element, attrs) {
 
@@ -69,6 +77,9 @@ app.config(require('./config'))
 						element.addClass('active');
 					} else {
 						element.removeClass('active');
+					}
+					if(time >= scope.videoOut && scope.lastContent) {
+						Video.ready(true);
 					}
 				});
 
@@ -99,7 +110,8 @@ app.config(require('./config'))
 			autoplay: 0,
 			disablekb: 1,
 			fs: 0,
-			showinfo: 0
+			showinfo: 0,
+			wmode: 'transparent'
 		};
 
 		/*
@@ -112,14 +124,55 @@ app.config(require('./config'))
 
 		$scope.currentTime = -1;
 
+		$scope.$watch(function() {
+			return Video.ready();
+		}, function(ready) {
+			console.log(ready);
+			$scope.readyForNext = ready;
+		});
+
+		$scope.jumpIntro = function() {
+			if($scope.player && $scope.currentContent) {
+				if($scope.player.getCurrentTime() < $scope.currentContent.contents[0].in -.5) {
+					$scope.player.seekTo($scope.currentContent.contents[0].in -.5);
+				}
+			}
+		}
+
+		$scope.mute = true;
+
+		$scope.toggleMute = function() {
+			if(!$scope.mute) {
+				$scope.mute = true;
+				if($scope.player) {
+					$scope.player.setVolume(0);
+					$scope.jumpIntro();
+				}
+			} else {
+				$scope.mute = false;
+				if($scope.player) {
+					$scope.player.setVolume(1);
+				}
+			}
+		}
+	
 		var setVideo = function(id, cb, initLoop) {
 
-			initLoop = initLoop || 0;
+			$scope.showInfo = false;
+
+			$scope.initLoop = initLoop || 0;
 
 			var set = function(player) {
+				Video.ready(false);
 				player.loadVideoById(id).playVideo();
 				player.unMute();
-				player.setVolume(100);
+
+				if($scope.mute) {
+					player.seekTo($scope.currentContent.contents[0].in -.5);
+					player.setVolume(0);
+				} else {
+					player.setVolume(100);
+				}
 
 				if(videoLoop) {
 					$interval.cancel(videoLoop);
@@ -130,22 +183,24 @@ app.config(require('./config'))
 
 				videoLoop = $interval(function() {
 					var ended = false;
-					$scope.currentTime = player.getCurrentTime() + ($scope.loopAmount * (player.getDuration() - initLoop));
+					$scope.currentTime = player.getCurrentTime() + ($scope.loopAmount * (player.getDuration() - $scope.initLoop));
 					Video.setTime($scope.currentTime);
-					console.log(Video.getTime());
-					if(player.getPlayerState() == 1 && player.getCurrentTime() >= (player.getDuration() - 1.5)) {
-						$scope.loopAmount++;
-						var ended = true;
-						if(cb == true) {
-							player.seekTo(0);
-						} else {
-							if(initLoop) {
-								player.seekTo(initLoop).playVideo();
+					if(player.getPlayerState() == 1) {
+						$scope.showInfo = true;
+						if(player.getCurrentTime() >= (player.getDuration() - 1.5)) {
+							$scope.loopAmount++;
+							var ended = true;
+							if(cb == true) {
+								player.seekTo(0);
 							} else {
-								clearInterval(videoLoop);
+								if($scope.initLoop) {
+									player.seekTo($scope.initLoop).playVideo();
+								} else {
+									clearInterval(videoLoop);
+								}
+								if(typeof cb !== 'function')
+									player.pauseVideo();
 							}
-							if(typeof cb !== 'function')
-								player.pauseVideo();
 						}
 					}
 					if(typeof cb == 'function')
@@ -171,6 +226,7 @@ app.config(require('./config'))
 			}
 			if(toParams.year) {
 				var item = _.find($scope.data, function(item) { return toParams.year == item.slug; });
+				$scope.currentContent = item;
 				$scope.showNext = false;
 				$scope.next = $scope.data[$scope.data.indexOf(item)+1] || false;
 				$scope.nextUrl = '/timeline/' + $scope.next.slug + '/';
@@ -235,6 +291,16 @@ app.config(require('./config'))
 					}
 				}
 
+				if(toState.name == 'equipe') {
+					$('#timeline-nav').animo({animation: 'fadeOutDown', duration: 0.5, keep: true}, function() {
+						$('#timeline-nav').hide();
+					});
+				}
+
+				if(fromState.name == 'equipe') {
+					$('#timeline-nav').show().animo({animation: 'fadeInUp', duration: 0.5, keep: true});	
+				}
+
 			}
 
 			});
@@ -251,6 +317,4 @@ app.config(require('./config'))
 	}
 ]);
 
-$(document).ready(function() {
-	angular.bootstrap(document, ['monitor']);
-});
+angular.bootstrap(document, ['monitor']);

@@ -41,7 +41,13 @@ html(lang='pt-BR')
 
 						p(ng-hide="initialized")
 							a.start-timeline(href="javascript:void(0);" ng-click="init()") Comece a navegar pela linha do tempo
-		
+
+					nav(ng-show="initialized")
+						a(href="/equipe/") Equipe
+						a(href="javascript:void(0);" ng-click="toggleMute()" ng-class="{'icon-mute':mute,'icon-volume':!mute}")
+							.tip(ng-hide="mute") Desativar áudio e pular introduções automaticamente
+							.tip(ng-show="mute") Ativar áudio e exibir introduções
+
 		//a.play-video.icon-play(href="javascript:void(0);" ng-click="init()")
 
 		section#content(ui-view, autoscroll='false')
@@ -87,10 +93,14 @@ html(lang='pt-BR')
 									a(href="/analise/mapa") Mapa
 					nav.post
 						.nav-content
-							a(href="/timeline/2015") 2015
+							//
+								a(href="/timeline/2015") 2015
 							a(href="/timeline/2020") 2020
 
 		footer#mastfoot
+			.footer-content
+				.container
+					.twelve.columns
 
 		#loading(loading-status-message='loading-status-message', ng-class='{active: loads.length}')
 		.loading-message

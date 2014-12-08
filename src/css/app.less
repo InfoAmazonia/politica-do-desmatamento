@@ -26,6 +26,11 @@ h6 {
 	line-height: 120%;
 }
 
+img {
+	max-width: 100%;
+	height: auto;
+}
+
 #masthead {
 	position: absolute;
 	top: 6%;
@@ -96,6 +101,9 @@ h6 {
 		}
 	}
 	// Fixed
+	nav {
+		display: none;
+	}
 	&.fixed {
 		top: 0;
 		background: #111;
@@ -104,10 +112,61 @@ h6 {
 		position: fixed;
 		h1 {
 			font-size: 20px;
+			line-height: 26px;
 			text-align: left;
 			border: 0;
 			margin: 0;
 			padding: 0;
+			float: left;
+		}
+		nav {
+			float: right;
+			font-family: "Open Sans", sans-serif;
+			font-size: 14px;
+			text-transform: uppercase;
+			display: block;
+			a {
+				float:left;
+				color: #fff;
+				text-decoration: none;
+				margin-left: 20px;
+				font-weight: 600;
+				line-height: 26px;
+				position: relative;
+				.tip {
+					pointer-events: none;
+					position: absolute;
+					top: 35px;
+					right: -10px;
+					width: 150px;
+					background: #f0f0f0;
+					color: #111;
+					padding: 5px 10px;
+					font-size: 12px;
+					line-height: 150%;
+					opacity: 0;
+					.transition(all .2s linear);
+					&:before {
+						content: '';
+						position: absolute;
+						width: 10px;
+						height: 10px;
+						.transform(rotate(45deg));
+						top: -5px;
+						right: 13px;
+						background: #f0f0f0;
+					}
+				}
+				&:hover {
+					.tip {
+						opacity: 1;
+						top: 40px;
+					}
+				}
+			}
+			[class^="icon-"], [class*=" icon-"] {
+				font-size: 20px;
+			}
 		}
 		section {
 			display: none;
@@ -148,6 +207,10 @@ h6 {
 		min-height: 100%;
 		.box-sizing(border-box);
 		position: relative;
+		&.single {
+			height: 100%;
+			overflow: auto;
+		}
 		&.flat {
 			background: #fff;
 			color: #333;
@@ -213,10 +276,23 @@ h6 {
 	margin: 180px 0 0;
 	h3 {
 		font-family: "Playfair Display", sans-serif;
-		margin: 0 0 20px;
+		margin: 10px 0;
+	}
+	.line {
+		border-bottom: 1px solid rgba(0,0,0,0.2);
+		&.big {
+			border-color: #333;
+			border-width: 2px;
+		}
+	}
+	.align-right {
+		text-align: right;
 	}
 	p {
 		font-size: 18px;
+	}
+	.light {
+		color: #666;
 	}
 	.analise-area {
 		&.white {
@@ -381,7 +457,7 @@ a.play-video {
 			color: #fff;
 			text-transform: uppercase;
 			[class^="icon-"], [class*=" icon-"] {
-				font-size: 40px;
+				font-size: 30px;
 			}
 			p {
 				font-size: 14px;
@@ -601,7 +677,8 @@ a.play-video {
 			}
 		}
 		&.post {
-			margin: 0 0 0 50%;
+			width: auto;
+			margin: 0 37% 0 50%;
 			&:after {
 				left: 0;
 				height: 70px;
@@ -676,5 +753,31 @@ a.play-video {
 				}
 			}
 		}
+	}
+}
+
+#mastfoot {
+	position: fixed;
+	bottom: 40px;
+	left: 63%;
+	right: 0;
+	text-align: right;
+	z-index: 100;
+	font-size: 14px;
+	overflow: hidden;
+	font-family: "Open Sans", sans-serif;
+	.footer-content {
+		margin-left: -174%;
+	}
+	a {
+		display: inline-block;
+		margin-left: 10px;
+		background: rgba(0,0,0,0.5);
+		color: #fff;
+		padding: 10px;
+		text-transform: uppercase;
+		text-decoration: none;
+		font-weight: 600;
+		border: 1px solid rgba(255,255,255,0.1);
 	}
 }
