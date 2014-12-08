@@ -6,19 +6,19 @@ module.exports = [
 		slug: 1960,
 		subtitle: 'As rodovias inaguram o desmatamento moderno',
 		videoSettings: {
-			introId: 'dA_-eEPO2N8',
-			videoId: 'nUMboEjemPY'
+			videoId: 'kQy5J0pAZ6Y',
+			introTime: 27
 		},
 		contents: [
 			{
 				text: 'A abertura da rodovia Belém-Brasília inaugura a era dos desmatamentos modernos na Amazônia brasileira, com grandes focos concentrados entre Goiás, o atual território do Tocantins e o Pará.',
-				in: 2,
-				out: 8
+				in: 26,
+				out: 36
 			},
 			{
 				text: 'É a primeira via de acesso aberta na floresta conectando as regiões Sul e Sudeste ao Norte do país.',
-				in: 8,
-				out: 14
+				in: 37,
+				out: 42
 			}
 		]
 	},
@@ -27,18 +27,19 @@ module.exports = [
 		slug: 1974,
 		subtitle: 'A lógica da ocupação do "grande vazio" demográfico',
 		videoSettings: {
-			videoId: 'rRa_H1Zryx8'
+			videoId: 'dhQ-3roxkj8',
+			introTime: 31
 		},
 		contents: [
 			{
 				text: 'A rodovia Transamazônica (BR-230) é inaugurada em agosto.',
-				in: 1,
-				out: 3
+				in: 29,
+				out: 35
 			},
 			{
 				text: 'As duas rodovias serão o epicentro da distribuição espacial do desmatamento na Amazônia nas próximas décadas.',
-				in: 3,
-				out: 7
+				in: 36,
+				out: 42
 			}
 		]
 	},
@@ -47,24 +48,24 @@ module.exports = [
 		slug: 1980,
 		subtitle: 'Os primórdios da grilagem e dos conflitos fundiários',
 		videoSettings: {
-			introId: 'On4jzfldwNo',
-			videoId: 'VIt7KQtAGzA'
+			videoId: 'k3gmR0rygpI',
+			introTime: 17
 		},
 		contents: [
 			{
 				text: 'Em apenas uma década, o desmatamento na região Norte alcança os 300 mil quilômetros quadrados, o equivalente a 6% da área total da Amazônia Legal (e um pouco maior do que a área do estado do Rio Grande do Sul).',
-				in: 1,
-				out: 4
+				in: 10,
+				out: 18
 			},
 			{
 				text: 'Durante as décadas de 1970 e 1980, os incentivos fiscais oferecidos pelo governo federal aos médios e grandes proprietários de terra e a ampla colonização pública e privada se constituem em fortes condutores do desmatamento.',
-				in: 4,
-				out: 8
+				in: 19,
+				out: 28
 			},
 			{
 				text: 'Incentivos fiscais e colonização: 6% da Amazônia Legal desmatada, principalmente no Norte.',
-				in: 8,
-				out: 10
+				in: 29,
+				out: 36
 			}
 		]
 	},
@@ -73,34 +74,34 @@ module.exports = [
 		slug: 1988,
 		subtitle: 'O assassinato de Chico Mendes',
 		videoSettings: {
-			introId: '7ey5zYc9IzE',
-			videoId: 'ilBRwwrGbSA'
+			videoId: 'EJeNZSn5xnk',
+			introTime: 25
 		},
 		contents: [
 			{
 				text: 'Após décadas de intensa destruição da floresta durante a ditadura miltar, é lançado o Programa Nossa Natureza.',
-				in: 1,
-				out: 3
-			},
-			{
-				text: 'Ainda que tímida, é a primeira tentativa do governo federal em frear o desmatamento na região Norte e estabelecer diretrizes para a exploração dos recursos naturais.',
-				in: 3,
-				out: 6
-			},
-			{
-				text: 'É inaugurado, também, o projeto PRODES, que, sob a chancela do Instituto Nacional de Pesquisas Espaciais (Inpe), realiza o monitoramento via satélite do desmatamento por corte raso na Amazônia Legal.',
-				in: 6,
+				in: 2,
 				out: 10
 			},
 			{
+				text: 'Ainda que tímida, é a primeira tentativa do governo federal em frear o desmatamento na região Norte e estabelecer diretrizes para a exploração dos recursos naturais.',
+				in: 11,
+				out: 20
+			},
+			{
+				text: 'É inaugurado, também, o projeto PRODES, que, sob a chancela do Instituto Nacional de Pesquisas Espaciais (Inpe), realiza o monitoramento via satélite do desmatamento por corte raso na Amazônia Legal.',
+				in: 21,
+				out: 34
+			},
+			{
 				text: 'Desde então, as taxas anuais tem sido utilizadas pelo governo para a definição de políticas públicas.',
-				in: 10,
-				out: 14
+				in: 35,
+				out: 42
 			},
 			{
 				text: 'O ano de 1988, contudo, seria marcado por um evento trágico: no dia 22 de dezembro, o seringalista Chico Mendes é assassinado em Xapuri, no Acre, com um tiro de escopeta.',
-				in: 14,
-				out: 18
+				in: 43,
+				out: 57
 			}
 		]
 	},
@@ -245,29 +246,29 @@ module.exports = [
 		slug: 2004,
 		subtitle: 'O Plano de Ação para a Prevenção e o Controle do Desmatamento na Amazônia é lançado',
 		videoSettings: {
-			videoId: 'JJoKZCFYtZw',
+			videoId: '8xxOgeO5Wjg',
 			introTime: 22
 		},
 		contents: [
 			{
 				text: 'O ritmo do desmatamento é intensificado e totaliza uma área acumulada de 670 mil quilômetros quadrados, o equivalente a 16% da área de floresta original da Amazônia Legal.',
-				in: 21,
-				out: 28
+				in: 10,
+				out: 18
 			},
 			{
 				text: 'Em resposta, o governo federal lança o Plano de Ação para a Prevenção e Controle do Desmatamento na Amazônia Legal (PPCDAm), estratégia oficial de combate ao desmatamento que resultou das discussões no GPTI.',
-				in: 29,
-				out: 38
+				in: 19,
+				out: 30
 			},
 			{
 				text: 'É, também, o primeiro ano de operação do Sistema de Detecção do Desmatamento em Tempo Real (Deter), do Inpe.',
-				in: 39,
-				out: 44
+				in: 31,
+				out: 37
 			},
 			{
 				text: 'Utilizado pelo governo para gerar alertas diários sobre a destruição da floresta, é importante para reduzir o tempo de resposta das operações de fiscalização.',
-				in: 45,
-				out: 51
+				in: 38,
+				out: 50
 			}
 		]
 	},

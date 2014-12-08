@@ -70,7 +70,6 @@ app.config(require('./config'))
 					} else {
 						element.removeClass('active');
 					}
-					console.log(time);
 				});
 
 			}
@@ -115,6 +114,8 @@ app.config(require('./config'))
 
 		var setVideo = function(id, cb, initLoop) {
 
+			initLoop = initLoop || 0;
+
 			var set = function(player) {
 				player.loadVideoById(id).playVideo();
 				player.unMute();
@@ -125,11 +126,15 @@ app.config(require('./config'))
 					videoLoop = false;
 				}
 
+				$scope.loopAmount = 0;
+
 				videoLoop = $interval(function() {
 					var ended = false;
-					$scope.currentTime = player.getCurrentTime();
+					$scope.currentTime = player.getCurrentTime() + ($scope.loopAmount * (player.getDuration() - initLoop));
 					Video.setTime($scope.currentTime);
-					if(player.getPlayerState() == 1 && $scope.currentTime >= (player.getDuration() - 1)) {
+					console.log(Video.getTime());
+					if(player.getPlayerState() == 1 && player.getCurrentTime() >= (player.getDuration() - 1.5)) {
+						$scope.loopAmount++;
 						var ended = true;
 						if(cb == true) {
 							player.seekTo(0);
