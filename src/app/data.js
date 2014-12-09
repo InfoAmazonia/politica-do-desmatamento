@@ -27,7 +27,7 @@ module.exports = [
 		slug: 1974,
 		subtitle: 'A lógica da ocupação do "grande vazio" demográfico',
 		videoSettings: {
-			videoId: 'dhQ-3roxkj8',
+			videoId: 'UnlC-Tmt2do',
 			introTime: 31
 		},
 		contents: [
@@ -48,24 +48,24 @@ module.exports = [
 		slug: 1980,
 		subtitle: 'Os primórdios da grilagem e dos conflitos fundiários',
 		videoSettings: {
-			videoId: 'k3gmR0rygpI',
+			videoId: 'QlhxiiTdGCw',
 			introTime: 17
 		},
 		contents: [
 			{
 				text: 'Em apenas uma década, o desmatamento na região Norte alcança os 300 mil quilômetros quadrados, o equivalente a 6% da área total da Amazônia Legal (e um pouco maior do que a área do estado do Rio Grande do Sul).',
-				in: 10,
-				out: 18
+				in: 17,
+				out: 26
 			},
 			{
 				text: 'Durante as décadas de 1970 e 1980, os incentivos fiscais oferecidos pelo governo federal aos médios e grandes proprietários de terra e a ampla colonização pública e privada se constituem em fortes condutores do desmatamento.',
-				in: 19,
-				out: 28
+				in: 27,
+				out: 36
 			},
 			{
 				text: 'Incentivos fiscais e colonização: 6% da Amazônia Legal desmatada, principalmente no Norte.',
-				in: 29,
-				out: 36
+				in: 37,
+				out: 45
 			}
 		]
 	},
@@ -74,8 +74,8 @@ module.exports = [
 		slug: 1988,
 		subtitle: 'O assassinato de Chico Mendes',
 		videoSettings: {
-			videoId: 'EJeNZSn5xnk',
-			introTime: 25
+			videoId: 'J5qAq-LAQzs',
+			introTime: 26
 		},
 		contents: [
 			{
@@ -111,7 +111,7 @@ module.exports = [
 		subtitle: 'O governo federal cria o Ibama',
 		videoSettings: {
 			videoId: 'B3kZauVRg2I',
-			introTime: 17
+			introTime: 18
 		},
 		contents: [
 			{
@@ -131,24 +131,24 @@ module.exports = [
 		slug: 1990,
 		subtitle: 'A pecuária extensiva avança sobre a floresta',
 		videoSettings: {
-			videoId: '_4yv3_uATrw',
+			videoId: '6jdjyMQi_Zw',
 			introTime: 20
 		},
 		contents: [
 			{
 				text: 'Com a hiperinflação, que predomina na economia do Brasil durante décadas, a terra, supervalorizada, atinge preços inviáveis na Amazônia.',
 				in: 4,
-				out: 10
+				out: 11
 			},
 			{
 				text: 'Como efeito, dissemina-se a prática da retirada da cobertura florestal para a criação de pastagens, inclusive como instrumento de reivindicação da posse das áreas exploradas.',
-				in: 11,
-				out: 20
+				in: 14,
+				out: 24
 			},
 			{
 				text: 'O resultado: outros 280 mil quilômetros são incorporados à porção desmatada na Amazônia Legal (o equivalente à dimensão territorial do estado de Minas Gerais), sendo que 26% desse total foram contabilizados apenas pelo estado do Mato Grosso, em franca expansão da atividade pecuária.',
-				in: 21,
-				out: 32
+				in: 25,
+				out: 35
 			}
 		]
 	},
@@ -157,8 +157,8 @@ module.exports = [
 		slug: 1992,
 		subtitle: 'Eco 92: a Amazônia no centro da discussão mundial',
 		videoSettings: {
-			videoId: 'wkLwDoDSZO8',
-			introTime: 20
+			videoId: '5IB7cg0mqqg',
+			introTime: 21
 		},
 		contents: [
 			{
@@ -178,7 +178,7 @@ module.exports = [
 		slug: 1995,
 		subtitle: 'Plano Real, créditos agrícolas e desmatamento recorde',
 		videoSettings: {
-			videoId: 'hvpn9WLpm2Q',
+			videoId: '4AZkh5JGaYo',
 			introTime: 16
 		},
 		contents: [
@@ -204,8 +204,8 @@ module.exports = [
 		slug: 1998,
 		subtitle: 'Alterações climáticas e a savana em chamas',
 		videoSettings: {
-			videoId: 'u8Z3K_CZJCM',
-			introTime: 9
+			videoId: 'gcXVwVuMEyA',
+			introTime: 10
 		},
 		contents: [
 			{
@@ -225,19 +225,19 @@ module.exports = [
 		slug: 2003,
 		subtitle: 'O asfalto na BR-163 faz disparar os índices de desmatamento',
 		videoSettings: {
-			videoId: 'TGAKbHro7X4',
-			introTime: 17
+			videoId: 'eEuI4e2ki24',
+			introTime: 10
 		},
 		contents: [
 			{
 				text: 'Após a euforia inicial com o Plano Real, o período entre 1996 e 2001 é marcado por um padrão nos índices de desmatamento, que voltariam a subir de maneira dramática em 2002, embalados, por exemplo, pelo anúncio de grandes obras do programa Avança Brasil, como o asfaltamento da BR-163, que fez aumentar em 500% a desflorestação no seu entorno.',
-				in: 5,
+				in: 8,
 				out: 18
 			},
 			{
 				text: 'Diante do quadro, o novo governo federal cria o Grupo Permanente de Trabalho Interministerial (GPTI), com a finalidade de propor e coordenar ações que visem à redução dos índices de desmatamento na Amazônia, sob coordenação da Casa Civil da Presidência da República.',
 				in: 19,
-				out: 37
+				out: 36
 			}
 		]
 	},
@@ -247,17 +247,17 @@ module.exports = [
 		subtitle: 'O Plano de Ação para a Prevenção e o Controle do Desmatamento na Amazônia é lançado',
 		videoSettings: {
 			videoId: '8xxOgeO5Wjg',
-			introTime: 22
+			introTime: 13
 		},
 		contents: [
 			{
 				text: 'O ritmo do desmatamento é intensificado e totaliza uma área acumulada de 670 mil quilômetros quadrados, o equivalente a 16% da área de floresta original da Amazônia Legal.',
-				in: 10,
-				out: 18
+				in: 12,
+				out: 20
 			},
 			{
 				text: 'Em resposta, o governo federal lança o Plano de Ação para a Prevenção e Controle do Desmatamento na Amazônia Legal (PPCDAm), estratégia oficial de combate ao desmatamento que resultou das discussões no GPTI.',
-				in: 19,
+				in: 21,
 				out: 30
 			},
 			{
@@ -278,7 +278,7 @@ module.exports = [
 		subtitle: 'A morte da Irmã Dorothy Stang ganha repercussão internacional',
 		videoSettings: {
 			videoId: 'JJoKZCFYtZw',
-			introTime: 22
+			introTime: 23
 		},
 		contents: [
 			{
@@ -299,24 +299,24 @@ module.exports = [
 		subtitle: 'Esforço para a criação de áreas protegidas.',
 		moreInfo: '/views/analise/fase-1.html',
 		videoSettings: {
-			videoId: 'GX_aCTYVfOE',
-			introTime: 28
+			videoId: 'GewiwarLcRc',
+			introTime: 0
 		},
 		contents: [
 			{
 				text: 'Após três anos consecutivos de redução do desmatamento, o segundo semestre de 2007 é marcado por um novo aumento significativo, motivado pela valorização da soja e da carne bovina no mercado internacional.',
-				in: 27,
-				out: 35
+				in: 1,
+				out: 10
 			},
 			{
 				text: 'Ao final da primeira fase do PPCDAm (2004-2008), mais de 25 milhões de hectares de Unidades de Conservação federais haviam sido criadas, além da homologação de 10 milhões de hectares de Terras Indígenas.',
-				in: 36,
-				out: 42
+				in: 11,
+				out: 20
 			},
 			{
 				text: 'Os estados também enviaram esforços na criação de áreas protegidas, totalizando 25 milhões de hectares de unidades de conservação estaduais.',
-				in: 43,
-				out: 50
+				in: 21,
+				out: 30
 			}
 		]
 	},
@@ -326,34 +326,34 @@ module.exports = [
 		subtitle: 'A queda nos índices de desmatamento',
 		moreInfo: '/views/analise/fase-2.html',
 		videoSettings: {
-			videoId: 'C0iLLtCehkE',
-			introTime: 23
+			videoId: 'Mk3Sejq6D4Q',
+			introTime: 0
 		},
 		contents: [
 			{
 				text: 'A dinâmica espacial da desflorestação se modifica: em resposta aos mecanismos de controle, os agentes associados ao desmatamento (madeireiros, produtores de soja e de gado) promovem uma pulverização espacial no corte da cobertura florestal.',
-				in: 10,
-				out: 20
+				in: 1,
+				out: 10
 			},
 			{
 				text: 'Ao invés dos tradicionais grandes polígonos, observava-se um aumento relativo de polígonos menores em pequenas propriedades e em assentamentos da Reforma Agrária.',
-				in: 21,
-				out: 28
+				in: 11,
+				out: 20
 			},
 			{
 				text: 'Em dezembro desse mesmo ano, na Conferência das Nações Unidas sobre as Mudanças Climáticas, em Copenhague, Dinamarca, o Brasil assume o compromisso de reduzir suas emissões de gases de efeito estufa associadas ao desmatamento na Amazônia e no Cerrado.',
-				in: 29,
-				out: 38
+				in: 21,
+				out: 30
 			},
 			{
 				text: 'Ao final da segunda fase do PPCDAm, a queda das taxas de desflorestação é atribuída à eficiência do sistema DETER e à agilidade das ações integradas de fiscalização e combate ao crime organizado.',
-				in: 39,
-				out: 48
+				in: 31,
+				out: 40
 			},
 			{
 				text: 'No dia 24 de maio, o casal de extrativistas José Cláudio Ribeiro e Maria do Espírito Santo é assassinado em Nova Ipixuna, no Pará. Os dois eram opositores declarados dos madeireiros ilegais da região.',
-				in: 49,
-				out: 55
+				in: 41,
+				out: 50
 			}
 		]
 	},
@@ -363,13 +363,13 @@ module.exports = [
 		subtitle: 'O desafio é fomentar a prática de atividades sustentáveis',
 		moreInfo: '/views/analise/fase-3.html',
 		videoSettings: {
-			videoId: '1CFJuXDeh_4',
-			introTime: 18 
+			videoId: '5EqUQU-fFMA',
+			introTime: 0
 		},
 		contents: [
 			{
 				text: 'Em 2012, a taxa de desmatamento atinge o menor valor histórico da série de monitoramento do Inpe, chegando a 4.656 quilômetros quadrados.',
-				in: 2,
+				in: 1,
 				out: 7
 			},
 			{
@@ -418,7 +418,7 @@ module.exports = [
 		title: 2020,
 		slug: 2020,
 		videoSettings: {
-			videoId: '_iF36FognFw',
+			videoId: '8mU4oUK8gdc',
 			introTime: 21
 		},
 		contents: [
