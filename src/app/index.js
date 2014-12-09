@@ -106,14 +106,11 @@ app.config(require('./config'))
 
 		$scope.videoId = 'bkhRoHQEzkA';
 		$scope.videoVars = {
-			html5: 1,
 			controls: 0,
 			autoplay: 0,
 			disablekb: 1,
 			fs: 0,
-			showinfo: 0,
-			wmode: 'transparent',
-			modestbrading: 1
+			showinfo: 0
 		};
 
 		/*
@@ -195,8 +192,7 @@ app.config(require('./config'))
 							$scope.loopAmount++;
 							var ended = true;
 							if(cb == true) {
-								console.log('should go back to 0 and play');
-								player.seekTo(0);
+								player.seekTo(0).playVideo();
 							} else {
 								if($scope.initLoop) {
 									player.seekTo($scope.initLoop).playVideo();
