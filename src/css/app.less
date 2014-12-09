@@ -40,16 +40,18 @@ img {
 	.transition(all .5s ease-in-out);
 	&.middle {
 		top: 50%;
-		margin-top: -290px;
+		margin-top: -270px;
 	}
 	h2 {
 		color: #fff;
 		font-size: 16px;
 		text-align: center;
-		margin-bottom: 40px;
+		margin-bottom: 20px;
 		img {
 			height: 40px;
 			width: auto;
+			display: block;
+			margin: 0 auto;
 		}
 		a {
 			color: inherit;
@@ -65,7 +67,7 @@ img {
 		font-size: 64px;
 		border-bottom: 3px solid #fff;
 		margin: 0;
-		padding: 0 0 40px;
+		padding: 0 0 30px;
 		text-shadow: 0 0 10px rgba(0,0,0,.5);
 		a {
 			text-decoration: none;
@@ -76,7 +78,7 @@ img {
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 800px;
-		padding: 40px 15% 0;
+		padding: 30px 15% 0;
 		//background: rgba(0,0,0,0.5);
 		p {
 			text-align: center;
@@ -92,10 +94,10 @@ img {
 			font-weight: 600;
 			font-size: 16px;
 			color: #f0f0f0;
-			padding: 20px 30px;
+			padding: 12px 18px;
 			text-decoration: none;
 			display: inline-block;
-			margin: 20px 0;
+			margin: 0;
 			border: 1px solid rgba(255,255,255,0.5);
 			.transition(all .2s linear);
 			&:hover {
@@ -172,9 +174,17 @@ img {
 				font-size: 20px;
 			}
 		}
-		section,
-		h2 {
+		section {
 			display: none;
+		}
+		h2 {
+			float: left;
+			margin: 0 20px 0 0;
+			img {
+				margin: 0;
+				display: block;
+				height: 25px;
+			}
 		}
 	}
 }
@@ -424,19 +434,22 @@ a.play-video {
 		height: 100%;
 		.box-sizing(border-box);
 		padding-top: 60px;
-		h2 {
-			font-size: 120px;
-			color: #fff;
-			font-weight: 800;
-			margin: 0;
-		}
-		h3.subtitle {
-			width: 50%;
-			font-family: "Playfair Display", sans-serif;
-			color: #fff;
-			font-size: 20px;
-			opacity: .8;
-			margin: 0 0 0 30px;
+		.timeline-header {
+			margin-bottom: 40px;
+			h2 {
+				font-size: 120px;
+				color: #fff;
+				font-weight: 800;
+				margin: 0;
+			}
+			h3.subtitle {
+				width: 250px;
+				font-family: "Playfair Display", sans-serif;
+				color: #fff;
+				font-size: 20px;
+				opacity: .8;
+				margin: 0 0 0 30px;
+			}
 		}
 		section {
 			p {
@@ -769,3 +782,5 @@ a.play-video {
 		}
 	}
 }
+
+@import "responsive.less";
