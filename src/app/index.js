@@ -230,13 +230,16 @@ app.config(require('./config'))
 				$scope.currentContent = item;
 				$scope.showNext = false;
 				$scope.next = $scope.data[$scope.data.indexOf(item)+1] || false;
-				$scope.nextUrl = '/timeline/' + $scope.next.slug + '/';
+				$scope.nextUrl = $state.href('timeline', {year: $scope.next.slug });
 				$scope.nextTitle = $scope.next.title;
 				if(item.slug == 2005) {
-					$scope.nextUrl = '/analise/';
+					$scope.nextUrl = $state.href('analise');
 					$scope.nextTitle = 'Análise';
 				} else if(toState.name.indexOf('analise') !== -1 && item.slug !== '2012-2014') {
-					$scope.nextUrl = '/analise/' + $scope.next.slug + '/';
+					$scope.nextUrl = $state.href('analise', {year: $scope.next.slug });
+				} else if(item.slug == 2020) {
+					$scope.nextUrl = $state.href('equipe');
+					$scope.nextTitle = 'Equipe';
 				}
 				setVideo(item.videoSettings.videoId, function(ended, player) {
 					if($scope.currentTime >= item.videoSettings.introTime && $scope.next) {
