@@ -2,15 +2,6 @@ doctype html
 html(lang='pt-BR')
 	include includes/head
 	body(ng-controller="SiteController")
-		#fb-root
-		script.
-			(function(d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) return;
-			js = d.createElement(s); js.id = id;
-			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=684842854918331&version=v2.0";
-			fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
 
 		.video-container
 			youtube-video(player-id="video" video-id="videoId" player-vars="videoVars" player-width="'100%'" player-height="'100%'")
@@ -85,13 +76,5 @@ html(lang='pt-BR')
 							//
 								a(ui-sref="timeline({year: '2015'})") 2015
 							a(ui-sref="timeline({year: '2020'})") 2020
-
-		footer#mastfoot
-			.footer-content
-				.container
-					.twelve.columns
-
-		#loading(loading-status-message='loading-status-message', ng-class='{active: loads.length}')
-		.loading-message
 
 		include includes/foot

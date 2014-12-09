@@ -161,7 +161,7 @@ app.config(require('./config'))
 			$scope.initLoop = initLoop || 0;
 
 			var set = function(player) {
-				Video.ready(false);
+				//Video.ready(false);
 				player.loadVideoById(id).playVideo();
 				player.unMute();
 
