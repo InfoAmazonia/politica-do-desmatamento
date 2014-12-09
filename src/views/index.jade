@@ -51,7 +51,9 @@ html(lang='pt-BR')
 							a(ui-sref="timeline({year: '2005'})") 2005
 					nav.current
 						.nav-content
-							a.label(ui-sref="analise") Conheça nossa análise
+							a.label(ui-sref="analise")
+								span.menu-name Conheça nossa análise
+								span.title Análise
 							.sub-nav
 								.pages
 									a(ui-sref="analise") Introdução
@@ -71,6 +73,8 @@ html(lang='pt-BR')
 								.pages
 									a(ui-sref="analise.metodologia") Metodologia
 									a(ui-sref="analise.mapa") Mapa
+								.timeline.last
+									a(ui-sref="timeline({year: '2020'})") Futuro
 					nav.post
 						.nav-content
 							//
