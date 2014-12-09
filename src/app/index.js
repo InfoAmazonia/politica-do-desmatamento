@@ -168,7 +168,8 @@ app.config(require('./config'))
 				player.unMute();
 
 				if($scope.mute) {
-					player.seekTo($scope.currentContent.contents[0].in -.5);
+					if($scope.currentContent)
+						player.seekTo($scope.currentContent.contents[0].in -.5);
 					player.setVolume(0);
 				} else {
 					player.setVolume(100);
@@ -221,6 +222,7 @@ app.config(require('./config'))
 		}
 
 		$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams) {
+			$scope.currentContent = false;
 			if(toState.name !== 'home') {
 				$scope.initialized = true;
 			}

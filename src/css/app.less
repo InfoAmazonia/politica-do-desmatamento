@@ -40,13 +40,17 @@ img {
 	.transition(all .5s ease-in-out);
 	&.middle {
 		top: 50%;
-		margin-top: -280px;
+		margin-top: -290px;
 	}
 	h2 {
 		color: #fff;
 		font-size: 16px;
 		text-align: center;
 		margin-bottom: 40px;
+		img {
+			height: 40px;
+			width: auto;
+		}
 		a {
 			color: inherit;
 			font-weight: 800;
@@ -168,7 +172,8 @@ img {
 				font-size: 20px;
 			}
 		}
-		section {
+		section,
+		h2 {
 			display: none;
 		}
 	}
@@ -247,7 +252,7 @@ img {
 	}
 	iframe {
 		width: 100%;
-		min-height: 400px;
+		min-height: 500px;
 	}
 	#map {
 		padding: 0;
@@ -270,14 +275,6 @@ img {
 			display: block;
 		}
 	}
-}
-
-#analise {
-	margin: 180px 0 0;
-	h3 {
-		font-family: "Playfair Display", sans-serif;
-		margin: 10px 0;
-	}
 	.line {
 		border-bottom: 1px solid rgba(0,0,0,0.2);
 		&.big {
@@ -288,11 +285,16 @@ img {
 	.align-right {
 		text-align: right;
 	}
-	p {
-		font-size: 18px;
-	}
 	.light {
 		color: #666;
+	}
+}
+
+#analise {
+	margin: 180px 0 0;
+	h3 {
+		font-family: "Playfair Display", sans-serif;
+		margin: 10px 0;
 	}
 	.analise-area {
 		&.white {
@@ -309,6 +311,9 @@ img {
 				}
 			}
 		}
+	}
+	p {
+		font-size: 20px;
 	}
 	.bg {
 		background-size: cover;

@@ -297,6 +297,7 @@ module.exports = [
 		title: '1ª fase',
 		slug: '2007-2008',
 		subtitle: 'Esforço para a criação de áreas protegidas.',
+		moreInfo: '/views/analise/fase-1.html',
 		videoSettings: {
 			videoId: 'GX_aCTYVfOE',
 			introTime: 28
@@ -323,6 +324,7 @@ module.exports = [
 		title: '2ª fase',
 		slug: '2009-2011',
 		subtitle: 'A queda nos índices de desmatamento',
+		moreInfo: '/views/analise/fase-2.html',
 		videoSettings: {
 			videoId: 'C0iLLtCehkE',
 			introTime: 23
@@ -359,6 +361,7 @@ module.exports = [
 		title: '3ª fase',
 		slug: '2012-2014',
 		subtitle: 'O desafio é fomentar a prática de atividades sustentáveis',
+		moreInfo: '/views/analise/fase-3.html',
 		videoSettings: {
 			videoId: '1CFJuXDeh_4',
 			introTime: 18 
