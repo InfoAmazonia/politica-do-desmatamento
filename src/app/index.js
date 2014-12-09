@@ -110,7 +110,8 @@ app.config(require('./config'))
 			autoplay: 0,
 			disablekb: 1,
 			fs: 0,
-			showinfo: 0
+			showinfo: 0,
+			wmode: 'transparent'
 		};
 
 		/*
