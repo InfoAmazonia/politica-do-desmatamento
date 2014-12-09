@@ -2,11 +2,11 @@ article.timeline-item
 	.timeline-content
 		.container
 			.six.columns
-				header
+				header.timeline-header
 					h2 {{item.title}}
 					h3.subtitle {{item.subtitle}}
 			.six.columns
-				section
+				section.timeline-contents
 					p
 						span(ng-repeat="content in item.contents" video-content video-in="content.in" video-out="content.out") {{content.text}}
 		section#analise(ng-include="item.moreInfo")
