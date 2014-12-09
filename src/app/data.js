@@ -110,19 +110,19 @@ module.exports = [
 		slug: 1989,
 		subtitle: 'O governo federal cria o Ibama',
 		videoSettings: {
-			videoId: 'ka5eYZZVh1I',
-			introTime: 29
+			videoId: 'B3kZauVRg2I',
+			introTime: 17
 		},
 		contents: [
 			{
 				text: 'É criado o IBAMA (Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis).',
-				in: 26,
-				out: 34
+				in: 16,
+				out: 24
 			},
 			{
 				text: 'A partir deste momento, a gestão ambiental do governo federal, que antes era descentralizada e realizada por diferentes secretarias ligadas a vários ministérios, passou a ser integrada.',
-				in: 35,
-				out: 48
+				in: 25,
+				out: 37
 			}
 		]
 	},
