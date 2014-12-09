@@ -106,12 +106,14 @@ app.config(require('./config'))
 
 		$scope.videoId = 'bkhRoHQEzkA';
 		$scope.videoVars = {
+			html5: 1,
 			controls: 0,
 			autoplay: 0,
 			disablekb: 1,
 			fs: 0,
 			showinfo: 0,
-			wmode: 'transparent'
+			wmode: 'transparent',
+			modestbrading: 1
 		};
 
 		/*
@@ -127,7 +129,6 @@ app.config(require('./config'))
 		$scope.$watch(function() {
 			return Video.ready();
 		}, function(ready) {
-			console.log(ready);
 			$scope.readyForNext = ready;
 		});
 
@@ -139,7 +140,7 @@ app.config(require('./config'))
 			}
 		}
 
-		$scope.mute = true;
+		$scope.mute = false;
 
 		$scope.toggleMute = function() {
 			if(!$scope.mute) {
@@ -151,7 +152,7 @@ app.config(require('./config'))
 			} else {
 				$scope.mute = false;
 				if($scope.player) {
-					$scope.player.setVolume(1);
+					$scope.player.setVolume(100);
 				}
 			}
 		}
@@ -166,6 +167,8 @@ app.config(require('./config'))
 				Video.ready(false);
 				player.loadVideoById(id).playVideo();
 				player.unMute();
+
+				$(window).resize();
 
 				if($scope.mute) {
 					if($scope.currentContent)
@@ -192,6 +195,7 @@ app.config(require('./config'))
 							$scope.loopAmount++;
 							var ended = true;
 							if(cb == true) {
+								console.log('should go back to 0 and play');
 								player.seekTo(0);
 							} else {
 								if($scope.initLoop) {
@@ -211,7 +215,6 @@ app.config(require('./config'))
 
 			if(!$scope.player) {
 				$scope.$on('youtube.player.ready', function(event, player) {
-					$(window).resize();
 					$scope.player = player;
 					set(player);
 				});
