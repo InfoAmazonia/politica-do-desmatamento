@@ -359,7 +359,7 @@ module.exports = [
 	},
 	{
 		title: '3ª fase',
-		slug: '2012-2014',
+		slug: '2012-2015',
 		subtitle: 'O desafio é fomentar a prática de atividades sustentáveis',
 		moreInfo: '/views/analise/fase-3.html',
 		videoSettings: {

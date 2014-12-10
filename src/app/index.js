@@ -258,7 +258,7 @@ app.config(require('./config'))
 				if(item.slug == 2005) {
 					$scope.nextUrl = $state.href('analise');
 					$scope.nextTitle = 'Análise';
-				} else if(toState.name.indexOf('analise') !== -1 && item.slug !== '2012-2014') {
+				} else if(toState.name.indexOf('analise') !== -1 && item.slug !== '2012-2015') {
 					$scope.nextUrl = $state.href('analise', {year: $scope.next.slug });
 				} else if(item.slug == 2020) {
 					$scope.nextUrl = $state.href('equipe');
