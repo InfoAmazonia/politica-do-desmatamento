@@ -346,4 +346,6 @@ app.config(require('./config'))
 	}
 ]);
 
-angular.bootstrap(document, ['monitor']);
+$(document).ready(function() {
+	angular.bootstrap(document, ['monitor']);
+});

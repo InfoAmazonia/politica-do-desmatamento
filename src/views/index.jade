@@ -2,6 +2,15 @@ doctype html
 html(lang='pt-BR')
 	include includes/head
 	body(ng-controller="SiteController")
+		#fb-root
+		script.
+			(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=459964104075857&version=v2.0";
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
 
 		.video-container
 			youtube-video(player-id="video" video-id="videoId" player-vars="videoVars" player-width="'100%'" player-height="'100%'")
@@ -11,9 +20,16 @@ html(lang='pt-BR')
 				.twelve.columns
 					h2
 						a(href="http://www.infoamazonia.org/" rel="external" target="_blank")
-							img(src="/img/ia-white.png" alt="InfoAmazonia") 
+							img(src="/img/ia-white.png" alt="InfoAmazonia")
+
+					nav(ng-show="initialized")
+						a(ui-sref="equipe") Equipe
+						a(href="javascript:void(0);" ng-click="toggleMute()" ng-class="{'icon-mute':mute,'icon-volume':!mute}")
+							.tip(ng-hide="mute") Desativar áudio e pular introduções automaticamente
+							.tip(ng-show="mute") Ativar áudio e exibir introduções
+
 					h1
-						a(ui-sref="home") Orçamento e Desmatamento
+						a(ui-sref="home") A Política do Desmatamento
 					section
 						p Quanto dinheiro é gasto pelo governo federal para preservar a Amazônia? Onde os recursos são investidos? Os valores são suficientes?
 
@@ -21,12 +37,6 @@ html(lang='pt-BR')
 
 						p(ng-hide="initialized")
 							a.start-timeline(href="javascript:void(0);" ng-click="init()") Comece a navegar pela linha do tempo
-
-					nav(ng-show="initialized")
-						a(ui-sref="equipe") Equipe
-						a(href="javascript:void(0);" ng-click="toggleMute()" ng-class="{'icon-mute':mute,'icon-volume':!mute}")
-							.tip(ng-hide="mute") Desativar áudio e pular introduções automaticamente
-							.tip(ng-show="mute") Ativar áudio e exibir introduções
 
 		//a.play-video.icon-play(href="javascript:void(0);" ng-click="init()")
 
@@ -80,5 +90,12 @@ html(lang='pt-BR')
 							//
 								a(ui-sref="timeline({year: '2015'})") 2015
 							a(ui-sref="timeline({year: '2020'})") 2020
+		footer#mastfoot
+
+			a.twitter-share-button(href="https://twitter.com/share" data-url="http://desmatamento.infoamazonia.org/" data-via="infoamazonia" data-text="A história e a política do desmatamento no Brasil") Tweet
+			script.
+				window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+
+			.fb-like(data-href="https://desmatamento.infoamazonia.org" data-colorscheme="dark" data-layout="button_count" data-action="like" data-share="true")
 
 		include includes/foot
