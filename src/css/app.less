@@ -828,6 +828,14 @@ a.play-video {
 	font-size: 14px;
 	overflow: hidden;
 	font-family: "Open Sans", sans-serif;
+	.transition(all 0);
+	&.fixed {
+		background: #fff;
+		bottom: 0;
+		padding: 10px 0;
+		left: 0;
+		.transition(all .5s linear);
+	}
 	.footer-content {
 		margin-left: -174%;
 	}

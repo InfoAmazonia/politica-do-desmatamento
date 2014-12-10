@@ -7,10 +7,10 @@ $(document).ready(function() {
 		var offset = $(window).height() - $(window).scrollTop() - timelineHeight - 40;
 
 		if(offset <= 0) {
-			$('#mastfoot').hide();
+			$('#mastfoot').addClass('fixed');
 			$('#timeline-nav').addClass('fixed');
 		} else {
-			$('#mastfoot').show();
+			$('#mastfoot').removeClass('fixed');
 			$('#timeline-nav').removeClass('fixed');
 		}
 
