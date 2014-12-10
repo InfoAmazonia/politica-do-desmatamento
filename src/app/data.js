@@ -300,7 +300,7 @@ module.exports = [
 		moreInfo: '/views/analise/fase-1.html',
 		videoSettings: {
 			videoId: 'GewiwarLcRc',
-			introTime: 0
+			introTime: 1
 		},
 		contents: [
 			{
@@ -327,7 +327,7 @@ module.exports = [
 		moreInfo: '/views/analise/fase-2.html',
 		videoSettings: {
 			videoId: 'Mk3Sejq6D4Q',
-			introTime: 0
+			introTime: 1
 		},
 		contents: [
 			{
@@ -364,7 +364,7 @@ module.exports = [
 		moreInfo: '/views/analise/fase-3.html',
 		videoSettings: {
 			videoId: '5EqUQU-fFMA',
-			introTime: 0
+			introTime: 1
 		},
 		contents: [
 			{
