@@ -224,10 +224,13 @@ app.config(require('./config'))
 
 		$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams) {
 			$scope.currentContent = false;
-			if(toState.name !== 'home') {
+
+			if(toState.name !== 'home')
 				$scope.initialized = true;
-			}
-			if(toParams.year) {
+			
+			if(toState.name == 'home')
+				setVideo('bkhRoHQEzkA', true);
+			else if(toParams.year) {
 				var item = _.find($scope.data, function(item) { return toParams.year == item.slug; });
 				$scope.currentContent = item;
 				$scope.showNext = false;
@@ -249,7 +252,9 @@ app.config(require('./config'))
 					}
 				}, item.videoSettings.introTime);
 			} else {
-				setVideo('bkhRoHQEzkA', true);
+				setVideo('bkhRoHQEzkA', function(ended, player) {
+					player.stopVideo();
+				});
 			}
 		});
 
