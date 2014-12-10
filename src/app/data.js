@@ -314,14 +314,19 @@ module.exports = [
 				out: 10
 			},
 			{
-				text: 'Ao final da primeira fase do PPCDAm (2004-2008), mais de 25 milhões de hectares de Unidades de Conservação federais haviam sido criadas, além da homologação de 10 milhões de hectares de Terras Indígenas.',
+				text: 'Para atuar na gestão das novas unidades de conservação, é criado o Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio), vinculado ao Ministério do Meio Ambiente.',
 				in: 10,
 				out: 20
 			},
 			{
-				text: 'Os estados também enviaram esforços na criação de áreas protegidas, totalizando 25 milhões de hectares de unidades de conservação estaduais.',
+				text: 'Ao final da primeira fase do PPCDAm (2004-2008), mais de 25 milhões de hectares de Unidades de Conservação federais haviam sido criadas, além da homologação de 10 milhões de hectares de Terras Indígenas.',
 				in: 20,
 				out: 30
+			},
+			{
+				text: 'Os estados também enviaram esforços na criação de áreas protegidas, totalizando 25 milhões de hectares de unidades de conservação estaduais.',
+				in: 30,
+				out: 40
 			}
 		]
 	},
