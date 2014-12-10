@@ -17,7 +17,7 @@ module.exports = [
 			},
 			{
 				text: 'É a primeira via de acesso aberta na floresta conectando as regiões Sul e Sudeste ao Norte do país.',
-				in: 37,
+				in: 36,
 				out: 42
 			}
 		]
@@ -38,7 +38,7 @@ module.exports = [
 			},
 			{
 				text: 'As duas rodovias serão o epicentro da distribuição espacial do desmatamento na Amazônia nas próximas décadas.',
-				in: 36,
+				in: 35,
 				out: 42
 			}
 		]
@@ -59,12 +59,12 @@ module.exports = [
 			},
 			{
 				text: 'Durante as décadas de 1970 e 1980, os incentivos fiscais oferecidos pelo governo federal aos médios e grandes proprietários de terra e a ampla colonização pública e privada se constituem em fortes condutores do desmatamento.',
-				in: 27,
+				in: 26,
 				out: 36
 			},
 			{
 				text: 'Incentivos fiscais e colonização: 6% da Amazônia Legal desmatada, principalmente no Norte.',
-				in: 37,
+				in: 36,
 				out: 45
 			}
 		]
@@ -85,22 +85,22 @@ module.exports = [
 			},
 			{
 				text: 'Ainda que tímida, é a primeira tentativa do governo federal em frear o desmatamento na região Norte e estabelecer diretrizes para a exploração dos recursos naturais.',
-				in: 11,
+				in: 10,
 				out: 20
 			},
 			{
 				text: 'É inaugurado, também, o projeto PRODES, que, sob a chancela do Instituto Nacional de Pesquisas Espaciais (Inpe), realiza o monitoramento via satélite do desmatamento por corte raso na Amazônia Legal.',
-				in: 21,
+				in: 20,
 				out: 34
 			},
 			{
 				text: 'Desde então, as taxas anuais tem sido utilizadas pelo governo para a definição de políticas públicas.',
-				in: 35,
+				in: 34,
 				out: 42
 			},
 			{
 				text: 'O ano de 1988, contudo, seria marcado por um evento trágico: no dia 22 de dezembro, o seringalista Chico Mendes é assassinado em Xapuri, no Acre, com um tiro de escopeta.',
-				in: 43,
+				in: 42,
 				out: 57
 			}
 		]
@@ -121,7 +121,7 @@ module.exports = [
 			},
 			{
 				text: 'A partir deste momento, a gestão ambiental do governo federal, que antes era descentralizada e realizada por diferentes secretarias ligadas a vários ministérios, passou a ser integrada.',
-				in: 25,
+				in: 24,
 				out: 37
 			}
 		]
@@ -138,16 +138,16 @@ module.exports = [
 			{
 				text: 'Com a hiperinflação, que predomina na economia do Brasil durante décadas, a terra, supervalorizada, atinge preços inviáveis na Amazônia.',
 				in: 4,
-				out: 11
+				out: 12
 			},
 			{
 				text: 'Como efeito, dissemina-se a prática da retirada da cobertura florestal para a criação de pastagens, inclusive como instrumento de reivindicação da posse das áreas exploradas.',
-				in: 14,
+				in: 12,
 				out: 24
 			},
 			{
 				text: 'O resultado: outros 280 mil quilômetros são incorporados à porção desmatada na Amazônia Legal (o equivalente à dimensão territorial do estado de Minas Gerais), sendo que 26% desse total foram contabilizados apenas pelo estado do Mato Grosso, em franca expansão da atividade pecuária.',
-				in: 25,
+				in: 24,
 				out: 35
 			}
 		]
@@ -168,7 +168,7 @@ module.exports = [
 			},
 			{
 				text: 'Em junho, no Rio de Janeiro, ocorre a Conferência das Nações Unidas sobre o Meio Ambiente e o Desenvolvimento, que ficaria conhecida como Eco 92 – mais de 100 chefes de Estado se reuniram para discutir novas perspectivas de desenvolvimento e consumo.',
-				in: 24,
+				in: 23,
 				out: 33
 			}
 		]
@@ -189,12 +189,12 @@ module.exports = [
 			},
 			{
 				text: 'As reformas incrementam o acesso ao capital por meio de créditos agrícolas.',
-				in: 23,
+				in: 22,
 				out: 30
 			},
 			{
 				text: 'Com dinheiro em mãos, os fazendeiros retomam o ímpeto por novas pastagens, impulsionando a destruição da floresta e estabelecendo um novo recorde: mais de 29.000 quilômetros quadrados colocados abaixo em 12 meses (área equivalente à do estado de Alagoas).',
-				in: 31,
+				in: 30,
 				out: 45
 			}
 		]
@@ -215,7 +215,7 @@ module.exports = [
 			},
 			{
 				text: 'Nesse mesmo ano, a exploração madeireira em toda a Amazônia atinge a expressiva marca de 28,3 milhões de metros cúbicos extraídos (ou 28 trilhões de exemplares de árvores de várias espécies) – a maior parte de origem ilegal.',
-				in: 21,
+				in: 20,
 				out: 43
 			}
 		]
@@ -236,7 +236,7 @@ module.exports = [
 			},
 			{
 				text: 'Diante do quadro, o novo governo federal cria o Grupo Permanente de Trabalho Interministerial (GPTI), com a finalidade de propor e coordenar ações que visem à redução dos índices de desmatamento na Amazônia, sob coordenação da Casa Civil da Presidência da República.',
-				in: 19,
+				in: 18,
 				out: 36
 			}
 		]
@@ -257,17 +257,17 @@ module.exports = [
 			},
 			{
 				text: 'Em resposta, o governo federal lança o Plano de Ação para a Prevenção e Controle do Desmatamento na Amazônia Legal (PPCDAm), estratégia oficial de combate ao desmatamento que resultou das discussões no GPTI.',
-				in: 21,
+				in: 20,
 				out: 30
 			},
 			{
 				text: 'É, também, o primeiro ano de operação do Sistema de Detecção do Desmatamento em Tempo Real (Deter), do Inpe.',
-				in: 31,
+				in: 30,
 				out: 37
 			},
 			{
 				text: 'Utilizado pelo governo para gerar alertas diários sobre a destruição da floresta, é importante para reduzir o tempo de resposta das operações de fiscalização.',
-				in: 38,
+				in: 37,
 				out: 50
 			}
 		]
@@ -288,7 +288,7 @@ module.exports = [
 			},
 			{
 				text: 'A morte da Irmã teria sido encomendada por fazendeiros locais, insatisfeitos com a atuação política da religiosa, que lutava pela criação de assentamentos da reforma agrária no oeste paraense.',
-				in: 29,
+				in: 28,
 				out: 40
 			}
 		]
@@ -310,12 +310,12 @@ module.exports = [
 			},
 			{
 				text: 'Ao final da primeira fase do PPCDAm (2004-2008), mais de 25 milhões de hectares de Unidades de Conservação federais haviam sido criadas, além da homologação de 10 milhões de hectares de Terras Indígenas.',
-				in: 11,
+				in: 10,
 				out: 20
 			},
 			{
 				text: 'Os estados também enviaram esforços na criação de áreas protegidas, totalizando 25 milhões de hectares de unidades de conservação estaduais.',
-				in: 21,
+				in: 20,
 				out: 30
 			}
 		]
@@ -337,22 +337,22 @@ module.exports = [
 			},
 			{
 				text: 'Ao invés dos tradicionais grandes polígonos, observava-se um aumento relativo de polígonos menores em pequenas propriedades e em assentamentos da Reforma Agrária.',
-				in: 11,
+				in: 10,
 				out: 20
 			},
 			{
 				text: 'Em dezembro desse mesmo ano, na Conferência das Nações Unidas sobre as Mudanças Climáticas, em Copenhague, Dinamarca, o Brasil assume o compromisso de reduzir suas emissões de gases de efeito estufa associadas ao desmatamento na Amazônia e no Cerrado.',
-				in: 21,
+				in: 20,
 				out: 30
 			},
 			{
 				text: 'Ao final da segunda fase do PPCDAm, a queda das taxas de desflorestação é atribuída à eficiência do sistema DETER e à agilidade das ações integradas de fiscalização e combate ao crime organizado.',
-				in: 31,
+				in: 30,
 				out: 40
 			},
 			{
 				text: 'No dia 24 de maio, o casal de extrativistas José Cláudio Ribeiro e Maria do Espírito Santo é assassinado em Nova Ipixuna, no Pará. Os dois eram opositores declarados dos madeireiros ilegais da região.',
-				in: 41,
+				in: 40,
 				out: 50
 			}
 		]
@@ -374,43 +374,23 @@ module.exports = [
 			},
 			{
 				text: 'No entanto, por meio da Medida Provisória 558, o governo federal (sem realizar a consulta pública exigida por lei) exclui 1.500 quilômetros quadrados de sete Unidades de Conservação na Amazônia (duas no Amazonas e cinco no Pará).',
-				in: 8,
+				in: 7,
 				out: 16
 			},
 			{
 				text: 'O objetivo é possibilitar o aproveitamento hidrelétrico do rios Madeira, Jamanxim e Tapajós. No dia 25 de maio, o novo Código Florestal é sancionado pelo governo federal.',
-				in: 17,
+				in: 16,
 				out: 25
 			},
 			{
 				text: 'Um dos pontos criticados é a anistia concedida a quem promoveu o desmatamento entre os anos de 1965 e 2008.',
-				in: 26,
+				in: 25,
 				out: 30
 			},
 			{
 				text: 'No ano de 2013, por meio de um decreto, o Grupo Permanente de Trabalho Interministerial (GPTI) deixa de ser coordenado pela Casa Civil da Presidência da República e passa a ser coordenado pelo Ministério do Meio Ambiente.',
-				in: 31,
+				in: 30,
 				out: 40
-			}
-		]
-	},
-	{
-		title: 2015,
-		slug: 2015,
-		videoSettings: {
-		},
-		contents: [
-			{
-				text: 'Em curso, a terceira fase do PPCDAm (2012-2015), perante a qual um desafio se apresenta: prover ações condizentes com a nova dinâmica do desmatamento.'
-			},
-			{
-				text: 'Atualmente, a maior parte das práticas de devastação florestal encontra-se abaixo do limiar de detecção do DETER.'
-			},
-			{
-				text: 'A redução na área dos polígonos e a sua dispersão (pulverização) aumentam o custo da fiscalização.'
-			},
-			{
-				text: 'As ações do eixo Fomento às Atividades Produtivas Sustentáveis ganham relevância.'
 			}
 		]
 	},
@@ -425,7 +405,7 @@ module.exports = [
 			{
 				text: 'É a data limite, ratificada junto à comunidade internacional no Plano Nacional sobre Mudança do Clima (PNMC), para que o desmatamento na Amazônia seja reduzido em 80%.',
 				in: 21,
-				out: 60
+				out: 70
 			}
 		]
 	}
