@@ -10,8 +10,7 @@ article.timeline-item
 					p
 						span(ng-repeat="(index, content) in item.contents" video-content video-in="content.in" video-out="content.out" last-content="(index == item.contents.length-1)") {{content.text}} 
 
-				//
-					p(ng-show="readyForNext")
+					p.next(ng-show="readyForNext")
 						a(href="{{nextUrl}}") Clique para continuar.
 
 			.three.columns
