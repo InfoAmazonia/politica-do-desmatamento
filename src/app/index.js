@@ -30,7 +30,6 @@ app.config(require('./config'))
 		 */
 		$rootScope.$on('$stateChangeSuccess', function() {
 			if($window._gaq) {
-				console.log('has gaq');
 				$window._gaq.push(['_trackPageview', $location.path()]);
 			}
 		});
