@@ -4,7 +4,7 @@ module.exports = [
 	{
 		title: 1960,
 		slug: 1960,
-		subtitle: 'As rodovias inaguram o desmatamento moderno',
+		subtitle: 'As rodovias inauguram o desmatamento moderno',
 		videoSettings: {
 			videoId: 'kQy5J0pAZ6Y',
 			introTime: 27
