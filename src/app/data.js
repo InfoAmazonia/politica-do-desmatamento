@@ -37,9 +37,14 @@ module.exports = [
 				out: 35
 			},
 			{
-				text: 'As duas rodovias serão o epicentro da distribuição espacial do desmatamento na Amazônia nas próximas décadas.',
+				text: 'A obra resulta em uma estrada com 4.073 quilômetros de extensão (até hoje, mais da metade sem asfalto).',
 				in: 35,
 				out: 42
+			},
+			{
+				text: 'As duas rodovias serão o epicentro da distribuição espacial do desmatamento na Amazônia nas próximas décadas.',
+				in: 42,
+				out: 50
 			}
 		]
 	},
@@ -53,7 +58,7 @@ module.exports = [
 		},
 		contents: [
 			{
-				text: 'Em apenas uma década, o desmatamento na região Norte alcança os 300 mil quilômetros quadrados, o equivalente a 6% da área total da Amazônia Legal (e um pouco maior do que a área do estado do Rio Grande do Sul).',
+				text: 'Em apenas uma década, o desmatamento alcança os 300 mil quilômetros quadrados, o equivalente a 6% da área total da Amazônia Legal (e um pouco maior do que a área do estado do Rio Grande do Sul).',
 				in: 17,
 				out: 26
 			},
@@ -61,11 +66,6 @@ module.exports = [
 				text: 'Durante as décadas de 1970 e 1980, os incentivos fiscais oferecidos pelo governo federal aos médios e grandes proprietários de terra e a ampla colonização pública e privada se constituem em fortes condutores do desmatamento.',
 				in: 26,
 				out: 36
-			},
-			{
-				text: 'Incentivos fiscais e colonização: 6% da Amazônia Legal desmatada, principalmente no Norte.',
-				in: 36,
-				out: 45
 			}
 		]
 	},
@@ -230,14 +230,19 @@ module.exports = [
 		},
 		contents: [
 			{
-				text: 'Após a euforia inicial com o Plano Real, o período entre 1996 e 2001 é marcado por um padrão nos índices de desmatamento, que voltariam a subir de maneira dramática em 2002, embalados, por exemplo, pelo anúncio de grandes obras do programa Avança Brasil, como o asfaltamento da BR-163, que fez aumentar em 500% a desflorestação no seu entorno.',
+				text: 'Após a euforia inicial com o Plano Real, o período entre 1996 e 2001 é marcado por um padrão nos índices de desmatamento, que voltariam a subir de maneira dramática em 2002.',
 				in: 8,
 				out: 18
 			},
 			{
-				text: 'Diante do quadro, o novo governo federal cria o Grupo Permanente de Trabalho Interministerial (GPTI), com a finalidade de propor e coordenar ações que visem à redução dos índices de desmatamento na Amazônia, sob coordenação da Casa Civil da Presidência da República.',
+				text: 'Embalados pelo anúncio de grandes obras do programa Avança Brasil, como o asfaltamento da BR-163, que fez aumentar em 500% a desflorestação no seu entorno.',
 				in: 18,
-				out: 36
+				out: 26
+			},
+			{
+				text: 'Diante do quadro, o novo governo federal cria o Grupo Permanente de Trabalho Interministerial (GPTI), com a finalidade de propor e coordenar ações que visem à redução dos índices de desmatamento na Amazônia, sob coordenação da Casa Civil da Presidência da República.',
+				in: 26,
+				out: 40
 			}
 		]
 	},
@@ -373,24 +378,29 @@ module.exports = [
 				out: 7
 			},
 			{
-				text: 'No entanto, por meio da Medida Provisória 558, o governo federal (sem realizar a consulta pública exigida por lei) exclui 1.500 quilômetros quadrados de sete Unidades de Conservação na Amazônia (duas no Amazonas e cinco no Pará).',
+				text: 'No entanto, por meio da Medida Provisória 558, o governo federal (sem realizar a consulta pública exigida por lei) exclui 1.500 quilômetros quadrados de sete Unidades de Conservação na Amazônia. O objetivo é possibilitar o aproveitamento hidrelétrico do rios Madeira, Jamanxim e Tapajós.',
 				in: 7,
-				out: 16
+				out: 19
 			},
 			{
-				text: 'O objetivo é possibilitar o aproveitamento hidrelétrico do rios Madeira, Jamanxim e Tapajós. No dia 25 de maio, o novo Código Florestal é sancionado pelo governo federal.',
-				in: 16,
-				out: 25
-			},
-			{
-				text: 'Um dos pontos criticados é a anistia concedida a quem promoveu o desmatamento entre os anos de 1965 e 2008.',
-				in: 25,
+				text: 'No dia 25 de maio, o novo Código Florestal é sancionado, apesar das várias críticas, sobretudo com relação à anistia concedida a quem promoveu o desmatamento antes de 2008.',
+				in: 19,
 				out: 30
 			},
 			{
 				text: 'No ano de 2013, por meio de um decreto, o Grupo Permanente de Trabalho Interministerial (GPTI) deixa de ser coordenado pela Casa Civil da Presidência da República e passa a ser coordenado pelo Ministério do Meio Ambiente.',
 				in: 30,
 				out: 40
+			},
+			{
+				text: 'O desmatamento volta a subir e o índice acumulado, que era inferior a 1% do território amazônico até início da década de 1970, atinge 19% dele em 2013 – em torno de 760 mil quilômetros quadrados (mais de duas vezes o território da Alemanha).',
+				in: 40,
+				out: 52
+			},
+			{
+				text: 'Por fim, em 2014, o governo deixa de dar publicidade periódica e sistemática aos dados do DETER, alterando uma prática que vinha ocorrendo desde o início do PPCDAm. Publicados no final de novembro, os dados do Prodes indicam uma queda de 18% no desmatamento em relação ao ano anterior.',
+				in: 52,
+				out: 64
 			}
 		]
 	},
