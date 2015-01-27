@@ -111,10 +111,11 @@ app.config(require('./config'))
 	'Data',
 	'VideoService',
 	'$interval',
+	'$location',
 	'$state',
 	'$scope',
 	'$rootScope',
-	function(Data, Video, $interval, $state, $scope, $rootScope) {
+	function(Data, Video, $interval, $location, $state, $scope, $rootScope) {
 
 		$scope.data = Data.get();
 
@@ -148,15 +149,116 @@ app.config(require('./config'))
 			$scope.readyForNext = ready;
 		});
 
+		$scope.introTime = function() {
+			if($scope.currentContent) {
+				return $scope.currentContent.contents[0].in -.5;
+			} else {
+				return 0;
+			}
+		};
+
 		$scope.jumpIntro = function() {
 			if($scope.player && $scope.currentContent) {
 				if($scope.player.getCurrentTime() < $scope.currentContent.contents[0].in -.5) {
 					$scope.player.seekTo($scope.currentContent.contents[0].in -.5);
 				}
 			}
-		}
+		};
 
 		$scope.mute = false;
+
+		$scope.playVideo = function() {
+			if($scope.player) {
+				$scope.paused = false;
+				$scope.player.playVideo();
+			}
+		};
+
+		$scope.pauseVideo = function() {
+			if($scope.player) {
+				$scope.paused = true;
+				$scope.player.pauseVideo();
+			}
+		};
+
+		$scope.clickOffset = function(ev) {
+			var width = $(ev.target).width();
+			var x = ev.pageX - $(ev.target).offset().left;
+			console.log((x/width)*100);
+			return (x/width)*100;
+		};
+
+		$scope.setVideoTimeByPercentage = function(percentage) {
+			if($scope.player) {
+				var time = $scope.player.getDuration() * (percentage/100);
+				$scope.setVideoTime(time);
+			}
+		};
+
+		$scope.setVideoTime = function(time) {
+			console.log('trying: ' + time);
+			if($scope.player) {
+				$scope.player.seekTo(time);
+			}
+		};
+
+		$scope.videoPercentage = function() {
+			if($scope.currentTime && $scope.player) {
+				return ($scope.currentTime / $scope.player.getDuration()) * 100;
+			} else {
+				return 0;
+			}
+		};
+
+		$scope.videoTimeBarStyle = function() {
+			var percentage = $scope.videoPercentage();
+			if(percentage >= 100)
+				percentage = 100;
+
+			return {
+				width: percentage + '%'
+			};
+		};
+
+		$scope.videoTimeBarTextStyle = function() {
+			if($scope.player && $scope.currentContent) {
+				var percentage = ($scope.currentContent.contents[0].in / $scope.player.getDuration()) * 100;
+				return {
+					display: 'block',
+					left: percentage + '%'
+				};
+			} else {
+				return {
+					display: 'none'
+				};
+			}
+		};
+
+		$scope.skipBack = function() {
+
+			if($scope.player) {
+				if($scope.mute) {
+					if($scope.currentContent.contents[0].in + 3 >= $scope.player.getCurrentTime()) {
+						$scope.player.seekTo($scope.currentContent.contents[0].in);
+					} else if($scope.prev) {
+						$location.url($scope.prevUrl);
+					}
+				} else {
+					if($scope.player.getCurrentTime() >= 3) {
+						$scope.player.seekTo(0);
+					} else if($scope.prev) {
+						$location.url($scope.prevUrl);
+					}
+				}
+			}
+
+		};
+
+		$scope.skipForward = function() {
+			if($scope.player && $scope.next) {
+				$location.url($scope.nextUrl);
+			}
+		};
 
 		$scope.toggleMute = function() {
 			if(!$scope.mute) {
@@ -172,8 +274,10 @@ app.config(require('./config'))
 				}
 			}
 		}
-	
+
 		var setVideo = function(id, cb, initLoop) {
+
+			$scope.paused = false;
 
 			$scope.showInfo = false;
 
@@ -243,14 +347,19 @@ app.config(require('./config'))
 		$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams) {
 			$scope.currentContent = false;
 
-			if(toState.name !== 'home')
+			if(toState.name !== 'home'){
 				$scope.initialized = true;
-			
-			if(toState.name == 'home')
+				$scope.isHome = false;
+			}
+
+			if(toState.name == 'home') {
 				setVideo('bkhRoHQEzkA', true);
-			else if(toParams.year) {
+				$scope.isHome = true;
+			} else if(toParams.year) {
 				var item = _.find($scope.data, function(item) { return toParams.year == item.slug; });
 				$scope.currentContent = item;
+				$scope.prev = $scope.data[$scope.data.indexOf(item)-1] || false;
+				$scope.prevUrl = $state.href('timeline', {year: $scope.prev.slug });
 				$scope.showNext = false;
 				$scope.next = $scope.data[$scope.data.indexOf(item)+1] || false;
 				$scope.nextUrl = $state.href('timeline', {year: $scope.next.slug });
@@ -327,7 +436,7 @@ app.config(require('./config'))
 				}
 
 				if(fromState.name == 'equipe') {
-					$('#timeline-nav').show().animo({animation: 'fadeInUp', duration: 0.5, keep: true});	
+					$('#timeline-nav').show().animo({animation: 'fadeInUp', duration: 0.5, keep: true});
 				}
 
 			}

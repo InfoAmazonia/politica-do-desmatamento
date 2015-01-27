@@ -8,15 +8,7 @@ article.timeline-item
 				section.timeline-contents(ng-show="showInfo")
 
 					p
-						span(ng-repeat="(index, content) in item.contents" video-content video-in="content.in" video-out="content.out" last-content="(index == item.contents.length-1)") {{content.text}} 
+						span(ng-repeat="(index, content) in item.contents" video-content video-in="content.in" video-out="content.out" last-content="(index == item.contents.length-1)") {{content.text}}
 
 					p.next(ng-show="readyForNext")
 						a(href="{{nextUrl}}") Clique aqui para continuar
-
-			.three.columns
-				section#next
-					span.icon-fast-forward
-					p
-						a(href="{{nextUrl}}") Próximo
-					h3
-						a(href="{{nextUrl}}") {{nextTitle}}

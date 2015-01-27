@@ -23,10 +23,9 @@ html(lang='pt-BR')
 							img(src="/img/ia-white.png" alt="InfoAmazonia")
 
 					nav(ng-show="initialized")
+						a(ui-sref="analise.metodologia") Metodologia
+						a(ui-sref="analise.mapa") Mapa
 						a(ui-sref="equipe") Saiba mais
-						a(href="javascript:void(0);" ng-click="toggleMute()" ng-class="{'icon-mute':mute,'icon-volume':!mute}")
-							.tip(ng-hide="mute") Desativar áudio e pular introduções automaticamente
-							.tip(ng-show="mute") Ativar áudio e exibir introduções
 
 					h1
 						a(ui-sref="home") A Política do Desmatamento
@@ -41,6 +40,35 @@ html(lang='pt-BR')
 		//a.play-video.icon-play(href="javascript:void(0);" ng-click="init()")
 
 		section#content(ui-view, autoscroll='false')
+
+		#video-controls(ng-show="(initialized || nagivated) && !isHome")
+			.container
+				.twelve.columns
+					.controls-container
+						.timebar-container(ng-click="setVideoTimeByPercentage(clickOffset($event))")
+							.timebar(ng-style="videoTimeBarStyle()")
+						.texts-button(ng-style="videoTimeBarTextStyle()")
+							span.icon-plus(ng-click="setVideoTime(introTime())")
+							.tip.top Início dos textos
+						.clearfix
+							.controls-content
+								.content-group
+									section#next
+										span.icon-fast-forward
+										p
+											a(href="{{nextUrl}}") Próximo
+										h3
+											a(href="{{nextUrl}}") {{nextTitle}}
+								.control-group
+									a.icon-play(ng-show="paused" href="javascript:void(0);" ng-click="playVideo()")
+									a.icon-pause(ng-hide="paused" href="javascript:void(0);" ng-click="pauseVideo()")
+								.control-group
+									a.icon-skip-back(href="javascript:void(0);" ng-click="skipBack()")
+									a.icon-skip-forward(href="javascript:void(0);" ng-click="skipForward()")
+								.control-group
+									a(href="javascript:void(0);" ng-click="toggleMute()" ng-class="{'icon-mute':mute,'icon-volume':!mute}")
+										.tip(ng-hide="mute") Desativar áudio e pular introduções automaticamente
+										.tip(ng-show="mute") Ativar áudio e exibir introduções
 
 		#timeline-nav.nav(ng-class="{initialized:initialized || navigated}")
 			.container
@@ -70,19 +98,20 @@ html(lang='pt-BR')
 								.timeline
 									a(ui-sref="analise.timeline({year: '2007-2008'})") 1ª fase
 										span.tip
-											span.title Primeira fase do PPCDAm 
+											span.title Primeira fase do PPCDAm
 											span.year 2007-2008
 									a(ui-sref="analise.timeline({year: '2009-2011'})") 2ª fase
 										span.tip
-											span.title Segunda fase do PPCDAm 
+											span.title Segunda fase do PPCDAm
 											span.year 2009-2011
 									a(ui-sref="analise.timeline({year: '2012-2015'})") 3ª fase
 										span.tip
-											span.title Terceira fase do PPCDAm 
+											span.title Terceira fase do PPCDAm
 											span.year 2012-2015
-								.pages
-									a(ui-sref="analise.metodologia") Metodologia
-									a(ui-sref="analise.mapa") Mapa
+								//
+									.pages
+										a(ui-sref="analise.metodologia") Metodologia
+										a(ui-sref="analise.mapa") Mapa
 								.timeline.last
 									a(ui-sref="timeline({year: '2020'})") Futuro
 					nav.post
