@@ -37,4 +37,9 @@ $(document).ready(function() {
 	}
 
 	$(window).resize(resize).resize();
+
+
+	/*
+	 * Eixo section
+	 */
 });

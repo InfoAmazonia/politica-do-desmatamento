@@ -107,6 +107,19 @@ app.config(require('./config'))
 	}
 ])
 
+.directive('tooltip', [
+	function() {
+
+		return {
+			restrict: 'E',
+			link: function(scope, element, attrs) {
+
+			}
+		}
+
+	}
+])
+
 .controller('SiteController', [
 	'Data',
 	'VideoService',
@@ -151,7 +164,7 @@ app.config(require('./config'))
 
 		$scope.introTime = function() {
 			if($scope.currentContent) {
-				return $scope.currentContent.contents[0].in -.5;
+				return $scope.currentContent.contents[0].in;
 			} else {
 				return 0;
 			}
@@ -165,7 +178,7 @@ app.config(require('./config'))
 			}
 		};
 
-		$scope.mute = false;
+		$scope.mute = true;
 
 		$scope.playVideo = function() {
 			if($scope.player) {
