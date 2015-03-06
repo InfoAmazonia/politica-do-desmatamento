@@ -980,51 +980,76 @@ a.play-video {
 
 #content section.eixos-summary {
 	background: #f7f7f7;
-	padding: 60px 0;
+	padding: 0 0 60px 0;
 	header {
 		ul {
 			width: 100%;
 			display: table;
+			margin: 0 0 40px;
+			padding: 0;
+			border-left: 1px solid #eee;
+			table-layout: fixed;
 			li {
 				width: 1%;
-				text-align: center;
 				display: table-cell;
+				text-align: center;
 				margin: 0;
 				padding: 0;
 				h3 {
 					background: #fff;
-					margin: 0 20px;
+					margin: 0;
 					font-weight: 600;
 					font-size: 24px;
-					padding: 20px;
-					border: 1px dotted #bbb;
+					padding: 30px;
 					cursor: default;
 					.transition(all .2s linear);
+					border-right: 1px solid #eee;
 					position: relative;
+					border-bottom-width: 2px;
+					border-bottom-style: solid;
 					&:hover {
+						z-index: 2;
 						.box-shadow(0 1px 5px 0px rgba(0,0,0,0.1));
+						border-bottom-width: 10px;
+						padding-bottom: 22px;
 					}
 					&:after {
 						content: '';
 						width: 0;
 						left: 50%;
 						top: 100%;
-						height: 40px;
+						height: 42px;
 						background: transparent;
 						position: absolute;
 						border-right: 1px dotted #bbb;
+					}
+				}
+				&.ordenamento {
+					h3 {
+						border-bottom-color: #3f7cac;
+					}
+				}
+				&.monitoramento {
+					h3 {
+						border-bottom-color: #aa455e;
+					}
+				}
+				&.fomento {
+					h3 {
+						border-bottom-color: #56c887;
 					}
 				}
 			}
 		}
 	}
 	.eixos-content {
-		margin: 0 40px;
+		margin: 0 5%;
 		> ul {
 			display: table;
 			width: 100%;
 			margin: 0;
 			padding: 0;
+			table-layout: fixed;
 			> li {
 				margin: 0;
 				padding: 0;
@@ -1041,6 +1066,7 @@ a.play-video {
 						border-bottom: 1px dotted #bbb;
 						.transition(all .2s linear);
 						cursor: default;
+						background: #fff;
 						&:hover {
 							background: #fff;
 						}
