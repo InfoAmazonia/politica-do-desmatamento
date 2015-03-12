@@ -1164,6 +1164,68 @@ a.play-video {
 	}
 }
 
+.yt-audio {
+	.controllers {
+		float:left;
+		margin: 0 40px 0 0;
+		background: #f0f0f0;
+		.border-radius(100%);
+		text-align: center;
+		width: 100px;
+		height: 100px;	
+		a {
+			font-size: 60px;
+			line-height: 100px;
+			color: #666;
+			text-decoration: none;
+			&.icon-play {
+				margin-left: 10px;
+			}
+			&:hover {
+				color: #333;
+			}
+		}
+	}
+	.description {
+		padding-top: 10px;
+		h3 {
+			font-style: italic;
+			font-size: 16px;
+			margin: 0 !important;
+			color: #999;
+		}
+		p {
+			font-size: 14px;
+			margin: 0 !important;
+		}
+	}
+}
+
+.pre-connect {
+	padding-left: 100px;
+	position: relative;
+	&:before {
+		content: '';
+		width: 60px;
+		left: 0;
+		top: 50px;
+		width: 100px;
+		border-bottom: 1px dotted #999;
+		position: absolute;
+	}
+	&:after {
+		content: '';
+		width: 10px;
+		height: 10px;
+		.border-radius(100%);
+		background: rgba(0,0,0,0.1);
+		top: 50px;
+		margin-top: -5px;
+		left: -3px;
+		position: absolute;
+	}
+}
+
 #mastfoot {
 	position: fixed;
 	bottom: 20px;

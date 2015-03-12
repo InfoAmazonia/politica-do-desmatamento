@@ -107,6 +107,38 @@ app.config(require('./config'))
 	}
 ])
 
+.directive('ytAudio', [
+	function() {
+		return {
+			restrict: 'E',
+			scope: {
+				id: '@videoId',
+				title: '@',
+				content: '@'
+			},
+			templateUrl: '/views/includes/audio.html',
+			link: function(scope, element, attrs) {
+
+				scope.$on('youtube.player.ready', function(ev, player) {
+					if(player.id == 'audio-' + scope.id) {
+						player.setVolume(100);
+						scope.play = function() {
+							player.playVideo();
+							scope.playing = true
+						}
+						scope.pause = function() {
+							player.pauseVideo();
+							scope.playing = false;
+						}
+						$(element).find('iframe').hide();
+					}
+				});
+
+			}
+		}
+	}
+])
+
 .directive('gpti', [
 	function() {
 
@@ -139,7 +171,8 @@ app.config(require('./config'))
 			});
 
 		}
-	}])
+	}
+])
 
 .directive('eixosSummary', [
 	function() {
@@ -236,7 +269,8 @@ app.config(require('./config'))
 		 */
 		var videoLoop = false;
 		$scope.$on('youtube.player.ready', function(event, player) {
-			$scope.player = player;
+			if(player.id == 'video')
+				$scope.player = player;
 		});
 
 		$scope.currentTime = -1;
@@ -433,8 +467,10 @@ app.config(require('./config'))
 
 			if(!$scope.player) {
 				$scope.$on('youtube.player.ready', function(event, player) {
-					$scope.player = player;
-					set(player);
+					if(player.id == 'video') {
+						$scope.player = player;
+						set(player);
+					}
 				});
 			} else {
 				set($scope.player);
