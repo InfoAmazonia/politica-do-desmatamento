@@ -107,6 +107,91 @@ app.config(require('./config'))
 	}
 ])
 
+.directive('gpti', [
+	function() {
+
+		return {
+			restrict: 'A',
+			transclude: true,
+			templateUrl: '/views/includes/gpti.html',
+			link: link
+		};
+
+		function link(scope, element, attrs, _c, transclude) {
+
+			$('#gpti').hide();
+
+			$(element).on('mouseover', function() {
+				$('#gpti').show();
+				$(element).addClass('hover');
+			});
+
+			$(element).on('mouseleave', function() {
+				$(element).removeClass('hover');
+				setTimeout(function() {
+					if(!$(element).hasClass('hover'))
+						$('#gpti').hide();
+				}, 500);
+			});
+
+			element.on('$destroy', function() {
+				$('#gpti').remove();
+			});
+
+		}
+	}])
+
+.directive('eixosSummary', [
+	function() {
+
+		return {
+			restrict: 'E',
+			templateUrl: '/views/includes/eixos-summary.html',
+			link: function(scope, element, attrs) {
+
+				$(element).find('header li').on('mouseenter', function() {
+
+					var eixo = $(this).attr('class');
+
+					// reset
+					$(element).find('.eixo-content').removeClass('expand');
+					$(element).find('header li h3').removeClass('active');
+
+					$(this).addClass('hover');
+					$(this).find('h3').addClass('active');
+
+					$(element).find('.eixos-summary').addClass('hovering');
+					var $content = $(this).parents('.eixos-summary').find('.eixos-content li.' + eixo + ' .eixo-content');
+
+					$content.addClass('expand');
+
+				});
+
+				$(element).find('.eixo-content').on('mouseover', function() {
+					$(this).addClass('hover');
+				});
+
+				$(element).find('.eixo-content').on('mouseleave', function() {
+					$(this).removeClass('hover');
+				});
+
+				$(element).find('header li, .eixo-content').on('mouseleave', function() {
+					$('header li').removeClass('hover');
+					setTimeout(function() {
+						if(!$(element).find('.expand').is('.hover') && !$('header li').is('.hover')) {
+							$(element).find('.eixos-summary').removeClass('hovering');
+							$(element).find('.eixo-content').removeClass('expand');
+							$(element).find('header li h3').removeClass('active');
+						}
+					}, 1000);
+				});
+
+			}
+		}
+
+	}
+])
+
 .directive('tooltip', [
 	function() {
 
@@ -178,7 +263,7 @@ app.config(require('./config'))
 			}
 		};
 
-		$scope.mute = false;
+		$scope.mute = true;
 
 		$scope.playVideo = function() {
 			if($scope.player) {
