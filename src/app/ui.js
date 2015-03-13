@@ -34,6 +34,10 @@ $(document).ready(function() {
 			$player.width(width).height(pHeight).css({left: 0, top: (height - pHeight) / 2}); // player height is greater, offset top; reset left
 		}
 
+		if($('#timeline-nav').hasClass('fixed')) {
+			$(window).scrollTop($(window).height());
+		}
+
 	}
 
 	$(window).resize(resize).resize();
