@@ -342,6 +342,73 @@ img {
 	}
 }
 
+#lulavsdilma {
+	.info {
+		background: #f9f9f9;
+		padding: 40px 0;
+		position: relative;
+		border-top: 1px solid #999;
+		&:before {
+			content: 'x';
+			font-style: italic;
+			position: absolute;
+			top: 40px;
+			left: 50%;
+			margin-left: -50px;
+			color: #eee;
+			font-size: 200px;
+			line-height: 200px;
+			pointer-events: none;
+		}
+		.ilust-container {
+			width: 255px;
+			height: 300px;
+		}
+		.ilust {
+			height: 300px;
+			width: auto;
+			margin: 0 auto;
+			display: block
+		}
+		.label {
+			color: #666;
+			font-size: 16px !important;
+		}
+		.number {
+			font-size: 40px !important;
+			font-style: italic;
+			font-weight: 600;
+		}
+		.lula {
+			.ilust-container {
+				float: left;
+			}
+		}
+		.dilma {
+			text-align: right;
+			.ilust-container {
+				float: right;
+			}
+		}
+	}
+	.graph {
+		.bars {
+			width: 50%;
+			margin: -100px auto 0;
+			text-align: center;
+			.bar {
+				display: inline-block;
+				width: 25%;
+				margin: 0 40px;
+				.bar-item {
+					background: #ccc;
+					border-top: 1px solid #999;
+				}
+			}
+		}
+	}
+}
+
 #analise {
 	margin: 180px 0 0;
 	h3 {
