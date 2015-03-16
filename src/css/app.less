@@ -1344,14 +1344,37 @@ a.play-video {
 }
 
 .yt-audio {
+	display: inline;
+	position: relative;
+	.yt-audio-text {
+		font-weight: 600;
+		border-bottom: 1px dotted #aaa;
+	}
+	.yt-audio-container {
+		position: absolute;
+		left: 100%;
+		top: -20px;
+		width: 200px;
+		margin-left: 100px;
+		border-left: 1px dotted #aaa;
+		padding-left: 20px;
+		&:before {
+			position: absolute;
+			content: '';
+			width: 100px;
+			height: 0px;
+			left: -101px;
+			border-bottom: 1px dotted #aaa;
+			top: 48px;
+		}
+	}
 	.controllers {
-		float:left;
-		margin: 0 40px 0 0;
+		margin: 0;
 		background: #f0f0f0;
 		.border-radius(100%);
 		text-align: center;
 		width: 100px;
-		height: 100px;	
+		height: 100px;
 		a {
 			font-size: 60px;
 			line-height: 100px;
@@ -1380,28 +1403,55 @@ a.play-video {
 	}
 }
 
-.pre-connect {
-	padding-left: 100px;
-	position: relative;
-	&:before {
-		content: '';
-		width: 60px;
-		left: 0;
-		top: 50px;
-		width: 100px;
-		border-bottom: 1px dotted #999;
-		position: absolute;
+h2 .yt-audio .yt-audio-container:before {
+	top: 67px;
+}
+
+.dark .yt-audio {
+	.yt-audio-container {
+		width: 300px;
+		&:before {
+			top: 56px;
+		}
 	}
-	&:after {
-		content: '';
-		width: 10px;
-		height: 10px;
-		.border-radius(100%);
-		background: rgba(0,0,0,0.1);
-		top: 50px;
-		margin-top: -5px;
-		left: -3px;
+	.controllers {
+		background: #444;
+		a {
+			color: #666;
+			&:hover {
+				color: #999;
+			}
+		}
+	}
+}
+
+p.big .yt-audio {
+	.yt-audio-container:before {
+
+	}
+	.controllers {
+
+	}
+}
+
+.yt-audio-left .yt-audio {
+	.yt-audio-container {
 		position: absolute;
+		left: auto;
+		right: 100%;
+		top: -20px;
+		width: 200px;
+		margin-left: 0;
+		margin-right: 100px;
+		border-left: 0;
+		border-right: 1px dotted #aaa;
+		padding-left: 0;
+		padding-right: 20px;
+		text-align: right !important;
+		&:before {
+			left: auto;
+			right: -101px;
+		}
 	}
 }
 

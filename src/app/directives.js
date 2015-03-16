@@ -40,14 +40,17 @@ angular.module('monitor')
 	'$interval',
 	function($interval) {
 		return {
-			restrict: 'E',
+			restrict: 'A',
 			scope: {
 				id: '@videoId',
 				title: '@',
 				content: '@'
 			},
+			transclude: true,
 			templateUrl: '/views/includes/audio.html',
 			link: function(scope, element, attrs) {
+
+				console.log($(element).find('.yt-audio').position().left);
 
 				scope.$on('youtube.player.ready', function(ev, player) {
 					if(player.id == 'audio-' + scope.id) {
