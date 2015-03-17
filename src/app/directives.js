@@ -44,17 +44,46 @@ angular.module('monitor')
 			scope: {
 				id: '@videoId',
 				title: '@',
-				content: '@'
+				content: '@',
+				left: '@ytAudioLeft',
+				debug: '@'
 			},
 			transclude: true,
 			templateUrl: '/views/includes/audio.html',
 			link: function(scope, element, attrs) {
+				var audioContainer = $(element).find('.yt-audio-container');
 
-				console.log($(element).find('.yt-audio').position().left);
+				var sizing = function() {
+					var position = $(element).find('.yt-audio').position();
+					audioContainer.css({
+						top: position.top
+					});
+
+					if(scope.left) {
+						audioContainer.css({
+							left: 0
+						});
+					} else {
+						audioContainer.css({
+							right: 0
+						});
+					}
+				}
+
+				sizing();
+				$(window).resize(sizing);
+
+				$(window).load(sizing);
+
+				if(scope.left) 
+					$(element).find('.yt-audio').addClass('yt-audio-left');
+
+				if(scope.debug)
+					console.log($(element).find('.yt-audio').position());
 
 				scope.$on('youtube.player.ready', function(ev, player) {
 					if(player.id == 'audio-' + scope.id) {
-						player.setVolume(0);
+						player.setVolume(100);
 						scope.play = function() {
 							player.playVideo();
 							scope.playing = true;

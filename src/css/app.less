@@ -31,6 +31,15 @@ img {
 	height: auto;
 }
 
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
 #masthead {
 	position: absolute;
 	top: 6%;
@@ -378,7 +387,7 @@ img {
 			font-size: 16px !important;
 		}
 		.number {
-			font-size: 40px !important;
+			font-size: 32px !important;
 			font-style: italic;
 			font-weight: 600;
 		}
@@ -1345,25 +1354,30 @@ a.play-video {
 
 .yt-audio {
 	display: inline;
-	position: relative;
+	// position: relative;
+	// &.non-relative {
+	// 	position: static;
+	// }
+	iframe {
+		display: none !important;
+	}
 	.yt-audio-text {
 		font-weight: 600;
 		border-bottom: 1px dotted #aaa;
 	}
 	.yt-audio-container {
 		position: absolute;
-		left: 100%;
-		top: -20px;
+		margin-top: -20px;
 		width: 200px;
-		margin-left: 100px;
+		margin-right: 0;
 		border-left: 1px dotted #aaa;
 		padding-left: 20px;
 		&:before {
 			position: absolute;
 			content: '';
-			width: 100px;
+			width: 220px;
 			height: 0px;
-			left: -101px;
+			left: -221px;
 			border-bottom: 1px dotted #aaa;
 			top: 48px;
 		}
@@ -1403,6 +1417,25 @@ a.play-video {
 	}
 }
 
+.yt-audio.yt-audio-left {
+	.yt-audio-container {
+		margin-right: 0;
+		margin-left: 0;
+		border-left: 0;
+		border-right: 1px dotted #aaa;
+		padding-left: 0;
+		padding-right: 20px;
+		text-align: right !important;
+		&:before {
+			left: auto;
+			right: -221px;
+		}
+	}
+	.controllers {
+		float: right;
+	}
+}
+
 h2 .yt-audio .yt-audio-container:before {
 	top: 67px;
 }
@@ -1421,36 +1454,6 @@ h2 .yt-audio .yt-audio-container:before {
 			&:hover {
 				color: #999;
 			}
-		}
-	}
-}
-
-p.big .yt-audio {
-	.yt-audio-container:before {
-
-	}
-	.controllers {
-
-	}
-}
-
-.yt-audio-left .yt-audio {
-	.yt-audio-container {
-		position: absolute;
-		left: auto;
-		right: 100%;
-		top: -20px;
-		width: 200px;
-		margin-left: 0;
-		margin-right: 100px;
-		border-left: 0;
-		border-right: 1px dotted #aaa;
-		padding-left: 0;
-		padding-right: 20px;
-		text-align: right !important;
-		&:before {
-			left: auto;
-			right: -101px;
 		}
 	}
 }

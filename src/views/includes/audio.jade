@@ -5,6 +5,7 @@
 			a.icon-play(href="javascript:void(0);" ng-click="play()" ng-hide="playing" title="Tocar")
 			a.icon-pause(href="javascript:void(0);" ng-click="pause()" ng-show="playing" title="Pausar")
 		youtube-video(player-id="audio-{{id}}" video-id="id")
+		.clear
 		.description
 			h3 {{title}}
 			p(ng-show="content") {{content}}
