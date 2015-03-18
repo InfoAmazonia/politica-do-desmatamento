@@ -46,7 +46,7 @@ angular.module('monitor')
 				title: '@',
 				content: '@',
 				left: '@ytAudioLeft',
-				debug: '@'
+				block: '@'
 			},
 			transclude: true,
 			templateUrl: '/views/includes/audio.html',
@@ -70,10 +70,14 @@ angular.module('monitor')
 					}
 				}
 
-				sizing();
-				$(window).resize(sizing);
+				if(!scope.block) {
+					sizing();
+					$(window).resize(sizing);
+					$(window).load(sizing);
+				}
 
-				$(window).load(sizing);
+				if(scope.block)
+					$(element).find('.yt-audio').addClass('yt-audio-block');
 
 				if(scope.left) 
 					$(element).find('.yt-audio').addClass('yt-audio-left');

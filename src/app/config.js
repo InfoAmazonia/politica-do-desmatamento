@@ -34,9 +34,17 @@ module.exports = [
 				url: 'metodologia/',
 				templateUrl: '/views/analise/metodologia.html'
 			})
-			.state('analise.mapa', {
-				url: 'mapa/',
-				templateUrl: '/views/analise/map.html'
+			.state('analise.fase1', {
+				url: 'fase-1',
+				templateUrl: '/views/analise/fase-1.html'
+			})
+			.state('analise.fase2', {
+				url: 'fase-2',
+				templateUrl: '/views/analise/fase-2.html'
+			})
+			.state('analise.fase3', {
+				url: 'fase-3',
+				templateUrl: '/views/analise/fase-3.html'
 			})
 			.state('analise.timeline', {
 				url: ':year/',

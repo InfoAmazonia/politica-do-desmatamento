@@ -255,6 +255,9 @@ img {
 		h3 {
 			font-size: 20px;
 			margin: 0 0 20px;
+			text-transform: uppercase;
+			font-weight: 600;
+			color: #999;
 		}
 		.author {
 			color: #999;
@@ -348,9 +351,75 @@ img {
 	}
 	p.featured {
 		font-size: 28px;
+		padding: 20px;
+		background: #F5F06E;
+	}
+	.featured-understand {
+		margin-top: 60px;
+		margin-bottom: 60px;
+		position: relative;
+		padding: 20px;
+		border: 1px dotted #d0d0d0;
+		&:before {
+			content: '';
+			position: absolute;
+			top: -40px;
+			width: 142px;
+			left: -42px;
+			height: 0;
+			border-bottom: 1px dotted #d0d0d0;
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			top: -40px;
+			left: 100px;
+			width: 0;
+			height: 40px;
+			border-left: 1px dotted #d0d0d0;
+		}
+		h3 {
+			position: absolute;
+			top: -40px;
+			left: 120px;
+		}
 	}
 	p.italic {
 		font-style: italic;
+	}
+	.graph {
+
+	.graph-legend {
+		font-size: 16px;
+		color: #666;
+		span {
+			margin-right: 20px;
+			&:before {
+				content: '';
+				display: inline-block;
+				width: 15px;
+				height: 15px;
+				.border-radius(3px);
+				background: #333;
+				margin-right: 5px;
+			}
+			&.ordenamento:before {
+				background: @ordenamento;
+			}
+			&.monitoramento:before {
+				background: @monitoramento;
+			}
+			&.fomento:before {
+				background: @fomento;
+			}
+			&.lula:before {
+				background: #399914;
+			}
+			&.dilma:before {
+				background: #b5d9a8;
+			}
+		}
+	}
 	}
 }
 
@@ -528,7 +597,7 @@ img {
 }
 
 #analise {
-	margin: 180px 0 0;
+	margin: 0;
 	h3 {
 		font-family: "Playfair Display", sans-serif;
 		margin: 10px 0;
@@ -1202,6 +1271,9 @@ a.play-video {
 					position: relative;
 					border-bottom-width: 2px;
 					border-bottom-style: solid;
+					color: #333;
+					text-transform: none;
+					font-weight: 400;
 					&:hover,
 					&.active {
 						z-index: 2;
@@ -1354,16 +1426,31 @@ a.play-video {
 
 .yt-audio {
 	display: inline;
-	// position: relative;
-	// &.non-relative {
-	// 	position: static;
-	// }
 	iframe {
 		display: none !important;
 	}
 	.yt-audio-text {
 		font-weight: 600;
 		border-bottom: 1px dotted #aaa;
+	}
+	&.yt-audio-block {
+		.yt-audio-container {
+			position: static;
+			margin-top: 0;
+			width: auto;
+			border: 0;
+			&:before {
+				width: 0;
+				border: 0;
+			}
+			.controllers {
+				float: left;
+				margin-right: 40px;
+			}
+			.clear {
+				display: none;
+			}
+		}
 	}
 	.yt-audio-container {
 		position: absolute;
@@ -1409,6 +1496,8 @@ a.play-video {
 			font-size: 16px;
 			margin: 0 !important;
 			color: #999;
+			font-weight: 400 !important;
+			text-transform: none !important;
 		}
 		p {
 			font-size: 14px;
