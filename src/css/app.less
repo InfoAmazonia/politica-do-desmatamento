@@ -356,6 +356,9 @@ img {
 		font-size: 28px;
 		padding: 20px;
 		background: #F5F06E;
+		&.actions-title {
+			padding-left: 35%;
+		}
 	}
 	.featured-understand {
 		margin-top: 60px;
@@ -391,38 +394,90 @@ img {
 		font-style: italic;
 	}
 	.graph {
-
-	.graph-legend {
-		font-size: 16px;
-		color: #666;
-		span {
-			margin-right: 20px;
-			&:before {
-				content: '';
-				display: inline-block;
-				width: 15px;
-				height: 15px;
-				.border-radius(3px);
-				background: #333;
-				margin-right: 5px;
-			}
-			&.ordenamento:before {
-				background: @ordenamento;
-			}
-			&.monitoramento:before {
-				background: @monitoramento;
-			}
-			&.fomento:before {
-				background: @fomento;
-			}
-			&.lula:before {
-				background: #399914;
-			}
-			&.dilma:before {
-				background: #b5d9a8;
+		.graph-legend {
+			font-size: 16px;
+			color: #666;
+			span {
+				margin-right: 20px;
+				&:before {
+					content: '';
+					display: inline-block;
+					width: 15px;
+					height: 15px;
+					.border-radius(3px);
+					background: #333;
+					margin-right: 5px;
+				}
+				&.ordenamento:before {
+					background: @ordenamento;
+				}
+				&.monitoramento:before {
+					background: @monitoramento;
+				}
+				&.fomento:before {
+					background: @fomento;
+				}
+				&.lula:before {
+					background: #399914;
+				}
+				&.dilma:before {
+					background: #b5d9a8;
+				}
 			}
 		}
 	}
+	.tendency-table {
+		width: 100%;
+		font-size: 22px;
+		thead {
+			font-weight: 600;
+			border-bottom: 1px solid #444;
+			td {
+				font-size: 18px !important;
+				color: #999;
+			}
+		}
+		td {
+			border-left: 1px solid #555;
+			padding: 20px;
+			text-align: left;
+			[class^="icon-"], [class*=" icon-"] {
+				margin-left: 20px;
+				&.up {
+					color: green;
+				}
+				&.down {
+					color: red;
+				}
+				&.right {
+					color: yellow;
+				}
+			}
+			&:first-child {
+				padding-left: 0;
+				border-left: 0;
+			}
+			&.year {
+				width: 25%;
+				text-align: right;
+				font-weight: 600;
+				font-size: 30px;
+			}
+			&.index {
+				width: 25%;
+				font-size: 28px;
+				font-weight: 600;
+			}
+		}
+	}
+	p.action {
+		font-weight: 600;
+		.action-name {
+			color: #999;
+			font-style: italic;
+			display:block;
+			font-weight: 400;
+		}
 	}
 }
 
@@ -1530,6 +1585,10 @@ a.play-video {
 
 h2 .yt-audio .yt-audio-container:before {
 	top: 67px;
+}
+
+p.featured .yt-audio .yt-audio-container:before {
+	top: 59px;
 }
 
 .dark .yt-audio {
