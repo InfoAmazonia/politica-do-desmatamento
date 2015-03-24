@@ -90,6 +90,12 @@ html(lang='pt-BR')
 								span.menu-name Conheça nossa análise
 								span.title Análise
 							.sub-nav
+								.back
+									a(ui-sref="timeline({year: '2005'})")
+										span.icon-rewind &nbsp;
+										| Voltar
+										span.tip
+											span.title Linha do tempo
 								.pages
 									a(ui-sref="analise") Introdução
 									a(ui-sref="analise.results") Principais resultados

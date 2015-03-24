@@ -5,6 +5,7 @@ section#fase-3.page.top.flat
 
 	.container.row
 		.six.columns.offset-by-three
+			h3 3ª fase
 			h2 O desafio é fomentar a prática de atividades sustentáveis
 			p 
 				span(yt-audio video-id="W4eXhMp0vFY" title="Mauro Oliveira Pires" content='"Comando e controle não é suficiente para evitar o desmatamento"') De acordo com o Ministério do Meio Ambiente
@@ -19,9 +20,10 @@ section#fase-3.page.top.flat
 		.row
 			cartodb(map-id="teste" base-layer="http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" user="infoamazonia" sql="SELECT * from unidades_de_conservacao" cartocss='#layer{polygon-opacity:.7;line-color:#FFF;line-width:.5;line-opacity:1} #layer[categori3="Reserva Particular do Patrimônio Natural"]{polygon-fill:#A6CEE3} #layer[categori3="Parque"]{polygon-fill:#1F78B4} #layer[categori3="Área de Proteção Ambiental"]{polygon-fill:#B2DF8A} #layer[categori3="Floresta"]{polygon-fill:#33A02C} #layer[categori3="Reserva Extrativista"]{polygon-fill:#FB9A99} #layer[categori3="Estação Ecológica"]{polygon-fill:#E31A1C} #layer[categori3="Reserva Biológica"]{polygon-fill:#FDBF6F} #layer[categori3="Área de Relevante Interesse Ecológico"]{polygon-fill:#FF7F00} #layer[categori3="Monumento Natural"]{polygon-fill:#CAB2D6} #layer[categori3="Reserva de Desenvolvimento Sustentável"]{polygon-fill:#6A3D9A} #layer{polygon-fill:#DDD}' interactivity="categori3,nome_org12,nome_uc1,ano_cria6")
 
-	.container.row
-		.six.columns.offset-by-three
-			h2 1. Eixo Ordenamento Fundiário e Territorial
+	.eixo-title.ordenamento
+		.container
+			.six.columns.offset-by-three
+				h2 1. Eixo Ordenamento Fundiário e Territorial
 
 	.dark.row
 		.container
@@ -116,9 +118,10 @@ section#fase-3.page.top.flat
 			p Em 2014, os recursos autorizados foram de 2,1 milhões de reais – o valor gasto foi inferior a 2% (36 mil reais). Em 2013, quando apenas 214,5 mil reais foram autorizados pelo Congresso, a quantia liquidada foi de 19 mil reais (9% do total).
 			p Em 2014, nada foi gasto nessa atividade, apesar do mais de 4 milhões de reais disponíveis.
 
-	.container.row
-		.six.columns.offset-by-three
-			h2 2. Eixo Monitoramento e Controle Ambiental
+	.eixo-title.monitoramento
+		.container
+			.six.columns.offset-by-three
+				h2 2. Eixo Monitoramento e Controle Ambiental
 
 	.dark.row
 		.container
@@ -213,9 +216,10 @@ section#fase-3.page.top.flat
 			p No ano de 2012, 25,7 milhões de reais foram autorizados e 23,4 milhões gastos (91%).
 			p Ano após ano, os incêndios consomem milhares de quilômetros de florestas, emitindo muitos gases que aquecem o planeta, mas nem sequer os fundos destinados pelo Congresso Nacional são efetivamente gastos, em razão do contingenciamento dos recursos, da baixa prioridade que esse tema recebe ao longo do tempo e das fragilidades institucionais impostas aos órgãos ambientais.
 
-	.container.row
-		.six.columns.offset-by-three
-			h2 3. Eixo Fomento às Atividades Sustentáveis
+	.eixo-title.fomento
+		.container
+			.six.columns.offset-by-three
+				h2 3. Eixo Fomento às Atividades Sustentáveis
 
 	.dark.row
 		.container

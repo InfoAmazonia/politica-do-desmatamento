@@ -332,6 +332,7 @@ img {
 		background: #333;
 		padding: 60px 0;
 		color: #f0f0f0;
+		border-bottom: 10px solid #111;
 		p {
 			color: #f0f0f0;
 			strong {
@@ -477,6 +478,23 @@ img {
 			font-style: italic;
 			display:block;
 			font-weight: 400;
+		}
+	}
+	.eixo-title {
+		padding: 60px 0;
+		border-top: 10px solid rgba(0,0,0,0.2);
+		h2 {
+			color: #fff;
+			margin: 0;
+		}
+		&.ordenamento {
+			background: @ordenamento;
+		}
+		&.monitoramento {
+			background: @monitoramento;
+		}
+		&.fomento {
+			background: @fomento;
 		}
 	}
 }
@@ -1050,6 +1068,7 @@ a.play-video {
 					display: block;
 				}
 				a.label {
+					display: none;
 					color: #ccc;
 					background: #111;
 					text-align: left;
@@ -1101,6 +1120,14 @@ a.play-video {
 			.sub-nav {
 				float: left;
 				display: block;
+				.back {
+					a {
+						font-weight: 600;
+						padding-left: 0;
+						color: #fff;
+						z-index: 2;
+					}
+				}
 				a {
 					width: auto;
 					display: block;
@@ -1111,6 +1138,40 @@ a.play-video {
 					padding: 10px 15px;
 					font-size: 14px;
 					font-weight: normal;
+					.transition(all .5s linear);
+					.tip {
+						display: none;
+						position: absolute;
+						left: 100%;
+						background: #f0f0f0;
+						color: #333;
+						width: 150px;
+						top: 10px;
+						pointer-events: none;
+						padding: 3px 8px;
+						font-size: 80%;
+						.year {
+							font-weight: 800;
+						}
+						&:before {
+							content: '';
+							position: absolute;
+							width: 10px;
+							height: 10px;
+							.transform(rotate(45deg));
+							left: -5px;
+							top: 50%;
+							margin-top: -5px;
+							background: #f0f0f0;
+						}
+					}
+					&:hover {
+						z-index: 2;
+						color: #fff;
+						.tip {
+							display: block;
+						}
+					}
 				}
 				> * {
 					float: left;
@@ -1133,36 +1194,7 @@ a.play-video {
 						position: relative;
 						.transition(all .5s linear);
 						.tip {
-							display: none;
-							position: absolute;
-							left: 100%;
-							background: #f0f0f0;
-							color: #333;
-							width: 150px;
 							top: 17px;
-							pointer-events: none;
-							padding: 3px 8px;
-							font-size: 80%;
-							.year {
-								font-weight: 800;
-							}
-							&:before {
-								content: '';
-								position: absolute;
-								width: 10px;
-								height: 10px;
-								.transform(rotate(45deg));
-								left: -5px;
-								top: 50%;
-								margin-top: -5px;
-								background: #f0f0f0;
-							}
-						}
-						&:hover {
-							z-index: 2;
-							.tip {
-								display: block;
-							}
 						}
 						&:after {
 							.transition(all .5s linear);
