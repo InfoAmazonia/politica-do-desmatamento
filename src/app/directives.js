@@ -82,9 +82,6 @@ angular.module('monitor')
 				if(scope.left) 
 					$(element).find('.yt-audio').addClass('yt-audio-left');
 
-				if(scope.debug)
-					console.log($(element).find('.yt-audio').position());
-
 				scope.$on('youtube.player.ready', function(ev, player) {
 					if(player.id == 'audio-' + scope.id) {
 						player.setVolume(100);
