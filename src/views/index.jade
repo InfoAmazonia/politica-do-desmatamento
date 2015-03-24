@@ -23,7 +23,7 @@ html(lang='pt-BR')
 							img(src="/img/ia-white.png" alt="InfoAmazonia")
 
 					nav(ng-show="initialized")
-						a(ui-sref="analise.metodologia") Metodologia
+						a(ui-sref="metodologia") Metodologia
 						a(ui-sref="equipe") Saiba mais
 
 					h1
@@ -106,17 +106,12 @@ html(lang='pt-BR')
 										span.tip
 											span.title Terceira fase do PPCDAm
 											span.year 2012-2015
-								//
-									.pages
-										a(ui-sref="analise.metodologia") Metodologia
-										a(ui-sref="analise.mapa") Mapa
-								.timeline.last
-									a(ui-sref="timeline({year: '2020'})") Futuro
+								.pages
+									a(ui-sref="analise.timeline({year: '2020'})") Conclusão
+				//
 					nav.post
 						.nav-content
-							//
-								a(ui-sref="timeline({year: '2015'})") 2015
-							a(ui-sref="timeline({year: '2020'})") 2020
+							a(ui-sref="analise.timeline({year: '2020'})") 2020
 		footer#mastfoot
 
 			a.twitter-share-button(href="https://twitter.com/share" data-url="http://desmatamento.infoamazonia.org/" data-via="infoamazonia" data-text="A Política de Desmatamento: linha do tempo multimídia sobre a destruição da Amazônia") Tweet

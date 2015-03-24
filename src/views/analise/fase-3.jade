@@ -11,13 +11,13 @@ section#fase-3.page.top.flat
 				| , desde o ano de 2004, quando o PPCDAm foi implementado, "o eixo Monitoramento e Controle tem sido reconhecido em avaliações independentes como o que mais evoluiu". Consequentemente, trata-se daquele com maior participação na redução de quase 77% na taxa de desmatamento entre 2004 (27.772 km²) e 2011 (6.418 km²).
 			p Em parte, o bom funcionamento desse componente deve-se às melhorias nos sistemas de monitoramento via satélite da cobertura florestal da Amazônia Legal: o Prodes e, principalmente, o Deter. Na outra ponta estão os trabalhos de fiscalização e controle, que visam desarticular os agentes do desmatamento ilegal. Sem investimentos adequados no eixo Fomento, a experiência dos últimos anos indica que o atual patamar do desmate não deverá sofrer reduções significativas, comprometendo, portanto, a meta de 2020.
 			p Assim sendo, é possível dizer que os principais desafios relacionados à terceira fase são: a baixa viabilidade das cadeias produtivas que constituem alternativas ao desmatamento, a expansão desordenada da agropecuária, a baixa produção madeireira sustentável, as atividades produtivas dos assentamentos não compatíveis com a legislação ambiental e a degradação florestal e do solo amazônico. Em outras palavras, a exploração predatória dos recursos naturais precisa deixar de ser a única alternativa viável para os habitantes do interior da Amazônia. Por enquanto, cadeias produtivas sustentáveis e geradoras de renda e emprego não são realidade na região.
+	//
+		.container
+			.twelve.columns
+				h3 TESTANDO MAPA
 
-	.container
-		.twelve.columns
-			h3 Dermacação de áreas protegidas e terras indígenas entre 2009 e 2011
-
-	.row
-		iframe(src='http://cardume.cartodb.com/viz/5f7e5aa4-816b-11e4-8e7e-0e9d821ea90d/embed_map' allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen)
+		.row
+			cartodb(map-id="teste" base-layer="http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" user="infoamazonia" sql="SELECT * from unidades_de_conservacao" cartocss='#layer{polygon-opacity:.7;line-color:#FFF;line-width:.5;line-opacity:1} #layer[categori3="Reserva Particular do Patrimônio Natural"]{polygon-fill:#A6CEE3} #layer[categori3="Parque"]{polygon-fill:#1F78B4} #layer[categori3="Área de Proteção Ambiental"]{polygon-fill:#B2DF8A} #layer[categori3="Floresta"]{polygon-fill:#33A02C} #layer[categori3="Reserva Extrativista"]{polygon-fill:#FB9A99} #layer[categori3="Estação Ecológica"]{polygon-fill:#E31A1C} #layer[categori3="Reserva Biológica"]{polygon-fill:#FDBF6F} #layer[categori3="Área de Relevante Interesse Ecológico"]{polygon-fill:#FF7F00} #layer[categori3="Monumento Natural"]{polygon-fill:#CAB2D6} #layer[categori3="Reserva de Desenvolvimento Sustentável"]{polygon-fill:#6A3D9A} #layer{polygon-fill:#DDD}' interactivity="categori3,nome_org12,nome_uc1,ano_cria6")
 
 	.container.row
 		.six.columns.offset-by-three

@@ -301,6 +301,7 @@ module.exports = [
 	{
 		title: 2020,
 		slug: 2020,
+		moreInfo: '/views/analise/conclusao.html',
 		videoSettings: {
 			videoId: '8mU4oUK8gdc',
 			introTime: 21

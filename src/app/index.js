@@ -1,5 +1,7 @@
 'use strict';
 
+L.mapbox.accessToken = 'pk.eyJ1IjoibWlndWVscGVpeGUiLCJhIjoiVlc0WWlrQSJ9.pIPkSx25w7ossO6rZH9Tcw';
+
 require('./ui');
 
 var timelineData = require('./data');
@@ -132,7 +134,7 @@ app.config(require('./config'))
 			}
 		};
 
-		$scope.mute = true;
+		$scope.mute = false;
 
 		$scope.playVideo = function() {
 			if($scope.player) {
@@ -398,14 +400,20 @@ app.config(require('./config'))
 					}
 				}
 
-				if(toState.name == 'equipe') {
+				if(
+					(fromState.name == 'equipe' && toState.name != 'metodologia') || 
+					(fromState.name == 'metodologia' && toState.name != 'equipe')
+				) {
+					$('#timeline-nav').show().animo({animation: 'fadeInUp', duration: 0.5, keep: true});
+				}
+
+				if(
+					(toState.name == 'equipe' && fromState.name != 'metodologia') || 
+					(toState.name == 'metodologia' && fromState.name != 'equipe')
+				) {
 					$('#timeline-nav').animo({animation: 'fadeOutDown', duration: 0.5, keep: true}, function() {
 						$('#timeline-nav').hide();
 					});
-				}
-
-				if(fromState.name == 'equipe') {
-					$('#timeline-nav').show().animo({animation: 'fadeInUp', duration: 0.5, keep: true});
 				}
 
 			}

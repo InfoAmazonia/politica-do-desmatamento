@@ -30,26 +30,26 @@ module.exports = [
 				url: 'results/',
 				templateUrl: '/views/analise/results.html'
 			})
-			.state('analise.metodologia', {
-				url: 'metodologia/',
-				templateUrl: '/views/analise/metodologia.html'
-			})
 			.state('analise.fase1', {
-				url: 'fase-1',
+				url: 'fase-1/',
 				templateUrl: '/views/analise/fase-1.html'
 			})
 			.state('analise.fase2', {
-				url: 'fase-2',
+				url: 'fase-2/',
 				templateUrl: '/views/analise/fase-2.html'
 			})
 			.state('analise.fase3', {
-				url: 'fase-3',
+				url: 'fase-3/',
 				templateUrl: '/views/analise/fase-3.html'
 			})
 			.state('analise.timeline', {
 				url: ':year/',
 				controller: 'TimelineController',
 				templateUrl: '/views/analise/timeline.html'
+			})
+			.state('metodologia', {
+				url: '/metodologia/',
+				templateUrl: '/views/pages/metodologia.html'
 			})
 			.state('equipe', {
 				url: '/equipe/',
