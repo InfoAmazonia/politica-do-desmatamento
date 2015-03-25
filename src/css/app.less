@@ -497,6 +497,36 @@ img {
 			background: @fomento;
 		}
 	}
+	// map
+	.leaflet-container {
+		.map-tooltip-content {
+			font-size: 14px;
+			line-height: 18px;
+			p {
+				font-size: 14px;
+				line-height: 18px;
+			}
+		}
+		.map-legends {
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				li {
+					margin: 0;
+					padding: 0;
+					list-style: none;
+				}
+			}
+			.bullet {
+				display: inline-block;
+				.border-radius(100%);
+				width: 10px;
+				height: 10px;
+				margin-right: 5px;
+			}
+		}
+	}
 }
 
 #lulavsdilma {
@@ -1686,7 +1716,7 @@ p.featured .yt-audio .yt-audio-container:before {
 
 .interactive-map {
 	width: 100%;
-	height: 400px;
+	height: 500px;
 }
 
 @import "responsive.less";

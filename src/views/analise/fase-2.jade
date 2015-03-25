@@ -14,10 +14,13 @@ section#fase-2.page.top.flat
 
 	.container
 		.twelve.columns
-			h3 Dermacação de áreas protegidas e terras indígenas entre 2009 e 2011
+			h3 Demarcação de unidades de conservação e terras indígenas entre 2009 e 2011
+	//
+		.row
+			iframe(src='http://cardume.cartodb.com/viz/5f7e5aa4-816b-11e4-8e7e-0e9d821ea90d/embed_map' allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen)
 
-	.row
-		iframe(src='http://cardume.cartodb.com/viz/5f7e5aa4-816b-11e4-8e7e-0e9d821ea90d/embed_map' allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen)
+	.map-container(ng-controller="MapController")
+		cartodb(map-id="teste" base-layer="getBaseLayer()" layers="[getAmazLegalLayer(), getTILayer(2009, 2011), getUCLayer(2009, 2011)]" bounds-index="'2'")
 
 	.eixo-title.ordenamento
 		.container

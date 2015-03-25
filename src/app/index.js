@@ -75,6 +75,47 @@ app.config(require('./config'))
 	}
 ])
 
+.controller('MapController', [
+	'$scope',
+	function($scope) {
+
+		$scope.getBaseLayer = function() {
+			return 'https://{s}.tiles.mapbox.com/v3/infoamazonia.forest-height,infoamazonia.osm-brasil/{z}/{x}/{y}.png';
+		};
+
+		$scope.getAmazLegalLayer = function() {
+			return {
+				user: 'infoamazonia',
+				sql: 'SELECT * from amazlegal_br',
+				cartocss: '#layer {line-color: #0f0; line-width: 1; line-opacity: .8;}'
+			};
+		};
+
+		$scope.getUCLayer = function(startYear, endYear) {
+			return {
+				user: 'infoamazonia',
+				sql: 'SELECT unidades_de_conservacao.* from unidades_de_conservacao, amazlegal_br WHERE (unidades_de_conservacao.ano_cria6 >= ' + startYear + ' AND unidades_de_conservacao.ano_cria6 <= ' + endYear + ') AND amazlegal_br.cartodb_id = 1 AND ST_Intersects(unidades_de_conservacao.the_geom, amazlegal_br.the_geom)',
+				cartocss: '#layer{polygon-opacity:.7;line-color:#FFF;line-width:.5;line-opacity:1} #layer[categori3="Reserva Particular do Patrimônio Natural"]{polygon-fill:#A6CEE3} #layer[categori3="Parque"]{polygon-fill:#1F78B4} #layer[categori3="Área de Proteção Ambiental"]{polygon-fill:#B2DF8A} #layer[categori3="Floresta"]{polygon-fill:#33A02C} #layer[categori3="Reserva Extrativista"]{polygon-fill:#FB9A99} #layer[categori3="Estação Ecológica"]{polygon-fill:#E31A1C} #layer[categori3="Reserva Biológica"]{polygon-fill:#FDBF6F} #layer[categori3="Área de Relevante Interesse Ecológico"]{polygon-fill:#FF7F00} #layer[categori3="Monumento Natural"]{polygon-fill:#CAB2D6} #layer[categori3="Reserva de Desenvolvimento Sustentável"]{polygon-fill:#6A3D9A} #layer{polygon-fill:#DDD}',
+				interactivity: 'categori3,nome_org12,nome_uc1,ano_cria6',
+				template: '<p><strong>Categoria:</strong><br/>{{categori3}}</p><p><strong>Nome:</strong><br/>{{nome_uc1}}</p><p><strong>Ano de criação:</strong><br/>{{ano_cria6}}</p>',
+				legend: '<div class="cartodb-legend category"><ul><li><div class="bullet" style="background: #A6CEE3"></div>Reserva Particular do Patrimônio Natural</li><li><div class="bullet" style="background: #1F78B4"></div>Parque</li><li><div class="bullet" style="background: #B2DF8A"></div>Área de Proteção Ambiental</li><li><div class="bullet" style="background: #33A02C"></div>Floresta</li><li><div class="bullet" style="background: #FB9A99"></div>Reserva Extrativista</li><li><div class="bullet" style="background: #E31A1C"></div>Estação Ecológica</li><li><div class="bullet" style="background: #FDBF6F"></div>Reserva Biológica</li><li><div class="bullet" style="background: #FF7F00"></div>Área de Relevante Interesse Ecológico</li><li><div class="bullet" style="background: #CAB2D6"></div>Monumento Natural</li><li><div class="bullet" style="background: #6A3D9A"></div>Reserva de Desenvolvimento Sustentável</li><li><div class="bullet" style="background: #DDDDDD"></div>Others</li></ul></div>'
+			};	
+		};
+
+		$scope.getTILayer = function(startYear, endYear) {
+			return {
+				user: 'infoamazonia',
+				sql: "SELECT wdpa_brazil.* from wdpa_brazil, amazlegal_br WHERE wdpa_brazil.status_yr >= " + startYear + " AND wdpa_brazil.status_yr <= " + endYear + " AND amazlegal_br.cartodb_id = 1 AND ST_Intersects(wdpa_brazil.the_geom, amazlegal_br.the_geom) AND wdpa_brazil.desig = 'Terra Indígena' AND wdpa_brazil.status = 'Designated'",
+				cartocss: '#layer{polygon-fill:#0f0;polygon-opacity:.7;line-color:#fff;line-width:.5;line-opacity:1;}',
+				interactivity: 'name,status_yr',
+				template: '<p><strong>Categoria:</strong><br/>Território Indígena</p><p><strong>Nome:</strong><br/>{{name}}</p><p><strong>Ano de criação:</strong><br/>{{status_yr}}</p>',
+				legend: '<div class="cartodb-legend category"><ul><li><div class="bullet" style="background: #0f0"></div>Território Indígena</li></ul></div>'
+			};
+		};
+
+	}
+])
+
 .controller('SiteController', [
 	'Data',
 	'VideoService',

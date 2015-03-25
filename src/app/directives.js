@@ -190,7 +190,7 @@ angular.module('monitor')
 						tiles.tiles[0].replace('{s}', 'b'),
 						tiles.tiles[0].replace('{s}', 'c')
 					],
-					"template": '{{nome_org12}}'
+					"template": template
 				};
 			}
 		}
@@ -199,52 +199,100 @@ angular.module('monitor')
 ])
 
 .directive('cartodb', [
+	'$q',
 	'CartoDBService',
-	function(cdb) {
+	function($q, cdb) {
 		return {
 			restrict: 'E',
 			template: '<div id="map-test" class="interactive-map"></div>',
 			scope: {
+
 				mapId: '@',
-				user: '@',
-				sql: '@',
-				interactivity: '@',
-				cartocss: '@',
-				baseLayer: '@'
+
+				user: '=',
+				sql: '=',
+				interactivity: '=',
+				cartocss: '=',
+				baseLayer: '=',
+				template: '=',
+
+				layers: '=',
+				boundsIndex: '='
 			},
 			link: function(scope, element, attrs) {
 
 				cdb.count(true);
 
-				var map = L.map('map-test', {center: [0,0], zoom: 2});
+				var map = L.map('map-test', {center: [0,0], zoom: 2, scrollWheelZoom: false});
 
 				L.tileLayer(scope.baseLayer).addTo(map);
 
-				cdb.getTiles({
-					user: scope.user,
-					sql: scope.sql,
-					cartocss: scope.cartocss,
-					interactivity: scope.interactivity
-				}, function(tiles) {
+				var legendControl = L.mapbox.legendControl();
 
-					var tilejson = cdb.getTilejson(tiles);
+				map.addControl(legendControl);
 
-					var tileLayer = L.mapbox.tileLayer(tilejson);
-					var gridLayer = L.mapbox.gridLayer(tilejson);
+				if(scope.layers) {
 
-					map.addLayer(tileLayer);
-					map.addLayer(gridLayer);
+					_.each(scope.layers, function(layer) {
 
-					map.addControl(L.mapbox.gridControl(gridLayer));
+						if(layer.legend) {
+							legendControl.addLegend(layer.legend);
+						}
 
-				});
+						cdb.getTiles(layer, function(tiles) {
 
-				cdb.getBounds({
-					user: scope.user,
-					sql: scope.sql
-				}, function(bounds) {
-					map.fitBounds(bounds);
-				});
+							var tilejson = cdb.getTilejson(tiles, layer.template);
+
+							var tileLayer = L.mapbox.tileLayer(tilejson);
+							var gridLayer = L.mapbox.gridLayer(tilejson);
+
+							map.addLayer(tileLayer);
+							map.addLayer(gridLayer);
+
+							map.addControl(L.mapbox.gridControl(gridLayer));
+
+						});
+
+					});
+
+					if(scope.boundsIndex) {
+
+						cdb.getBounds({
+							user: scope.layers[scope.boundsIndex].user,
+							sql: scope.layers[scope.boundsIndex].sql
+						}, function(bounds) {
+							map.fitBounds(bounds);
+						});
+
+					}
+
+				} else {
+					cdb.getTiles({
+						user: scope.user,
+						sql: scope.sql,
+						cartocss: scope.cartocss,
+						interactivity: scope.interactivity
+					}, function(tiles) {
+
+						var tilejson = cdb.getTilejson(tiles, scope.template);
+
+						var tileLayer = L.mapbox.tileLayer(tilejson);
+						var gridLayer = L.mapbox.gridLayer(tilejson);
+
+						map.addLayer(tileLayer);
+						map.addLayer(gridLayer);
+
+						map.addControl(L.mapbox.gridControl(gridLayer));
+
+					});
+
+					cdb.getBounds({
+						user: scope.user,
+						sql: scope.sql
+					}, function(bounds) {
+						map.fitBounds(bounds);
+					});
+				}
 
 			}
 		}
