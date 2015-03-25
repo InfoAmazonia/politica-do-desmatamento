@@ -348,4 +348,17 @@ angular.module('monitor')
 		}
 
 	}
+])
+
+.directive('nextPage', [
+	function() {
+		return {
+			restrict: 'E',
+			scope: {
+				ref: '@',
+				title: '@'
+			},
+			templateUrl: '/views/includes/next-page.html'
+		}
+	}
 ]);

@@ -234,6 +234,12 @@ img {
 		position: relative;
 		font-size: 20px;
 		line-height: 150%;
+		&:after {
+			content: '';
+			display: block;
+			height: 60px;
+			width: 100%;
+		}
 		&.top {
 			padding-top: 0;
 		}
@@ -1717,6 +1723,33 @@ p.featured .yt-audio .yt-audio-container:before {
 .interactive-map {
 	width: 100%;
 	height: 500px;
+}
+
+.next-page-section {
+	.icon-fast-forward {
+		font-size: 60px;
+		float: right;
+		margin-left: 20px;
+		color: #999;
+		.transition(all .2s linear);
+	}
+	a {
+		text-align: right;
+		text-decoration: none;
+		font-size: 22px;
+		display: block;
+		.label {
+			display: block;
+			font-size: 14px;
+			text-transform: uppercase;
+			color: #999;
+		}
+	}
+	&:hover {
+		.icon-fast-forward {
+			color: #333;
+		}
+	}
 }
 
 @import "responsive.less";
