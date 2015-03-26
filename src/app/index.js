@@ -175,7 +175,7 @@ app.config(require('./config'))
 			}
 		};
 
-		$scope.mute = true;
+		$scope.mute = false;
 
 		$scope.playVideo = function() {
 			if($scope.player) {
