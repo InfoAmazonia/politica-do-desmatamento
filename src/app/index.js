@@ -30,8 +30,8 @@ app.config(require('./config'))
 		/*
 		 * Analytics
 		 */
-		$rootScope.$on('$stateChangeSuccess', function() {
-			if($window._gaq) {
+		$rootScope.$on('$stateChangeSuccess', function(ev, toState, toParams, fromState, fromParams) {
+			if($window._gaq && fromState.name) {
 				$window._gaq.push(['_trackPageview', $location.path()]);
 			}
 		});
