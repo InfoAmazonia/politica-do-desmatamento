@@ -14,6 +14,7 @@ html(lang='pt-BR')
 
 		.video-container
 			youtube-video(player-id="video" video-id="videoId" player-vars="videoVars" player-width="'100%'" player-height="'100%'")
+			.front-image(ng-hide="initialized")
 
 		header#masthead(ng-class="{middle:!initialized}")
 			.container
@@ -24,7 +25,7 @@ html(lang='pt-BR')
 
 					nav.mobile(ng-show="initialized")
 						span.label.icon-menu
-						.mobile-nav-content
+						.mobile-nav-content.clearfix
 							p.nav-title Linha do tempo
 							ul.nav-items.timeline-items.clearfix
 								li

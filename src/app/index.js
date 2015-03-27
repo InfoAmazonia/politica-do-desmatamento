@@ -66,7 +66,7 @@ app.config(require('./config'))
 				time = val;
 				return time;
 			},
-			ready: function(val) {
+			readyForNext: function(val) {
 				if(typeof val !== 'undefined')
 					readyForNext = val;
 				return readyForNext;
@@ -135,10 +135,12 @@ app.config(require('./config'))
 		$scope.videoId = 'bkhRoHQEzkA';
 		$scope.videoVars = {
 			controls: 0,
-			autoplay: 0,
+			autoplay: 1,
 			disablekb: 1,
 			fs: 0,
 			showinfo: 0,
+			rel: 0,
+			modestbranding: 1,
 			wmode: 'transparent'
 		};
 
@@ -154,7 +156,7 @@ app.config(require('./config'))
 		$scope.currentTime = -1;
 
 		$scope.$watch(function() {
-			return Video.ready();
+			return Video.readyForNext();
 		}, function(ready) {
 			$scope.readyForNext = ready;
 		});
@@ -295,9 +297,16 @@ app.config(require('./config'))
 
 			var set = function(player) {
 				Video.setTime(0);
-				Video.ready(false);
-				player.loadVideoById(id).playVideo();
+				Video.readyForNext(false);
+				player.loadVideoById(id);
 				player.unMute();
+
+				// setTimeout(function() {
+				// 	player.pauseVideo();
+				// 	setTimeout(function() {
+				// 		player.playVideo();
+				// 	}, 500);
+				// }, 500);
 
 				$(window).resize();
 
@@ -472,6 +481,7 @@ app.config(require('./config'))
 
 			$scope.initialized = true;
 			$state.go('timeline', { year: Data.get()[0].slug });
+			$scope.playVideo();
 
 		};
 
