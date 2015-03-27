@@ -459,22 +459,30 @@ app.config(require('./config'))
 					}
 				}
 
-				if(toState.name.indexOf('analise') !== -1) {
-					var heightOffset = 130;
-					if($(window).width() <= 770) {
-						heightOffset = 47;
-					} else {
-						$('#timeline-nav').addClass('analise');
-					}
-					$('html,body').animate({
-						scrollTop: $(window).height() - heightOffset
-					}, 1000);
-				} else {
-					$('#timeline-nav').removeClass('analise');
-					if(fromState.name.indexOf('analise') !== -1) {
+				if($(window).width() > 770) {
+					if(toState.name.indexOf('analise') !== -1) {
+						var heightOffset = 130;
+						if($(window).width() <= 770) {
+							heightOffset = 47;
+						} else {
+							$('#timeline-nav').addClass('analise');
+						}
 						$('html,body').animate({
-							scrollTop: 0
-						}, 500);
+							scrollTop: $(window).height() - heightOffset
+						}, 1000);
+					} else {
+						$('#timeline-nav').removeClass('analise');
+						if(fromState.name.indexOf('analise') !== -1) {
+							$('html,body').animate({
+								scrollTop: 0
+							}, 500);
+						}
+					}
+				} else {
+					if(toState.name.indexOf('timeline') == 0 || toState.name == 'home') {
+						$('#timeline-nav,#video-controls').show();
+					} else {
+						$('#timeline-nav,#video-controls').hide();
 					}
 				}
 

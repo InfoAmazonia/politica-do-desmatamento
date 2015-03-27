@@ -44,6 +44,10 @@
 }
 
 @media screen and (max-width: 770px) {
+	html, body {
+		overflow: auto;
+		height: auto;
+	}
 	#masthead {
 		top: 10px;
 		&.middle {
@@ -152,11 +156,21 @@
 		}
 	}
 	#content {
+		height: auto;
+		position: relative;
 		iframe {
 			height: 300px;
 		}
+		.page {
+			padding: 80px 0;
+			&.spacing {
+				display: none;
+			}
+		}
 		.subcontent {
-			height: calc(~"100% - 47px");
+			width: auto !important;
+			height: auto !important;
+			overflow: visible;
 		}
 		.embedded-map {
 			width: auto;
