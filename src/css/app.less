@@ -115,10 +115,10 @@ img {
 			}
 		}
 	}
-	// Fixed
 	nav {
 		display: none;
 	}
+	// Fixed
 	&.fixed {
 		top: 0;
 		background: #111;
@@ -133,6 +133,61 @@ img {
 			border: 0;
 			margin: 0;
 			padding: 0;
+		}
+		nav.mobile {
+			margin-left: 20px;
+			margin-top: 3px;
+			position: relative;
+			span.label {
+				cursor: pointer;
+			}
+			.mobile-nav-content {
+				display: none;
+				position: absolute;
+				top: 25px;
+				right: 0;
+				width: 290px;
+				padding: 10px;
+				background: #fff;
+				color: #333;
+				.box-shadow(1px 1px 3px rgba(0,0,0,0.1));
+				p {
+					color: #333;
+					margin: 0;
+					&.nav-title {
+						font-weight: 600;
+					}
+				}
+				a {
+					color: #333;
+				}
+				ul {
+					margin: 0 0 20px;
+					padding: 0;
+					li {
+						margin: 0;
+						padding: 0;
+						float: none;
+						font-size: 12px;
+						a {
+							float: none;
+							margin: 0;
+							padding: 0;
+						}
+					}
+					&.timeline-items {
+						li {
+							float: left;
+							margin-right: 20px;
+						}
+					}
+				}
+			}
+			&.active {
+				.mobile-nav-content {
+					display: block;
+				}
+			}
 		}
 		nav {
 			float: right;
@@ -606,11 +661,12 @@ img {
 		}
 		.ilust-container {
 			width: 255px;
+			max-width: 50%;
 			height: 300px;
 		}
 		.ilust {
-			height: 300px;
-			width: auto;
+			width: 100%;
+			height: auto;
 			margin: 0 auto;
 			display: block
 		}

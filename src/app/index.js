@@ -428,9 +428,14 @@ app.config(require('./config'))
 				}
 
 				if(toState.name.indexOf('analise') !== -1) {
-					$('#timeline-nav').addClass('analise');
+					var heightOffset = 130;
+					if($(window).width() <= 770) {
+						heightOffset = 47;
+					} else {
+						$('#timeline-nav').addClass('analise');
+					}
 					$('html,body').animate({
-						scrollTop: $(window).height() - 130
+						scrollTop: $(window).height() - heightOffset
 					}, 1000);
 				} else {
 					$('#timeline-nav').removeClass('analise');
