@@ -1,7 +1,7 @@
 doctype html
 html(lang='pt-BR')
 	include includes/head
-	body(ng-controller="SiteController" ng-class="{initialized: initialized, paused: paused}")
+	body(ng-controller="SiteController" ng-class="{initialized: initialized, paused: paused, 'in-video': inVideo}")
 		#fb-root
 		script.
 			(function(d, s, id) {

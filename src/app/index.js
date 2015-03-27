@@ -21,7 +21,7 @@ require('./timeline')(app);
 require('./directives');
 
 function isMobileSafari() {
-	return navigator.userAgent.match(/(iPod|iPhone|iPad)/) && navigator.userAgent.match(/AppleWebKit/)
+	return navigator.userAgent.match(/(iPod|iPhone|iPad)/) && navigator.userAgent.match(/AppleWebKit/);
 }
 
 app.config(require('./config'))
@@ -300,22 +300,6 @@ app.config(require('./config'))
 			$scope.initLoop = initLoop || 0;
 
 			var set = function(player) {
-				if(isMobileSafari()) {
-
-					// playerReadyInterval = window.setInterval(function(){
-					// 	player.playVideo();
-					// }, 1000);
-
-					// disablePlayerReadyInterval = window.setInterval(function(){
-					// 	if (player.getCurrentTime() < 1.0) {
-					// 		return;
-					// 	}
-					// 	// Video started...
-					// 	window.clearInterval(playerReadyInterval);
-					// 	window.clearInterval(disablePlayerReadyInterval);
-					// }, 1000);
-
-				}
 
 				Video.setTime(0);
 				Video.readyForNext(false);
@@ -510,6 +494,12 @@ app.config(require('./config'))
 					});
 				}
 
+				if(toState.name.indexOf('timeline') == 0 || toState.name == 'home') {
+					$scope.inVideo = true;
+				} else {
+					$scope.inVideo = false;
+				}
+
 			}
 
 			});
@@ -522,8 +512,6 @@ app.config(require('./config'))
 			$state.go('timeline', { year: Data.get()[0].slug });
 			if(!isMobileSafari()) {
 				$scope.playVideo();
-			} else {
-				$('.video-container iframe .ytp-large-play-button').click();
 			}
 
 		};

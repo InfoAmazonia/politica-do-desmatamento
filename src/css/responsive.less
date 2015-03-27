@@ -1,3 +1,23 @@
+.ios {
+	&.in-video {
+		&.paused {
+			#masthead,
+			#content,
+			#timeline-nav {
+				pointer-events: none !important;
+			}
+		}
+	}
+	.video-container {
+		.front-image {
+			display: none !important;
+		}
+	}
+	#content iframe {
+		//pointer-events: none !important;
+	}
+}
+
 @media screen and (max-height: 700px) {
 	.timeline-item {
 		.timeline-content {
@@ -24,19 +44,6 @@
 }
 
 @media screen and (max-width: 770px) {
-	.ios {
-		&.paused {
-			#masthead,
-			#content {
-				pointer-events: none;
-			}
-		}
-		.video-container {
-			.front-image {
-				display: none;
-			}
-		}
-	}
 	#masthead {
 		top: 10px;
 		&.middle {
