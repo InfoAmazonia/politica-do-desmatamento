@@ -26,7 +26,7 @@ angular.module('monitor')
 						element.removeClass('active');
 					}
 					if(time >= scope.videoOut && scope.lastContent) {
-						Video.ready(true);
+						Video.readyForNext(true);
 					}
 				});
 

@@ -24,6 +24,19 @@
 }
 
 @media screen and (max-width: 770px) {
+	.ios {
+		&.paused {
+			#masthead,
+			#content {
+				pointer-events: none;
+			}
+		}
+		.video-container {
+			.front-image {
+				display: none;
+			}
+		}
+	}
 	#masthead {
 		top: 10px;
 		&.middle {

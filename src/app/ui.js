@@ -1,3 +1,7 @@
+function isMobileSafari() {
+	return navigator.userAgent.match(/(iPod|iPhone|iPad)/) && navigator.userAgent.match(/AppleWebKit/)
+}
+
 $(document).ready(function() {
 
 	/*
@@ -15,6 +19,18 @@ $(document).ready(function() {
 	$('#masthead nav.mobile a').on('click', function() {
 		$(this).parents('nav.mobile').removeClass('active');
 	});
+
+	/*
+	 * IOS class
+	 */
+	if(isMobileSafari()) {
+		$('body').addClass('ios');
+	}
+
+
+	/*
+	 * Fixed timeline
+	 */
 
 	var timelineHeight = $('#timeline-nav').height();
 

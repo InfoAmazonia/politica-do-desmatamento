@@ -20,6 +20,10 @@ require('./timeline')(app);
 
 require('./directives');
 
+function isMobileSafari() {
+	return navigator.userAgent.match(/(iPod|iPhone|iPad)/) && navigator.userAgent.match(/AppleWebKit/)
+}
+
 app.config(require('./config'))
 
 .run([
@@ -128,14 +132,16 @@ app.config(require('./config'))
 
 		$scope.data = Data.get();
 
+		$scope.iOS = isMobileSafari();
+
 		/*
 		 * VIDEO
 		 */
 
 		$scope.videoId = 'bkhRoHQEzkA';
 		$scope.videoVars = {
-			controls: 0,
-			autoplay: 1,
+			controls: isMobileSafari() ? 1 : 0,
+			autoplay: isMobileSafari() ? 0 : 1,
 			disablekb: 1,
 			fs: 0,
 			showinfo: 0,
@@ -180,15 +186,13 @@ app.config(require('./config'))
 		$scope.mute = false;
 
 		$scope.playVideo = function() {
-			if($scope.player) {
-				$scope.paused = false;
+			if($scope.player && !isMobileSafari()) {
 				$scope.player.playVideo();
 			}
 		};
 
 		$scope.pauseVideo = function() {
 			if($scope.player) {
-				$scope.paused = true;
 				$scope.player.pauseVideo();
 			}
 		};
@@ -289,17 +293,38 @@ app.config(require('./config'))
 
 		var setVideo = function(id, cb, initLoop) {
 
-			$scope.paused = false;
+			$scope.paused = true;
 
 			$scope.showInfo = false;
 
 			$scope.initLoop = initLoop || 0;
 
 			var set = function(player) {
+				if(isMobileSafari()) {
+
+					// playerReadyInterval = window.setInterval(function(){
+					// 	player.playVideo();
+					// }, 1000);
+
+					// disablePlayerReadyInterval = window.setInterval(function(){
+					// 	if (player.getCurrentTime() < 1.0) {
+					// 		return;
+					// 	}
+					// 	// Video started...
+					// 	window.clearInterval(playerReadyInterval);
+					// 	window.clearInterval(disablePlayerReadyInterval);
+					// }, 1000);
+
+				}
+
 				Video.setTime(0);
 				Video.readyForNext(false);
-				player.loadVideoById(id);
+				player.cueVideoById(id);
 				player.unMute();
+
+				if(!isMobileSafari()) {
+					player.playVideo();
+				}
 
 				// setTimeout(function() {
 				// 	player.pauseVideo();
@@ -335,10 +360,10 @@ app.config(require('./config'))
 							$scope.loopAmount++;
 							var ended = true;
 							if(cb == true) {
-								player.seekTo(0).playVideo();
+								player.seekTo(0);
 							} else {
 								if($scope.initLoop) {
-									player.seekTo($scope.initLoop).playVideo();
+									player.seekTo($scope.initLoop);
 								} else {
 									clearInterval(videoLoop);
 								}
@@ -364,6 +389,20 @@ app.config(require('./config'))
 			}
 
 		}
+
+		$scope.paused = true;
+
+		$scope.$on('youtube.player.playing', function(event, player) {
+			$scope.paused = false;
+		});
+
+		$scope.$on('youtube.player.buffering', function(event, player) {
+			$scope.paused = false;
+		});
+
+		$scope.$on('youtube.player.paused', function(event, player) {
+			$scope.paused = true;
+		});
 
 		$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams) {
 			$scope.currentContent = false;
@@ -481,7 +520,11 @@ app.config(require('./config'))
 
 			$scope.initialized = true;
 			$state.go('timeline', { year: Data.get()[0].slug });
-			$scope.playVideo();
+			if(!isMobileSafari()) {
+				$scope.playVideo();
+			} else {
+				$('.video-container iframe .ytp-large-play-button').click();
+			}
 
 		};
 
