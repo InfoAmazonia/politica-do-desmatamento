@@ -641,6 +641,52 @@ img {
 		text-align: right;
 		margin-top: 10px;
 	}
+	.data-section {
+		padding-top: 10px;
+		ul.data-list {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			> li {
+				list-style: none;
+				margin: 0 0 20px;
+				padding: 0;
+				h4 {
+					text-transform: uppercase;
+					padding: 10px;
+					font-size: 14px;
+					font-weight: 600;
+				}
+				ul {
+					border-top: 1px solid #ddd;
+					border-left: 1px solid #ddd;
+					border-right: 1px solid #ddd;
+					li {
+						list-style: none;
+						padding: 0;
+						margin: 0;
+						border-bottom: 1px solid #ddd;
+						a {
+							display: block;
+							text-decoration: none;
+							color: #666;
+							padding: 10px;
+							.format {
+								float: right;
+								font-size: 14px;
+								font-family: "Open Sans";
+								background: #eee;
+								padding: 0 5px;
+							}
+							&:hover {
+								color: #333;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 #lulavsdilma {

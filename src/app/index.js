@@ -496,14 +496,14 @@ app.config(require('./config'))
 					(fromState.name == 'equipe' && toState.name != 'metodologia') || 
 					(fromState.name == 'metodologia' && toState.name != 'equipe')
 				) {
-					$('#timeline-nav').show().animo({animation: 'fadeInUp', duration: 0.5, keep: true});
+					$('#timeline-nav,#video-controls').show().animo({animation: 'fadeInUp', duration: 0.5, keep: true});
 				}
 
 				if(
 					(toState.name == 'equipe' && fromState.name != 'metodologia') || 
 					(toState.name == 'metodologia' && fromState.name != 'equipe')
 				) {
-					$('#timeline-nav').animo({animation: 'fadeOutDown', duration: 0.5, keep: true}, function() {
+					$('#timeline-nav,#video-controls').animo({animation: 'fadeOutDown', duration: 0.5, keep: true}, function() {
 						$('#timeline-nav').hide();
 					});
 				}
