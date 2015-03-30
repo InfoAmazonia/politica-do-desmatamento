@@ -219,7 +219,6 @@ app.config(require('./config'))
 		};
 
 		$scope.setVideoTime = function(time) {
-			console.log('trying: ' + time);
 			if($scope.player) {
 				$scope.player.seekTo(time);
 			}
