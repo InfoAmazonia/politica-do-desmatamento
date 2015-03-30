@@ -198,6 +198,39 @@
 		p.big {
 			font-size: 22px;
 		}
+		section.eixos-summary {
+			header {
+				ul {
+					display: block;
+					li {
+						width: auto;
+						display: block;
+						h3 {
+							padding: 20px;
+							font-size: 20px;
+							height: auto;
+							border-bottom-width: 10px;
+							font-weight: 600;
+							&:hover,
+							&.active {
+								padding: 20px;
+							}
+							&:after {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+			.eixos-content {
+				> ul {
+					display: block;
+					> li {
+						display: block;
+					}
+				}
+			}
+		}
 	}
 	#orcadovsrealizado {
 		.bars {

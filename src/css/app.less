@@ -1567,16 +1567,16 @@ a.play-video {
 			li {
 				width: 1%;
 				display: table-cell;
-				text-align: center;
 				margin: 0;
 				padding: 0;
 				h3 {
+					text-align: center;
 					background: #fff;
 					margin: 0;
 					font-weight: 600;
-					font-size: 24px;
+					font-size: 20px;
 					padding: 30px;
-					height: 120px;
+					height: 100px;
 					.box-sizing(border-box);
 					cursor: default;
 					.transition(all .2s linear);
@@ -1627,6 +1627,25 @@ a.play-video {
 			}
 		}
 	}
+	.eixo-content {
+		ul {
+			padding: 0;
+			border: 1px dotted #bbb;
+			li {
+				list-style: none;
+				margin: 0;
+				padding: 20px;
+				border-bottom: 1px dotted #bbb;
+				.transition(all .2s linear);
+				cursor: default;
+				background: #fff;
+				font-size: 18px;
+				&:hover {
+					background: #fff;
+				}
+			}
+		}
+	}
 	.eixos-content {
 		margin: 0 2%;
 		position: relative;
@@ -1647,21 +1666,6 @@ a.play-video {
 			width: 100%;
 			ul {
 				margin: 0 20px;
-				padding: 0;
-				border: 1px dotted #bbb;
-				li {
-					list-style: none;
-					margin: 0;
-					padding: 20px;
-					border-bottom: 1px dotted #bbb;
-					.transition(all .2s linear);
-					cursor: default;
-					background: #fff;
-					font-size: 18px;
-					&:hover {
-						background: #fff;
-					}
-				}
 			}
 			&.expand {
 				position: relative;

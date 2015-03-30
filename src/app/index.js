@@ -38,6 +38,13 @@ app.config(require('./config'))
 			if($window._gaq && fromState.name) {
 				$window._gaq.push(['_trackPageview', $location.path()]);
 			}
+			if(fromState.name) {
+				if($(window).width() <= 770) {
+					$('html,body').animate({
+						scrollTop: 0
+					}, '200');
+				}
+			}
 		});
 	}
 ])

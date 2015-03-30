@@ -307,42 +307,55 @@ angular.module('monitor')
 			templateUrl: '/views/includes/eixos-summary.html',
 			link: function(scope, element, attrs) {
 
-				$(element).find('header li').on('mouseenter', function() {
+				if($(window).width() > 770) {
 
-					var eixo = $(this).attr('class');
+					$(element).find('header li').on('mouseenter', function() {
 
-					// reset
-					$(element).find('.eixo-content').removeClass('expand');
-					$(element).find('header li h3').removeClass('active');
+						var eixo = $(this).attr('class');
 
-					$(this).addClass('hover');
-					$(this).find('h3').addClass('active');
+						// reset
+						$(element).find('.eixo-content').removeClass('expand');
+						$(element).find('header li h3').removeClass('active');
 
-					$(element).find('.eixos-summary').addClass('hovering');
-					var $content = $(this).parents('.eixos-summary').find('.eixos-content li.' + eixo + ' .eixo-content');
+						$(this).addClass('hover');
+						$(this).find('h3').addClass('active');
 
-					$content.addClass('expand');
+						$(element).find('.eixos-summary').addClass('hovering');
+						var $content = $(this).parents('.eixos-summary').find('.eixos-content li.' + eixo + ' .eixo-content');
 
-				});
+						$content.addClass('expand');
 
-				$(element).find('.eixo-content').on('mouseover', function() {
-					$(this).addClass('hover');
-				});
+					});
 
-				$(element).find('.eixo-content').on('mouseleave', function() {
-					$(this).removeClass('hover');
-				});
+					$(element).find('.eixo-content').on('mouseover', function() {
+						$(this).addClass('hover');
+					});
 
-				$(element).find('header li, .eixo-content').on('mouseleave', function() {
-					$('header li').removeClass('hover');
-					setTimeout(function() {
-						if(!$(element).find('.expand').is('.hover') && !$('header li').is('.hover')) {
-							$(element).find('.eixos-summary').removeClass('hovering');
-							$(element).find('.eixo-content').removeClass('expand');
-							$(element).find('header li h3').removeClass('active');
-						}
-					}, 1000);
-				});
+					$(element).find('.eixo-content').on('mouseleave', function() {
+						$(this).removeClass('hover');
+					});
+
+					$(element).find('header li, .eixo-content').on('mouseleave', function() {
+						$('header li').removeClass('hover');
+						setTimeout(function() {
+							if(!$(element).find('.expand').is('.hover') && !$('header li').is('.hover')) {
+								$(element).find('.eixos-summary').removeClass('hovering');
+								$(element).find('.eixo-content').removeClass('expand');
+								$(element).find('header li h3').removeClass('active');
+							}
+						}, 1000);
+					});
+
+				} else {
+
+					$(element).find('header li').each(function() {
+						var eixo = $(this).attr('class');
+						var $content = $(this).parents('.eixos-summary').find('.eixos-content li.' + eixo + ' .eixo-content');
+
+						$content.insertAfter($(this).find('h3'));
+					});
+
+				}
 
 			}
 		}
