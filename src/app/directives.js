@@ -36,6 +36,24 @@ angular.module('monitor')
 	}
 ])
 
+.directive('copyCode', [
+	function() {
+		return {
+			resitrct: 'E',
+			replace: true,
+			scope: {
+				'code': '@'
+			},
+			template: '<textarea class="code">{{code}}</textarea>',
+			link: function(scope, element, attrs) {
+				$(element)
+					.focus(function () { $(this).select(); } )
+					.mouseup(function (e) {e.preventDefault(); });
+			}
+		}
+	}
+])
+
 .directive('ytAudio', [
 	'$interval',
 	function($interval) {

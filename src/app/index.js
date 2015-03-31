@@ -504,7 +504,7 @@ app.config(require('./config'))
 					(toState.name == 'metodologia' && fromState.name != 'equipe')
 				) {
 					$('#timeline-nav,#video-controls').animo({animation: 'fadeOutDown', duration: 0.5, keep: true}, function() {
-						$('#timeline-nav').hide();
+						$('#timeline-nav,#video-controls').hide();
 					});
 				}
 
