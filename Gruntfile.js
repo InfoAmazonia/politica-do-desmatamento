@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 			build: {
 				options: {
 					mangle: true,
-					compress: true
+					compress: {}
 				},
 				files: {
 					'dist/vendor.js': 'dist/vendor.js',
@@ -135,8 +135,8 @@ module.exports = function(grunt) {
 	);
 
 	grunt.registerTask(
-		'default', 
-		'Build, start server and watch.', 
+		'default',
+		'Build, start server and watch.',
 		['build', 'watch']
 	);
 

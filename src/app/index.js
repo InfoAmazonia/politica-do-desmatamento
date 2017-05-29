@@ -11,7 +11,7 @@ var timelineData = require('./data');
  */
 
 var app = angular.module('monitor', [
-	'ngAnimate',
+	// 'ngAnimate',
 	'ui.router',
 	'youtube-embed'
 ]);
@@ -40,10 +40,13 @@ app.config(require('./config'))
 			}
 			if(fromState.name) {
 				if($(window).width() <= 770) {
-					$('html,body').animate({
+					$('html,body,.subcontent').animate({
 						scrollTop: 0
 					}, '200');
 				}
+				$('.subcontent').animate({
+					scrollTop: 0
+				}, 200);
 			}
 		});
 	}
@@ -110,7 +113,7 @@ app.config(require('./config'))
 				interactivity: 'categori3,nome_org12,nome_uc1,ano_cria6',
 				template: '<p><strong>Categoria:</strong><br/>{{categori3}}</p><p><strong>Nome:</strong><br/>{{nome_uc1}}</p><p><strong>Ano de criação:</strong><br/>{{ano_cria6}}</p>',
 				legend: '<div class="cartodb-legend category"><ul><li><div class="bullet" style="background: #A6CEE3"></div>Reserva Particular do Patrimônio Natural</li><li><div class="bullet" style="background: #1F78B4"></div>Parque</li><li><div class="bullet" style="background: #B2DF8A"></div>Área de Proteção Ambiental</li><li><div class="bullet" style="background: #33A02C"></div>Floresta</li><li><div class="bullet" style="background: #FB9A99"></div>Reserva Extrativista</li><li><div class="bullet" style="background: #E31A1C"></div>Estação Ecológica</li><li><div class="bullet" style="background: #FDBF6F"></div>Reserva Biológica</li><li><div class="bullet" style="background: #FF7F00"></div>Área de Relevante Interesse Ecológico</li><li><div class="bullet" style="background: #CAB2D6"></div>Monumento Natural</li><li><div class="bullet" style="background: #6A3D9A"></div>Reserva de Desenvolvimento Sustentável</li><li><div class="bullet" style="background: #DDDDDD"></div>Others</li></ul></div>'
-			};	
+			};
 		};
 
 		$scope.getTILayer = function(startYear, endYear) {
@@ -493,14 +496,14 @@ app.config(require('./config'))
 				}
 
 				if(
-					(fromState.name == 'equipe' && toState.name != 'metodologia') || 
+					(fromState.name == 'equipe' && toState.name != 'metodologia') ||
 					(fromState.name == 'metodologia' && toState.name != 'equipe')
 				) {
 					$('#timeline-nav,#video-controls').show().animo({animation: 'fadeInUp', duration: 0.5, keep: true});
 				}
 
 				if(
-					(toState.name == 'equipe' && fromState.name != 'metodologia') || 
+					(toState.name == 'equipe' && fromState.name != 'metodologia') ||
 					(toState.name == 'metodologia' && fromState.name != 'equipe')
 				) {
 					$('#timeline-nav,#video-controls').animo({animation: 'fadeOutDown', duration: 0.5, keep: true}, function() {

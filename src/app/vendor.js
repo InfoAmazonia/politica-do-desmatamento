@@ -5,8 +5,8 @@ window._ = require('underscore');
 require('animo.js/animo');
 
 require('angular');
-require('angular-animate/angular-animate');
-require('ui-router');
+require('angular-animate');
+require('angular-ui-router/release/angular-ui-router');
 require('angular-youtube/src/angular-youtube-embed');
 
 /*
