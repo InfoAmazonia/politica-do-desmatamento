@@ -2,5 +2,16 @@ version: '2'
 services:
   app:
     build: .
-    ports:
-      - 8080:8000
+    image: infoamazonia/desmatamento
+    #ports:
+    #  - 3002:8000
+    restart: always
+    networks:
+      - default
+      - weblan
+
+networks:
+ weblan:
+   external:
+    name: ispconfig_weblan
+
