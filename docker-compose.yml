@@ -3,8 +3,8 @@ services:
   app:
     build: .
     image: infoamazonia/desmatamento
-    #ports:
-    #  - 3002:8000
+    ports:
+     - 3002:8000
     restart: always
     networks:
       - default
@@ -14,4 +14,3 @@ networks:
  weblan:
    external:
     name: ispconfig_weblan
-
