@@ -1,9 +1,13 @@
 {
+  "homepage": "https://1desmata.infoamazonia.org",
   "name": "monitor-de-gastos",
   "description": "Monitor de gastos no combate ao desmatamento",
   "repository": {
     "type": "git",
-    "url": "git://github.com/oeco/monitor-de-gastos.git"
+    "url": "https://github.com/InfoAmazonia/politica-do-desmatamento.git"
+  },
+  "bugs": {
+    "url": "https://github.com/InfoAmazonia/politica-do-desmatamento/issues"
   },
   "version": "0.1.0",
   "authors": [
@@ -13,7 +17,10 @@
   "scripts": {
     "install": "./node_modules/.bin/napa",
     "postinstall": "mkdir -p dist && ./node_modules/grunt-cli/bin/grunt build",
-    "start": "node app.js"
+    "start": "node app.js",
+    "clean": "gh-pages-clean",
+    "predeploy": "mkdir -p dist && ./node_modules/grunt-cli/bin/grunt build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "angular": "1.2.23",
@@ -58,5 +65,8 @@
     "orçamento",
     "gastos"
   ],
-  "engine": "node >= 0.10"
+  "engine": "node >= 0.10",
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
+  }
 }
