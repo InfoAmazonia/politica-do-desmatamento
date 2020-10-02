@@ -1,4 +1,4 @@
-FROM node:8
+FROM node:6
 
 EXPOSE 8000
 
@@ -26,8 +26,10 @@ WORKDIR $HOME/app
 COPY . $HOME/app/
 
 # Install app
-RUN chown -R $APP_USER:$APP_USER $HOME/app && \
-  gosu $APP_USER:$APP_USER npm install
+# RUN chown -R $APP_USER:$APP_USER $HOME/app && \
+#   gosu $APP_USER:$APP_USER npm install
+
+RUN npm install
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
