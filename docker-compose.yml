@@ -3,6 +3,8 @@ services:
   app:
     build: .
     image: infoamazonia/desmatamento
+    volumes:
+      - ./:/home/node/app:delegated
     ports:
      - 3002:8000
     restart: always
