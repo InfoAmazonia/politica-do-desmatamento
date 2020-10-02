@@ -6,12 +6,12 @@ Quanto dinheiro é gasto pelo governo federal para preservar a Amazônia? Onde o
 
 ### Requirements
 
-- node v6.17.c
+- node v6.17.x
 - npm v3.10.10
 
 ### Build and start server
 
-Install dependencies and build javascript:
+Install dependencies:
 ```
 $ npm install
 ```
@@ -94,7 +94,7 @@ $ docker cp $(docker-compose ps -q app):/home/node/app/dist .
 
 6. Inside docker bash: docker-compose exec app bash
 ```
-npm run watch
+docker$ npm run watch
 ```
 
 ### CREDITS
