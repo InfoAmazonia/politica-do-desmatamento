@@ -50,7 +50,7 @@
     "moment": "2.8.3",
     "moment-timezone": "0.2.2",
     "napa": "0.4.1",
-    "request": "2.44.0",
+    "request": "2.88.2",
     "ui-router": "angular-ui/ui-router#0.2.0",
     "underscore": "1.7.0"
   },
