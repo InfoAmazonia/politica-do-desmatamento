@@ -1,0 +1,307 @@
+section#fase-3.page.top.flat
+
+	.row
+		iframe.embedded-map(width='100%' height='520' frameborder='0' src='http://gufalei.cartodb.com/viz/4ad58224-b197-11e4-962b-0e018d66dc29/embed_map' allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen)
+
+	.container.row
+		.six.columns.offset-by-three
+			h3 3ª fase
+			h2 O desafio é fomentar a prática de atividades sustentáveis
+			p 
+				span(yt-audio video-id="W4eXhMp0vFY" title="Mauro Oliveira Pires" content='"Comando e controle não é suficiente para evitar o desmatamento"') De acordo com o Ministério do Meio Ambiente
+				| , desde o ano de 2004, quando o PPCDAm foi implementado, "o eixo Monitoramento e Controle tem sido reconhecido em avaliações independentes como o que mais evoluiu". Consequentemente, trata-se daquele com maior participação na redução de quase 77% na taxa de desmatamento entre 2004 (27.772 km²) e 2011 (6.418 km²).
+			p Em parte, o bom funcionamento desse componente deve-se às melhorias nos sistemas de monitoramento via satélite da cobertura florestal da Amazônia Legal: o Prodes e, principalmente, o Deter. Na outra ponta estão os trabalhos de fiscalização e controle, que visam desarticular os agentes do desmatamento ilegal. Sem investimentos adequados no eixo Fomento, a experiência dos últimos anos indica que o atual patamar do desmate não deverá sofrer reduções significativas, comprometendo, portanto, a meta de 2020.
+			p Assim sendo, é possível dizer que os principais desafios relacionados à Terceira Fase são: a baixa viabilidade das cadeias produtivas que constituem alternativas ao desmatamento, a expansão desordenada da agropecuária, a baixa produção madeireira sustentável, as atividades produtivas dos assentamentos não compatíveis com a legislação ambiental e a degradação florestal e do solo amazônico. Em outras palavras, a exploração predatória dos recursos naturais precisa deixar de ser a única alternativa viável para os habitantes do interior da Amazônia. Por enquanto, cadeias produtivas sustentáveis e geradoras de renda e emprego não são realidade na região.
+
+	.container
+		.twelve.columns
+			h3 Demarcação de unidades de conservação e terras indígenas entre 2012 e 2014
+
+	.map-container(ng-controller="MapController")
+		cartodb(map-id="teste" base-layer="getBaseLayer()" layers="[getAmazLegalLayer(), getTILayer(2012, 2014), getUCLayer(2012, 2014)]" bounds-index="'2'")
+
+	.eixo-title.ordenamento
+		.container
+			.six.columns.offset-by-three
+				h2 1. Eixo Ordenamento Fundiário e Territorial
+
+	.dark.row
+		.container
+			.twelve.columns
+				table.tendency-table
+					thead
+						tr
+							td.year Ano
+							td.authorized Autorizado
+							td.spent Liquidado
+							td.index Índice de execução
+					tr
+						td.year 2012
+						td.authorized R$ 115,5 mi
+						td.spent R$ 7 mi
+						td.index 6%
+					tr
+						td.year 2013
+						td.authorized R$ 300 mi
+							span.icon-arrow-up-right2.up
+						td.spent R$ 42 mi
+							span.icon-arrow-up-right2.up
+						td.index 14%
+							span.icon-arrow-up-right2.up
+					tr
+						td.year 2014
+						td.authorized R$ 546 mi
+							span.icon-arrow-up-right2.up
+						td.spent R$ 157 mi
+							span.icon-arrow-up-right2.up
+						td.index 29%
+							span.icon-arrow-up-right2.up
+
+	.container
+		.six.columns.offset-by-three
+
+			.row
+				p.featured Representatividade do eixo Ordenamento na Terceira Fase
+
+				p Entre os anos de 2012 e 2014, foram gastos neste eixo 
+					strong 206 milhões de reais
+					| , o equivalente a 
+					strong 24% do total liquidado 
+					| durante a Terceira Fase do Programa.
+
+			.row
+				p.featured Objetivo estratégico em destaque
+
+				p Agregadas sob o Objetivo Estratégico "Implementar os instrumentos de ordenamento territorial visando a conservação da floresta", 11 ações englobam metas diversas – ainda que complementares. Entre elas, estão iniciativas que visam a implantação de corredores ecológicos, a gestão de Unidades de Conservação e Terras Indígenas, a modernização do Sistema Nacional de Cadastro Rural (SNCR), a implantação do Cadastro Nacional de Imovéis Rurais (CNIR), a elaboração e a implementação do Zoneamento Ecológico-Econômico, ou seja, todas elas permeiam a regularização fundiária da Amazônia.
+				p Em 2014, foram autorizados 361,7 milhões de reais pelo Congresso Nacional para todas essas 13 ações, sendo que 116,6 milhões de reais foram, de fato, liquidados (32% do total). Ainda em 2014, um caso que merece atenção é o da Ação 20W4, dedicada à gestão ambiental e territorial das Terras Indígenas: dos 2,1 milhões de reais autorizados especificamente para essa iniciativa, foram liquidados apenas 36 mil reais (índice de execução inferior a 2%).
+				p No ano anterior, em 2013, as ações mencionadas acima contemplaram 94 milhões de reais autorizados pelo Congresso, contudo, desse montante, foram liquidados 6 milhões de reais (6%).
+				p Em especial, destacamos o caso da Ação 20WM, dedicada ao "Apoio à Criação, Gestão e Implementação das Unidades de Conservação Federais", para a qual o orçamento autorizado em 2013 foi de 343,2 mil reais, porém, nenhum centavo acabou sendo liquidado.
+				p Por fim, em 2012, foram autorizados 99 milhões de reais para esse grupo de ações. Desse montante, gastaram-se 4,25 milhões de reais (4%).
+				p Bastante curioso é o caso da Ação 0506, criada para oferecer "Apoio a projetos de desenvolvimento sustentável na área de atuação da Suframa, com ênfase em arranjos produtivos locais e cadeias produtivas". A Suframa (Superintendência da Zona Franca de Manaus) é uma autarquia ligada ao Ministério do Desenvolvimento, Indústria e Comércio Exterior, que tem por objetivo atrair investimentos para o polo de Manaus e ajudar a promover o desenvolvimento no interior da região amazônica. Em 2012, a verba autorizada para essa ação foi de 47,6 milhões de reais, entretanto, nada foi liquidado.
+
+	.container
+		.nine.columns
+			p.featured.actions-title Ações em destaque
+
+	.container.row
+		.three.columns
+
+			p.action Organização da estrutura fundiária
+				span.action-name (Ação 210U na Lei Orçamentária Anual)
+
+		.six.columns
+
+			p Sob responsabilidade do Ministério do Desenvolvimento Agrário (MDA), a destinação das terras públicas federais remanescentes para a reforma agrária teve, em 2014, um valor autorizado pelo Congresso Nacional de 34,6 milhões de reais, no entanto, foram gastos apenas 31% desse total (11 milhões de reais).
+			p No ano de 2013, os gastos governamentais nessa atividade foram ainda menos expressivos: dos 10,3 milhões de reais autorizados pelo Congresso, apenas 9% foram de fato investidos na organização da estrutura fundiária (931,6 mil reais).
+			p Enfim, em 2012, mais de 1,8 milhão de reais foram autorizados, mas absolutamente nada foi gasto na reforma agrária, uma consequência da expressiva queda no número de assentamentos criados pelo Incra no período.
+
+	.container.row
+		.three.columns
+			p.action Regularização da estrutura fundiária na área de abrangência da Lei 11.952
+				span.action-name (Ação 211C na Lei Orçamentária Anual)
+
+		.six.columns
+
+			p A titulação dos posseiros ocupantes de terras federais na Amazônia vem demonstrando ser mais complexa do que o previsto quando da aprovação da Lei 11.952, de 2009, que estabelece regras próprias e em tese mais rápidas para a regularização fundiária na região. Pelo menos é isso que indicam os dados da execução orçamentária do programa Terra Legal, sob responsabilidade do MDA.
+			p Exemplo desse contexto é a grande diferença entre os valores autorizados e liquidados. Em 2014, dos 78 milhões de reais autorizados pelo Congresso, apenas 5 milhões foram gastos na regularização da estrutura fundiária (quase 7%). Antes de chegar na fase da titulação propriamente dita, há um longo processo administrativo, que começa pela identificação das terras federais, o que, por sua vez, implica a checagem nos cartórios, passa pela demarcação e georreferenciamento das glebas, pela solução dos eventuais conflitos entre os órgãos de gestão de terras (UCs, TI, quilombos, terras estaduais etc), pelo levantamento dos ocupantes e se esses cumprem os requisitos legais, até chegar à assinatura das cláusulas resolutivas.
+			p No ano anterior, em 2013,89 milhões de reais foram autorizados e os gastos reais não chegaram aos 12 milhões de reais (13% do total).
+			p Mas, outra vez, o ano de 2012 é o que teve menor execução: dos 756,4 mil reais autorizados para o cumprimento da atividade, nada foi gasto. Como dito acima, o órgão responsável por coordenar a implementação dessa política específica é o Ministério do Desenvolvimento Agrário (MDA), que criou uma secretaria extraordinária para cuidar do assunto.
+
+	.container.row
+		.three.columns
+			p.action Gestão ambiental e territorial das Terras Indígenas
+				span.action-name (Ação 20W4 na Lei Orçamentária Anual)
+
+		.six.columns
+
+			p Sob coordenação da Fundação Nacional do Índio (Funai) e do Ministério do Meio Ambiente (MMA), a atividade dedicada a "Elaborar planos de gestão territorial e ambiental de Terras Indígenas" gastou muito menos dinheiro do que o previsto.
+			p Em 2014, os recursos autorizados foram de 2,1 milhões de reais – o valor gasto foi inferior a 2% (36 mil reais). Em 2013, quando apenas 214,5 mil reais foram autorizados pelo Congresso, a quantia liquidada foi de 19 mil reais (9% do total).
+			p Em 2014, nada foi gasto nessa atividade, apesar dos mais de 4 milhões de reais disponíveis.
+
+	.eixo-title.monitoramento
+		.container
+			.six.columns.offset-by-three
+				h2 2. Eixo Monitoramento e Controle Ambiental
+
+	.dark.row
+		.container
+			.twelve.columns
+				table.tendency-table
+					thead
+						tr
+							td.year Ano
+							td.authorized Autorizado
+							td.spent Liquidado
+							td.index Índice de execução
+					tr
+						td.year 2012
+						td.authorized R$ 249 mi
+						td.spent R$ 159 mi
+						td.index 64%
+					tr
+						td.year 2013
+						td.authorized R$ 205 mi
+							span.icon-arrow-down-right2.down
+						td.spent R$ 145 mi
+							span.icon-arrow-down-right2.down
+						td.index 70%
+							span.icon-arrow-up-right2.up
+					tr
+						td.year 2014
+						td.authorized R$ 247 mi
+							span.icon-arrow-up-right2.up
+						td.spent R$ 173 mi
+							span.icon-arrow-up-right2.up
+						td.index 70%
+							span.icon-arrow-right2.right
+
+	.container
+		.six.columns.offset-by-three
+
+			.row
+				p.featured Representatividade do eixo Monitoramento na Terceira Fase
+
+				p Entre os anos de 2012 e 2014, foram gastos neste eixo 
+					strong 477 milhões de reais
+					| , o equivalente a 
+					strong 56% do total liquidado 
+					| durante o período.
+
+			.row
+				p.featured Objetivo estratégico em destaque
+
+				p Ao todo, 24 ações estão englobadas pelo Objetivo Estratégico "Aumentar a eficácia da fiscalização e do controle do desmatamento". São iniciativas que contemplam atuar, por exemplo, por meio da prevenção e combate a incêndios florestais; da fiscalização das atividades de desmatamento; da prevenção e combate a emergências ambientais em Unidades de Conservação; da integração de órgãos federais, estaduais e municipais no enfrentamento de práticas ilegais que ameacem a floresta; da localização e proteção de índios isolados e de recente contato; da extrusão de não índios de Terras Indígenas; do monitoramento via satélite da cobertura da terra na Amazônia; e do Cadastamento Ambiental Rural nos municípios mais ameaçados pelo desmatamento.
+				p Ao longo dos três primeiros anos da Terceira Fase do PPCDAm (o ano de 2015 será seu último), esse grupo de ações acumulou um valor autorizado pelo Congresso Nacional de 542,7 milhões de reais, dos quais foram liquidados 370 milhões de reais (68%).
+				p Durante o ano de 2014, a ação identificada pelo código 6307, que visa "criar mecanismos que facilitem a apreensão e a destinação de bens, instrumentos ou produtos decorrentes da prática de crimes e infrações ambientais", foi a responsável pelo maior aporte liquidado no período dentre aquelas agrupadas no mesmo objetivo estratégico: 58 milhões de reais.
+				p Já a ação 20IB, dedicada à fiscalização e demarcação de Terras Indígenas, localização e proteção de índios isolados e de recente contato, não recebeu nem 1 real.
+
+	.container
+		.nine.columns
+			p.featured.actions-title Ações em destaque
+
+	.container.row
+		.three.columns
+
+			p.action Fiscalização de atividades de desmatamento
+				span.action-name (Ação 6307 na Lei Orçamentária Anual)
+
+		.six.columns
+
+			p Em 2014, dos 66 milhões de reais aprovados pelo Congresso Nacional, 58 milhões de reais foram liquidados (88%).
+			p Um total de 55,6 milhões de reais foi aprovado em 2013, contudo, gastaram-se 33,5 milhões de reais – o equivalente a 60%.
+			p No ano de 2012, dos 117 milhões de reais previstos em orçamento, foram utilizados 45 milhões de reais (38%).
+
+	.container.row
+		.three.columns
+
+			p.action Regularização ambiental dos imóveis rurais nas unidades da federação
+				span.action-name (Ação 8308 na Lei Orçamentária Anual)
+
+		.six.columns
+
+			p Embora a Lei 12.651 (novo Código Florestal) tenha sido sancionada em maio de 2012, é curioso que o Cadastro Ambiental Rural (CAR), que visa regularizar a precária situação ambiental no Brasil, tenha tido uma baixa execução orçamentária justamente no ano de seu lançamento. Dos 5 milhões autorizados pelo Congresso Nacional, foram gastos 2,4 milhões (49%).
+			p No ano seguinte, em 2013, muito mais dinheiro foi destinado à meta: 35 milhões de reais, dos quais foram despendidos 92%. Desse dinheiro, uma boa parte seguiu para a aquisição de imagens de satélite e para a contratação de serviços vinculados à Universidade Federal de Lavras (UFLA).
+			p Em maio de 2014, o MMA publicou a Instrução Normativa que estabelece as regras do CAR, após dois anos de sanção presidencial da Lei Florestal (12.651). Essa instrução normativa era aguardada há bastante tempo pelos ambientalistas porque tem o papel de definir, entre outras coisas, o início do prazo de um ano, prorrogável por igual período, em que os proprietários e posseiros devem registrar seus imóveis rurais no sistema de CAR, informando as áreas de produção e as áreas de preservação permamente e de reserva legal. Por isso surpreende que, mesmo em 2014, tenha havido baixa execução orçamentária dessa ação. Sem investimentos, certamente o prazo, prestes a vencer em maio próximo, não será cumprido, como recentemente já sinalizou o governo. Se o CAR é a principal ferramenta de execução do Código Florestal, a baixa execução orçamentária dessa ação sugere que o assunto não é tratado com a prioridade anunciada.
+			p Em 2014, 63,2 milhões de reais foram aprovados pelo Congresso. O valor efetivamente utilizado foi de 32,6 milhões de reais (52% do total).
+
+	.container.row
+		.three.columns
+			p.action Prevenção e combate a incêndios florestais e controle de queimadas
+				span.action-name (Ação 6074 Lei Orçamentária Anual)
+
+		.six.columns
+
+			p A ação destinada a prevenir e combater incêndios recebeu, no ano de 2014, um orçamento de 43 milhões de reais do governo federal – dos quais 25 milhões foram gastos (58%).
+			p Em 2013, o valor autorizado pelo Congresso Federal foi de 23 milhões de reais, sendo que 18 milhões de reais foram utilizados (79%).
+			p No ano de 2012, 25,7 milhões de reais foram autorizados e 23,4 milhões gastos (91%).
+			p Ano após ano, os incêndios consomem milhares de quilômetros de florestas, emitindo muitos gases que aquecem o planeta, mas nem sequer os fundos destinados pelo Congresso Nacional são efetivamente gastos, em razão do contingenciamento dos recursos, da baixa prioridade que esse tema recebe ao longo do tempo e das fragilidades institucionais impostas aos órgãos ambientais.
+
+	.eixo-title.fomento
+		.container
+			.six.columns.offset-by-three
+				h2 3. Eixo Fomento às Atividades Sustentáveis
+
+	.dark.row
+		.container
+			.twelve.columns
+				table.tendency-table
+					thead
+						tr
+							td.year Ano
+							td.authorized Autorizado
+							td.spent Liquidado
+							td.index Índice de execução
+					tr
+						td.year 2012
+						td.authorized R$ 343,8 mi
+						td.spent R$ 63,3 mi
+						td.index 18%
+					tr
+						td.year 2013
+						td.authorized R$ 1.055 mi
+							span.icon-arrow-up-right2.up
+						td.spent R$ 89 mi
+							span.icon-arrow-up-right2.up
+						td.index 8%
+							span.icon-arrow-down-right2.down
+					tr
+						td.year 2014
+						td.authorized R$ 902,6 mi
+							span.icon-arrow-down-right2.down
+						td.spent R$ 17,2 mi
+							span.icon-arrow-down-right2.down
+						td.index 2%
+							span.icon-arrow-down-right2.down
+
+	.container
+		.six.columns.offset-by-three
+
+			.row
+				p.featured Representatividade do eixo Fomento na Terceira Fase
+
+				p Entre os anos de 2012 e 2014, foram gastos neste eixo 
+					strong 169,5 milhões de reais
+					| , o equivalente a 
+					strong 20% do total liquidado 
+					| durante o período.
+
+			.row
+				p.featured Objetivo estratégico em destaque
+
+				p Agrupadas sob o objetivo 0945, 12 ações compartilham da seguinte meta: "Implantar e desenvolver a política nacional de gestão ambiental e territorial de Terras Indígenas, por meio de estratégias integradas e participativas com vistas ao desenvolvimento sustentável e à autonomia dos povos indígenas". Em outras palavras, ainda que Amazônia conte hoje com extensas faixas de Terras Indígenas (TIs) demarcadas, é preciso promover a viabilidade de cadeias produtivas que possam ser alternativas ao desmatamento ilegal. Tais ações concentram esforços em diversas atividades, como, por exemplo, o aprimoramento técnico da agricultura familiar nas TIs, o acesso dos produtos tradicionais aos mercados nacional e internacional, a promoção da gestão ambiental participativa (que engloba, entre outros, a atuação dos povos tradicionais como intervenientes nos processos de licenciamento ambiental de empreendimentos com significativo potencial de impacto), a garantia à segurança alimentar e nutricional e outros itens relacionados à geração de renda e qualidade de vida.
+				p No ano de 2014, o governo federal não gastou absolutamente nada com esse grupo de ações. 
+				p A mesma situação se deu em 2013.
+				p Já em 2012, foram autorizados 15,7 milhões de reais e gastos 3,5 milhões de reais (22%). 
+				p Outro grupo, composto por seis ações agregadas sob o Objetivo Estratégico "Aumentar a produção e comercialização de madeira por meio do manejo florestal sustentável", visou, por exemplo, incentivar a ampliação de florestas plantadas com o intuito de suprir a demanda de matéria-prima florestal e, dessa forma, reduzir a pressão sobre os remanescentes nativos; focos complementares, mais específicos, foram o financiamento de projetos de manejo florestal, o estímulo à certificação florestal e o desenvolvimento da silvicultura.
+				p Ao todo, nos três primeiros anos da Terceira Fase do PPCDAm, esse grupo teve um orçamento autorizado no valor de 14 milhões de reais, dos quais foram liquidados 4,3 milhões de reais (30%).
+				p O ano de 2014 destoa bastante dos dois anteriores. Enquanto, em 2012 e 2013, o valor executado foi próximo de 2 milhões de reais, em 2014, apenas 376 mil reais foram liquidados.
+
+	.container
+		.nine.columns
+			p.featured.actions-title Ações em destaque
+
+	.container.row
+		.three.columns
+
+			p.action Fomento à produção pesqueira e aquícola
+				span.action-name (Ação 20Y0 na Lei Orçamentária Anual)
+
+		.six.columns
+
+			p Com o objetivo de "promover a viabilidade das cadeias produtivas que constituem alternativas ao desmatamento" e sob a responsabilidade do Ministério da Pesca e Aquicultura (MPA), o governo federal disponibilizou, em 2013, 221,7 milhões de reais para fomentar a pesca e a aquicultura na Amazônia – dos quais 21 milhões foram, de fato, investidos (ou 9,5%).
+			p Curiosamente, no ano de 2012, nenhum centavo dos 4,8 milhões de reais aprovados foi gasto.
+			p Em 2014, nenhum valor foi disponibilizado, tampouco utilizado.
+
+	.container.row
+		.three.columns
+
+			p.action Promoção de modelos produtivos rurais sustentáveis
+				span.action-name (Ação 20M4 na Lei Orçamentária Anual)
+
+		.six.columns
+
+			p A iniciativa dedicada a incentivar o manejo florestal e a ampliação de florestas plantadas (alternativas ao desmatamento ilegal) recebeu, em 2014, 700 mil reais do governo federal – 125,3 mil reais, de fato, utilizados (18%).
+			p No anterior, em 2013, a quantia disponibilizada foi de 697 mil reais. No entanto, o valor gasto foi superior: 160 mil reais (23%).
+			p Por fim, em 2012, dos 539 mil reais aprovados pelo Congresso, 159 mil reais foram investidos (29% do total).
+
+	next-page(ref="analise.timeline({year: '2020'})" title="Conclusão")

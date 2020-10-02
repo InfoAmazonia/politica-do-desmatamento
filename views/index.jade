@@ -1,0 +1,182 @@
+doctype html
+html(lang='pt-BR')
+	include includes/head
+	body(ng-controller="SiteController" ng-class="{initialized: initialized, paused: paused, 'in-video': inVideo}")
+		#fb-root
+		script.
+			(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=459964104075857&version=v2.0";
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+
+		.video-container
+			youtube-video(player-id="video" video-id="videoId" player-vars="videoVars" player-width="'100%'" player-height="'100%'")
+			.front-image(ng-hide="initialized")
+
+		header#masthead(ng-class="{middle:!initialized}")
+			.container
+				.twelve.columns
+					h2
+						a(href="https://infoamazonia.org/" rel="external" target="_blank")
+							img(src="/img/ia-white.png" alt="InfoAmazonia")
+
+					nav.mobile(ng-show="initialized")
+						span.label.icon-menu
+						.mobile-nav-content.clearfix
+							p.nav-title Linha do tempo
+							ul.nav-items.timeline-items.clearfix
+								li
+									a(ui-sref="timeline({year: '1960'})") 1960
+								li
+									a(ui-sref="timeline({year: '1974'})") 1974
+								li
+									a(ui-sref="timeline({year: '1980'})") 1980
+								li
+									a(ui-sref="timeline({year: '1988'})") 1988
+								li
+									a(ui-sref="timeline({year: '1989'})") 1989
+								li
+									a(ui-sref="timeline({year: '1990'})") 1990
+								li
+									a(ui-sref="timeline({year: '1992'})") 1992
+								li
+									a(ui-sref="timeline({year: '1995'})") 1995
+								li
+									a(ui-sref="timeline({year: '1998'})") 1998
+								li
+									a(ui-sref="timeline({year: '2003'})") 2003
+								li
+									a(ui-sref="timeline({year: '2004'})") 2004
+								li
+									a(ui-sref="timeline({year: '2005'})") 2005
+							p.nav-title Análise
+							ul.nav-items.analise-items.clearfix
+								li
+									a(ui-sref="analise") Introdução
+								li
+									a(ui-sref="analise.results") Principais resultados
+								li
+									a(ui-sref="analise.fase1") 1ª fase (2007-2008)
+								li
+									a(ui-sref="analise.fase2") 2ª fase (2009-2011)
+								li
+									a(ui-sref="analise.fase3") 3ª fase (2012-2015)
+								li
+									a(ui-sref="analise.timeline({year: '2020'})") Conclusão
+							p.nav-title Saiba mais
+							ul.nav-items.page-items.clearfix
+								li
+									a(ui-sref="metodologia") Metodologia
+								li
+									a(ui-sref="equipe") Equipe
+
+					nav(ng-show="initialized")
+						a(ui-sref="metodologia") Metodologia
+						a(ui-sref="equipe") Saiba mais
+
+
+
+					h1
+						a(ui-sref="home") A Política do Desmatamento
+					section
+						p Quanto dinheiro é gasto pelo governo federal para preservar a Amazônia? Onde os recursos são investidos? Um olhar sobre era moderna do desmatamento aponta os sucessos e as falhas da estratégia oficial de combate à devastação da Amazônia brasileira.
+
+						p(ng-hide="initialized")
+							a.start-timeline(href="javascript:void(0);" ng-click="init()") Comece a navegar pela linha do tempo
+
+		//a.play-video.icon-play(href="javascript:void(0);" ng-click="init()")
+
+		section#content(ui-view, autoscroll='false')
+
+		#video-controls(ng-show="(initialized || nagivated) && !isHome")
+			.container
+				.twelve.columns
+					.controls-container
+						.timebar-container(ng-click="setVideoTimeByPercentage(clickOffset($event))")
+							.timebar(ng-style="videoTimeBarStyle()")
+						.texts-button(ng-style="videoTimeBarTextStyle()")
+							span.icon-plus(ng-click="setVideoTime(introTime())")
+							.tip.top Início dos textos
+						.clearfix
+							.controls-content
+								.content-group
+									section#next
+										span.icon-fast-forward
+										p
+											a(href="{{nextUrl}}") Próximo
+										h3
+											a(href="{{nextUrl}}") {{nextTitle}}
+								.control-group(ng-hide="iOS")
+									a.icon-play(ng-show="paused" href="javascript:void(0);" ng-click="playVideo()")
+									a.icon-pause(ng-hide="paused" href="javascript:void(0);" ng-click="pauseVideo()")
+								.control-group
+									a.icon-skip-back(href="javascript:void(0);" ng-click="skipBack()")
+									a.icon-skip-forward(href="javascript:void(0);" ng-click="skipForward()")
+								.control-group
+									a(href="javascript:void(0);" ng-click="toggleMute()" ng-class="{'icon-mute':mute,'icon-volume':!mute}")
+										.tip(ng-hide="mute") Desativar áudio e pular introduções automaticamente
+										.tip(ng-show="mute") Ativar áudio e exibir introduções
+
+		#timeline-nav.nav(ng-class="{initialized:initialized || navigated}")
+			.container
+				.twelve.columns
+					nav.pre
+						.nav-content
+							a(ui-sref="timeline({year: '1960'})") 1960
+							a(ui-sref="timeline({year: '1974'})") 1974
+							a(ui-sref="timeline({year: '1980'})") 1980
+							a(ui-sref="timeline({year: '1988'})") 1988
+							a(ui-sref="timeline({year: '1989'})") 1989
+							a(ui-sref="timeline({year: '1990'})") 1990
+							a(ui-sref="timeline({year: '1992'})") 1992
+							a(ui-sref="timeline({year: '1995'})") 1995
+							a(ui-sref="timeline({year: '1998'})") 1998
+							a(ui-sref="timeline({year: '2003'})") 2003
+							a(ui-sref="timeline({year: '2004'})") 2004
+							a(ui-sref="timeline({year: '2005'})") 2005
+					nav.current
+						.nav-content
+							a.label(ui-sref="analise")
+								span.menu-name Conheça nossa análise
+								span.title Análise
+							.sub-nav
+								.back
+									a(ui-sref="timeline({year: '2005'})")
+										span.icon-rewind &nbsp;
+										| Voltar
+										span.tip
+											span.title Linha do tempo
+								.pages
+									a(ui-sref="analise") Introdução
+									a(ui-sref="analise.results") Principais resultados
+								.timeline
+									a(ui-sref="analise.fase1") 1ª fase
+										span.tip
+											span.title Primeira fase do PPCDAm
+											span.year 2007-2008
+									a(ui-sref="analise.fase2") 2ª fase
+										span.tip
+											span.title Segunda fase do PPCDAm
+											span.year 2009-2011
+									a(ui-sref="analise.fase3") 3ª fase
+										span.tip
+											span.title Terceira fase do PPCDAm
+											span.year 2012-2015
+								.pages
+									a(ui-sref="analise.timeline({year: '2020'})") Conclusão
+				//
+					nav.post
+						.nav-content
+							a(ui-sref="analise.timeline({year: '2020'})") 2020
+		footer#mastfoot
+
+			a.twitter-share-button(href="https://twitter.com/share" data-url="https://desmatamento.infoamazonia.org/" data-via="infoamazonia" data-text="A Política de Desmatamento: linha do tempo multimídia sobre a destruição da Amazônia") Tweet
+			script.
+				window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+
+			.fb-like(data-href="https://desmatamento.infoamazonia.org" data-colorscheme="dark" data-layout="button_count" data-action="like" data-share="true")
+
+		include includes/foot

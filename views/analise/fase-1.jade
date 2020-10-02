@@ -1,0 +1,242 @@
+section#fase-1.page.top.flat
+
+	.row
+		iframe.embedded-map(width='100%' height='520' frameborder='0' src='http://gufalei.cartodb.com/viz/82c6e312-afda-11e4-b8f6-0e4fddd5de28/embed_map' allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen)
+
+	.container.row
+		.six.columns.offset-by-three
+			h3 1ª fase
+			h2 Esforço para a criação de áreas protegidas
+			p Após três anos consecutivos de redução, a taxa do desmate no biênio 2007-2008 sofre uma retomada significativa, com 60% de aumento e um total de 12,6 mil hectares desmatados. O crescimento é motivado, sobretudo, pela valorização da soja e da carne bovina no mercado internacional. A constatação de que as derrubadas se aceleram nos estados de Mato Grosso e Pará gera tensão entre governo e setor produtivo.
+			p Para atuar na gestão das novas unidades de conservação, é criado o Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio), vinculado ao Ministério do Meio Ambiente. 
+				span(yt-audio video-id="gU5HPOy8KCc" title="Mauro Oliveira Pires" content='"Hoje, há menos terra para especulação na Amazônia"') Ao final da Primeira Fase do PPCDAm (2004-2008), mais de 25 milhões de hectares de unidades de conservação federais haviam sido criadas, além da homologação de 10 milhões de hectares de Terras Indígenas. 
+				| (TIs).
+
+	.container
+		.twelve.columns
+			h3 Demarcação de unidades de conservação e terras indígenas entre 2007 e 2008
+	//
+		.row
+			iframe(src='http://cardume.cartodb.com/viz/17b0dbf0-7f3d-11e4-8aa7-0e018d66dc29/embed_map' allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen)
+
+	.map-container(ng-controller="MapController")
+		cartodb(map-id="teste" base-layer="getBaseLayer()" layers="[getAmazLegalLayer(), getTILayer(2007, 2008), getUCLayer(2007, 2008)]" bounds-index="'2'")
+
+	.eixo-title.ordenamento
+		.container
+			.six.columns.offset-by-three
+				h2 1. Eixo Ordenamento Fundiário e Territorial
+
+	.dark.row
+		.container
+			.twelve.columns
+				table.tendency-table
+					thead
+						tr
+							td.year Ano
+							td.authorized Autorizado
+							td.spent Liquidado
+							td.index Índice de execução
+					tr
+						td.year 2007
+						td.authorized R$ 221,6 mi
+						td.spent R$ 163,8 mi
+						td.index 74%
+					tr
+						td.year 2008
+						td.authorized R$ 316,0 mi
+							span.icon-arrow-up-right2.up
+						td.spent R$ 176,6 mi
+							span.icon-arrow-up-right2.up
+						td.index 54%
+							span.icon-arrow-down-right2.down
+
+	.container
+		.six.columns.offset-by-three
+
+			.row
+				p.featured Representatividade do eixo Ordenamento na Primeira Fase
+
+				p Durante os dois últimos anos da Primeira Fase do PPCDAm, este eixo consumiu 
+					strong 336,4 milhões de reais
+					| , o equivalente a 
+					strong 8,5% dos gastos totais 
+					| do Programa durante o período.
+
+			.row
+				p.featured Objetivo estratégico em destaque
+
+				p Nos primeiros anos do PPCDAm, uma das metas específicas mais importantes deste eixo foi a promoção do Ordenamento Territorial no Arco do Desmatamento e nos municípios de influência da BR-163, a rodovia Cuiabá-Santarém.
+
+				p Para atingir esses objetivos, no ano de 2007, foram autorizados pelo Congresso Nacional 18,7 milhões de reais, dos quais acabaram sendo liquidados 3,3 milhões de reais (18% do orçamento inicialmente autorizado). 
+
+				p Em 2008, o orçamento autorizado para esse grupo de ações foi de 21 milhões de reais. O valor liquidado, por sua vez, foi de 13,6 milhões de reais (64%).
+
+
+	.container
+		.nine.columns
+			p.featured.actions-title Ações em destaque
+
+	.container.row
+		.three.columns
+
+			p.action Localização e proteção de povos indígenas isolados ou de recente contato
+				span.action-name (Ação 6914 na Lei Orçamentária Anual)
+
+		.six.columns
+
+			p A ação teve orçamento autorizado, em 
+				strong 2007
+				| , no valor de 2 milhões de reais – sendo que 84,5% desse montante foi, de fato, investido. 
+			p No ano seguinte, em 
+				strong 2008
+				| , os valores foram bem mais modestos: dos 242 mil reais autorizados pelo Congresso, 87,4 mil reais foram gastos (o equivalente a  36% do total). 
+			p De um ano para outro, o valor liquidado diminuiu mais de 20 vezes.
+
+	.container.row
+		.three.columns
+			p.action Elaboração da base cartográfica digital da Amazônia Legal
+				span.action-name (Ação 1J30 na Lei Orçamentária Anual)
+
+		.six.columns
+
+			p Em 2007, a ação teve orçamento estipulado em 12,5 milhões de reais, entretanto, o valor despendido foi de apenas 66,4 mil reais (0,5% do estipulado originalmente). 
+			p Muito mais foi investido em 2008, quando, dos 15 milhões de reais autorizados, 9,5 milhões foram gastos (63%).
+
+	.eixo-title.monitoramento
+		.container
+			.six.columns.offset-by-three
+				h2 2. Eixo Monitoramento e Controle Ambiental
+
+	.dark.row
+		.container
+			.twelve.columns
+				table.tendency-table
+					thead
+						tr
+							td.year Ano
+							td.authorized Autorizado
+							td.spent Liquidado
+							td.index Índice de execução
+					tr
+						td.year 2007
+						td.authorized R$ 142,7 mi
+						td.spent R$ 108,4 mi
+						td.index 76%
+					tr
+						td.year 2008
+						td.authorized R$ 261 mi
+							span.icon-arrow-up-right2.up
+						td.spent R$ 223 mi
+							span.icon-arrow-up-right2.up
+						td.index 85%
+							span.icon-arrow-up-right2.up
+
+	.container
+		.six.columns.offset-by-three
+
+			.row
+				p.featured Representatividade do eixo Monitoramento na Primeira Fase
+
+				p Durante os dois últimos anos da Primeira Fase do PPCDAm, este eixo liquidou 
+					strong 331,3 milhões de reais
+					| , o equivalente a 
+					strong 8,5% dos gastos totais 
+					| do Programa durante o período. 
+
+	.container
+		.nine.columns
+			p.featured.actions-title Ações em destaque
+
+	.container.row
+		.three.columns
+
+			p.action Fiscalização de atividades de desmatamento
+				span.action-name (Ação 6307 na Lei Orcamentária Anual)
+
+		.six.columns
+
+			p Em 2007, o orçamento autorizado para essa ação superou os 36 milhões de reais e foi utilizado em quase a sua totalidade – 36,5 milhões de reais (98%) – na tentativa de fiscalizar e conter o desmatamento na Amazônia. 
+			p No ano seguinte, em 2008, quantias maiores foram gastas: dos 43,8 milhões de reais autorizados, 39,7 milhões de reais (ou 97%) acabaram sendo liquidados.
+			p Conforme os índices de execução elevados permitem inferir, o combate ao desmatamento por meio de ações de fiscalização e monitoramento receberam atenção prioritária do governo federal na primeira fase do PPCDAm.
+
+	.container.row
+		.three.columns
+
+			p.action Manutenção do Sistema de Vigilância da Amazônia [SIVAM]
+				span.action-name (Ação 4322 na Lei Orçamentária Anual)
+
+		.six.columns
+
+			p Em 2007, praticamente todo o montante de 3 milhões de reais aprovado pelo Congresso Nacional para manter o sistema de vigilância do espaço aéreo da Amazônia brasileira acabou sendo gasto.
+			p Contudo, no ano seguinte, em 2008, dos 14 milhões de reais disponíveis, 2,8 milhões de reais foram investidos – um aproveitamento de 20% dos recursos.
+
+	.eixo-title.fomento
+		.container
+			.six.columns.offset-by-three
+				h2 3. Eixo Fomento às Atividades Sustentáveis
+
+	.dark.row
+		.container
+			.twelve.columns
+				table.tendency-table
+					thead
+						tr
+							td.year Ano
+							td.authorized Autorizado
+							td.spent Liquidado
+							td.index Índice de execução
+					tr
+						td.year 2007
+						td.authorized R$ 1.440 mi
+						td.spent R$ 1.315 mi
+						td.index 91%
+					tr
+						td.year 2008
+						td.authorized R$ 2.387 mi
+							span.icon-arrow-up-right2.up
+						td.spent R$ 1.915 mi
+							span.icon-arrow-up-right2.up
+						td.index 80%
+							span.icon-arrow-down-right2.down
+
+	.container
+		.six.columns.offset-by-three
+
+			.row
+				p.featured Representatividade do eixo Fomento na Primeira Fase
+
+				p Durante os dois últimos anos desta fase do PPCDAm, o eixo consumiu 
+					strong 3,2 bilhões de reais
+					| , o equivalente a 
+					strong 83% dos gastos totais 
+					| do Programa nesse período.
+
+	.container
+		.nine.columns
+			p.featured.actions-title Ações em destaque
+
+	.container.row
+		.three.columns
+
+			p.action Fomento a Projetos de Gestão Ambiental dos Povos Indígenas da Amazônia
+				span.action-name (Ação 6063 na Lei Orçamentária Anual)
+
+		.six.columns
+
+			p A quantia autorizada em 2007 foi de 4,9 milhões de reais. Destes, 884mil reais acabaram sendo, de fato, gastos (o equivalente a 18% da importância original).
+			p No ano fiscal seguinte, 2008, o Congresso aprovou o orçamento em 11,3 milhões de reais, dos quais 659,5 mil reais foram investidos (ou 6%).
+
+	.container.row
+		.three.columns
+
+			p.action Concessão de crédito / Instalação às famílias assentadas / Implantação
+				span.action-name (Ação 0062 na Lei Orçamentária Anual)
+
+		.six.columns
+
+			p Assentar as famílias cadastradas no Instituto Nacional de Colonização e Reforma Agrária (Incra) é apenas a etapa inicial na promoção de uma melhor distribuição das terras no interior do Brasil. É preciso, também, dar condições aos pequenos produtores de prosperarem em suas propriedades – do contrário, eles podem acabar cooptados por lucrativas atividades ilegais, como o comércio de madeira.
+			p No ano de 2007, praticamente toda a quantia de 1,14 bilhão de reais destinada à concessão de crédito para as famílias assentadas acabou sendo usada.
+			p Em 2008, muito dinheiro foi investido: 2 bilhões de reais autorizados – e 1,8 bilhão de reais gastos (91%).
+
+	next-page(ref="analise.fase2" title="2ª fase")
