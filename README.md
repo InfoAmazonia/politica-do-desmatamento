@@ -100,4 +100,5 @@ npm run watch
 ### CREDITS
 [rafgraph](https://github.com/rafgraph/spa-github-pages) for the 404.html redirect (rewrite rule for github pages). It works!
 [Natalie Cardot](https://medium.com/@nataliecardot/easily-deploy-a-create-react-app-project-to-github-pages-280529adb086) how to easily Deploy a Create React App Project to GitHub Pages.
+[Ginny Fahs](https://medium.com/@ginnyfahs/github-error-authentication-failed-from-command-line-3a545bfd0ca8) how to authenticate on github with 2FA
 
