@@ -65,6 +65,11 @@ module.exports = function(grunt) {
 						src: ['**', '!app/**', '!**/*.less', '!**/*.jade', '!**/*.js'],
 						dest: 'dist',
 						expand: true
+					},
+					{
+						'dist/index.html': 'dist/views/index.html',
+						'dist/404.html': 'src/views/404.html',
+						'dist/js/cartodb.core.js': 'src/js/cartodb.core.js'
 					}
 				]
 			}
