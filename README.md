@@ -76,9 +76,9 @@ docker$ npm run deploy
 ```
 
 ### NOTES
-- If you use 2FA (2 factor authentication) on git hub. [follow these steps](https://medium.com/@ginnyfahs/github-error-authentication-failed-from-command-line-3a545bfd0ca8).
-- 
-- When using docker you can use watch for save and auto compile files when developing. For this you have to copy dist and node_modules from docker to host and uncomment volumes in docker-compose.yml file the steps are:
+- If you use 2FA (2 factor authentication) on git hub, [follow these steps](https://medium.com/@ginnyfahs/github-error-authentication-failed-from-command-line-3a545bfd0ca8).
+  
+- When using docker you can use watch for save and auto compile files when developing. For this you have to copy dist and node_modules from docker to host and uncomment volumes in docker-compose.yml file. The steps are:
 
 1. Copy dist and node_modules from docker to host (when docker-compose is up and running using bash from host)
 $ docker cp $(docker-compose ps -q app):/home/node/app/node_modules .
